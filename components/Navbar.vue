@@ -1,42 +1,20 @@
 <template>
   <div>
-    <!-- ***** Search Form Area ***** -->
-    <div class="dorne-search-form d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div id="closeBtn" class="search-close-btn">
-              <i class="pe-7s-close-circle" aria-hidden="true"></i>
-            </div>
-            <form action="#" method="get">
-              <input
-                id="search"
-                type="search"
-                name="caviarSearch"
-                placeholder="Search Your Desire Destinations or Events"
-              />
-              <input type="submit" class="d-none" value="submit" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ***** Header Area Start ***** -->
-    <header id="header" class="header_area">
+    <header id="header" class="header_area border-0">
       <div class="container-fluid h-100">
         <div class="row h-100">
           <div class="col-12 h-100">
             <nav class="h-100 navbar navbar-expand-lg">
-              <a class="navbar-brand" href="/">
+              <nuxt-link to="/" class="navbar-brand" tag="a">
                 <img
-                  style="width: 350px"
-                  src="img/core-img/logolamabener.png"
-                  alt
+                  src="/images/logo.png"
+                  width="110"
+                  height="110"
+                  alt="logo-ceo-gmbh"
                 />
-              </a>
+              </nuxt-link>
               <button
-                class="navbar-toggler"
+                class="navbar-toggler m-0 "
                 type="button"
                 data-toggle="collapse"
                 data-target="#dorneNav"
@@ -44,14 +22,14 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="fa fa-bars"></span>
+                <span class="fa fa-bars text-secondary"></span>
               </button>
               <!-- Nav -->
-              <div id="dorneNav" class="collapse navbar-collapse">
+              <div id="dorneNav" class="collapse navbar-collapse bg-white">
                 <ul id="dorneMenu" class="navbar-nav mr-auto">
                   <li class="nav-item dropdown">
                     <a
-                      id="navbarDropdown"
+                      id="navbarDropdown-1"
                       class="nav-link dropdown-toggle"
                       href="#"
                       role="button"
@@ -61,7 +39,10 @@
                     >
                       Our Services
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div
+                      class="dropdown-menu border-0"
+                      aria-labelledby="navbarDropdown"
+                    >
                       <nuxt-link class="dropdown-item" to="/tickets"
                         >Ticketing</nuxt-link
                       >
@@ -78,7 +59,7 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a
-                      id="navbarDropdown"
+                      id="navbarDropdown-2"
                       class="nav-link dropdown-toggle"
                       href="#"
                       role="button"
@@ -88,16 +69,53 @@
                     >
                       About Us
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="index.html">Contact</a>
-                      <a class="dropdown-item" href="explore.html">Gallery</a>
-                      <a class="dropdown-item" href="listing.html">Testimony</a>
+                    <div
+                      class="dropdown-menu border-0"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <a class="dropdown-item" href="#">Contact</a>
+                      <a class="dropdown-item" href="#">Gallery</a>
+                      <a class="dropdown-item" href="#">Testimony</a>
+                    </div>
+                  </li>
+                  <li v-if="authenticated" class="nav-item dropdown">
+                    <a
+                      id="navbarDropdown-3"
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Customer Section
+                    </a>
+                    <div
+                      class="dropdown-menu border-0"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <a class="dropdown-item" href="#">Contact</a>
+                      <a class="dropdown-item" href="#">Gallery</a>
+                      <a class="dropdown-item" href="#">Testimony</a>
                     </div>
                   </li>
                 </ul>
                 <!-- Signin btn -->
-                <div class="dorne-signin-btn">
-                  <nuxt-link to="/login" tag="a">Sign In or Register</nuxt-link>
+                <div class="ceo-gmbh-signin-btn">
+                  <a
+                    v-if="!authenticated"
+                    href="javascript:void(0);"
+                    data-toggle="modal"
+                    data-target="#modal-login"
+                    class="sign-in-link"
+                    >Sign In / Register</a
+                  >
+                  <div v-else>
+                    <a class="mx-2">Welcome, {{ user.email }}</a>
+                    <a href="javascript:void(0);" class="" @click="logout"
+                      >Logout</a
+                    >
+                  </div>
                 </div>
               </div>
             </nav>
@@ -105,14 +123,48 @@
         </div>
       </div>
     </header>
-    <!-- ***** Header Area End ***** -->
+    <modal-login />
   </div>
+  <!-- ***** Header Area End ***** -->
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import ModalLogin from '@/components/index/ModalLogin'
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  components: {
+    ModalLogin
+  },
+  computed: {
+    ...mapGetters({
+      user: 'loggedInUser',
+      authenticated: 'isAuthenticated'
+    })
+  },
+  methods: {
+    async logout() {
+      await this.$auth.logout().then(() => this.$router.push('/'))
+      this.$swal({
+        icon: 'success',
+        title: 'Logged out!',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      })
+    }
+  }
 }
 </script>
 
-<style></style>
+<style scoped>
+.sign-in-link {
+  color: #67a6c9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8eadbe;
+  text-decoration: none;
+}
+</style>

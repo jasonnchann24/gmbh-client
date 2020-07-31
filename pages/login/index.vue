@@ -1,5 +1,5 @@
 <template>
-  <div class="div">
+  <div class="container flex-center">
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -33,7 +33,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'LoginPage'
+}
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay">
+    <section class="ceo-gmbh-welcome-area bg-img bg-overlay">
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -20,12 +20,12 @@
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div
             class="carousel-item active"
-            style="background-image: url('/img/bg-img/slider1home.jpeg')"
+            style="background-image: url('https://images.unsplash.com/photo-1473615695634-d284ec918736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')"
           >
-            <div class="carousel-caption d-none d-md-block">
-              <h2 class="display-4 text-white font-weight-bold">
+            <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
+              <h1 class=" text-white d-none d-md-block font-weight-bold">
                 CEO Travel GmbH
-              </h2>
+              </h1>
               <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
               </p>
@@ -34,12 +34,12 @@
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div
             class="carousel-item"
-            style="background-image: url('/img/bg-img/slider2home.jpeg')"
+            style="background-image: url('https://images.unsplash.com/photo-1520681979516-e3c118ef971f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); "
           >
-            <div class="carousel-caption d-none d-md-block">
-              <h2 class="display-4 text-white font-weight-bold">
+            <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
+              <h1 class=" text-white d-none d-md-block font-weight-bold">
                 CEO Travel GmbH
-              </h2>
+              </h1>
               <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
               </p>
@@ -48,12 +48,15 @@
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div
             class="carousel-item"
-            style="background-image: url('/img/bg-img/slider3home.jpeg')"
+            style="background-image: url('https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80')"
           >
-            <div class="carousel-caption d-none d-md-block">
-              <h2 class="display-4 text-white font-weight-bold">
+            <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
+              <h1 class=" text-white d-none d-md-block font-weight-bold">
+                CEO Travel GmbH
+              </h1>
+              <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
-              </h2>
+              </p>
             </div>
           </div>
         </div>
@@ -79,82 +82,24 @@
     </section>
     <!-- ***** Welcome Area End ***** -->
 
-    <!-- ***** Catagory Area Start ***** -->
-    <section class="dorne-catagory-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="all-catagories">
-              <div class="row">
-                <!-- Single Catagory Area Brava -->
-                <div class="col-4 col-sm-6 col-md">
-                  <div
-                    class="single-catagory-area wow fadeInUpBig"
-                    data-wow-delay="0.2s"
-                  >
-                    <div class="catagory-content">
-                      <!-- <a href="#">
-                        <h5 class="text-dark py-2">Brava</h5>
-                      </a> -->
-                      <nuxt-link class="category-content" to="/brava"
-                        >Bavarian</nuxt-link
-                      >
-                      <img src="img/bg-img/photo3.jpeg" alt />
-                    </div>
-                  </div>
-                </div>
-                <!-- Single Catagory Area Scandinavian-->
-                <div class="col-4 col-sm-6 col-md">
-                  <div
-                    class="single-catagory-area wow fadeInUpBig"
-                    data-wow-delay="0.4s"
-                  >
-                    <div class="catagory-content">
-                      <a href="#">
-                        <h5 class="text-dark py-2 top-left">Scandinavian</h5>
-                      </a>
-                      <img src="img/bg-img/photo5.jpeg" alt />
-                    </div>
-                  </div>
-                </div>
-                <!-- Single Catagory Area Health-->
-                <div class="col-4 col-sm-6 col-md">
-                  <div
-                    class="single-catagory-area wow fadeInUpBig"
-                    data-wow-delay="0.6s"
-                  >
-                    <div class="catagory-content">
-                      <a href="#">
-                        <h5 class="text-dark py-2">Customize your dream!</h5>
-                      </a>
-                      <img src="img/bg-img/photo7.jpeg" alt />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Catagory Area End ***** -->
-
     <!-- ***** About Area Start ***** -->
-    <section class="dorne-about-area section-padding-0-100">
+    <section class="ceo-gmbh-about-area section-padding-0-100 pb-0 mt-100">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="about-content text-center">
-              <h2>
+              <h3 class="font-weight-bold">
                 Discover the beautiful world with
                 <br />
                 <span>CEO Travel GmbH</span>
-              </h2>
+              </h3>
               <p>
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Fusce quis tempus elit. Sed
-                efficitur tortor neque, vitae aliquet urna varius sit amet. Ut
-                rhoncus, nunc nec tincidunt volutpat, ex libero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+                odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem
+                reprehenderit, at sint dolor natus fugit minima facere vel
+                adipisci officiis nostrum minus tenetur nesciunt debitis rerum
+                eveniet fuga. Officiis, fugiat! Tempore amet eligendi inventore.
+                Est ea ut iure, possimus deleniti necessitatibus similique.
               </p>
             </div>
           </div>
@@ -163,48 +108,200 @@
     </section>
     <!-- ***** About Area End ***** -->
 
-    <!-- ***** Clients Area Start ***** -->
-    <div class="dorne-clients-area section-padding-100">
-      <div class="container-fluid">
+    <!-- ***** Catagory Area Start ***** -->
+    <section class="ceo-gmbh-catagory-area mt-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mt-4">
+            <div class="section-heading text-center my-auto">
+              <h4 class="text-dark">Our Packages</h4>
+              <p class="text-dark">Discover the Beautiful World with Us</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <client-only>
+            <div v-if="PACKAGES" class="col-12">
+              <div v-if="PACKAGES && show" class="all-catagories">
+                <div class="row">
+                  <!-- Single Catagory Area Brava -->
+                  <div class="col-12 col-sm-12 col-md-4 my-md-3">
+                    <div
+                      class="single-catagory-area my-50 p-0"
+                      style="border-radius: 15px"
+                      data-wow-delay="0.4s"
+                    >
+                      <nuxt-link tag="a" to="/brava">
+                        <div class="catagory-content">
+                          <h5 class="text-dark p-0 p-md-2">
+                            Custom Tour
+                          </h5>
+
+                          <div class="img-hover-zoom parent">
+                            <content-placeholders
+                              :rounded="true"
+                              class="image1"
+                            >
+                              <content-placeholders-img />
+                            </content-placeholders>
+                            <img
+                              v-if="show"
+                              src="/images/custom-tour.jpg"
+                              alt="custom-tour-package"
+                              class="m-0 package-image image2"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                  <div
+                    v-for="(item, index) in PACKAGES.data"
+                    :key="item.id"
+                    class="col-12 col-sm-12 col-md-4 my-md-3"
+                  >
+                    <div
+                      class="single-catagory-area my-50 p-0"
+                      style="border-radius: 15px"
+                      :data-wow-delay="`${(index + 1) * 0.6}s`"
+                    >
+                      <nuxt-link
+                        tag="a"
+                        :to="
+                          `/packages/${item.id}/${item.name
+                            .replace(/\s/g, '-')
+                            .toLowerCase()}`
+                        "
+                      >
+                        <div class="catagory-content">
+                          <h5 class="text-dark p-0 p-md-2">
+                            {{ item.name }}
+                          </h5>
+                          <div class="img-hover-zoom parent">
+                            <content-placeholders
+                              :rounded="true"
+                              class="image1"
+                            >
+                              <content-placeholders-img />
+                            </content-placeholders>
+                            <img
+                              v-if="show"
+                              :src="item.image_url"
+                              :alt="`packages-${item.name}`"
+                              class="m-0 package-image image2"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                </div>
+                <div v-if="PACKAGES.meta" class="row mt-100 mb-100">
+                  <div v-if="PACKAGES.meta.last_page > 1" class="col-12">
+                    <pagination
+                      :object-to-paginate="PACKAGES"
+                      :store-action="'packages/GET_PACKAGES'"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div v-else>
+                <div class="all-categories">
+                  <div class="row">
+                    <div
+                      v-for="index in 3"
+                      :key="index"
+                      class="col-12 col-sm-12 col-md-4 my-md-3"
+                    >
+                      <div class="single-catagory-area m-1 p-0">
+                        <content-placeholders :rounded="true">
+                          <content-placeholders-heading />
+                          <content-placeholders-img />
+                        </content-placeholders>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </client-only>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Catagory Area End ***** -->
+
+    <section
+      class="ceo-gmbh-features-events-area bg-img bg-overlay-9 section-padding-100-50"
+      style="background-image: url('https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80')"
+    >
+      <div class="container">
         <div class="row">
           <div class="col-12">
+            <div class="section-heading text-center">
+              <span></span>
+              <h4>Testimonials</h4>
+              <p>Our happy customers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div v-for="index in 3" :key="index" class="col-12 col-lg-12">
             <div
-              class="clients-logo d-md-flex align-items-center justify-content-around"
+              class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
+              data-wow-delay="0.2s"
             >
-              <img src="img/clients-img/1.png" alt />
-              <img src="img/clients-img/2.png" alt />
-              <img src="img/clients-img/3.png" alt />
-              <img src="img/clients-img/4.png" alt />
-              <img src="img/clients-img/5.png" alt />
-              <!-- <p v-for="item in posts" :key="item.id">
-                title: {{ item.title }} body: {{ item.body }}
-              </p>
-              <button @click="getPosts()">y</button>-->
+              <div class="feature-events-thumb">
+                <img src="img/bg-img/event-1.jpg" alt="" />
+              </div>
+              <div class="feature-events-content">
+                <h5>Tom Hanks</h5>
+                <h6>Jakarta</h6>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae iste at vitae, totam odio provident?
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- ***** Clients Area End ***** -->
+    </section>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+import Pagination from '@/components/Core/Pagination'
 export default {
-  // data() {
-  //   return {
-  //     posts: {}
-  //   }
-  // },
-  // methods: {
-  //   getPosts() {
-  //     this.$axios
-  //       .get('https://jsonplaceholder.typicode.com/posts')
-  //       .then((response) => {
-  //         this.posts = response.data
-  //       })
-  //   }
-  // }
+  name: 'IndexPage',
+  components: {
+    Pagination
+  },
+  data() {
+    return {
+      show: true
+    }
+  },
+  computed: {
+    ...mapGetters({
+      PACKAGES: 'packages/PACKAGES'
+    }),
+    packageSlug(name) {
+      return name.replace(/\s/g, '-')
+    }
+  },
+  async created() {
+    await this.GET_PACKAGES()
+  },
+  mounted() {},
+  methods: {
+    ...mapActions({
+      GET_PACKAGES: 'packages/GET_PACKAGES'
+    })
+  }
 }
 </script>
 
@@ -217,5 +314,48 @@ export default {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.package-image {
+  height: 225px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.9s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.2);
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  height: 225px;
+  width: 400px;
+  border-radius: 0px 0px 15px 15px;
+
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>

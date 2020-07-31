@@ -37,7 +37,7 @@
   z-index: 99999;
 }
 
-.dorne-load {
+.ceo-gmbh-load {
   width: 60px;
   height: 60px;
   background-color: transparent;
@@ -251,7 +251,7 @@ li {
   height: 800px !important;
 }
 
-.dorne-table {
+.ceo-gmbh-table {
   display: table;
   height: 100%;
   left: 0;
@@ -261,7 +261,7 @@ li {
   z-index: 2;
 }
 
-.dorne-table-cell {
+.ceo-gmbh-table-cell {
   display: table-cell;
   vertical-align: middle;
 }
@@ -344,7 +344,7 @@ li {
 }
 
 .bg-overlay-9:after {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(25, 25, 25, 0.5);
 }
 
 .bg-gray {
@@ -355,7 +355,7 @@ li {
   background-color: #ff0000;
 }
 
-.dorne-btn {
+.ceo-gmbh-btn {
   min-width: 180px;
   height: 52px;
   background-color: #525252;
@@ -369,8 +369,8 @@ li {
   transition-duration: 500ms;
 }
 
-.dorne-btn:hover,
-.dorne-btn:focus {
+.ceo-gmbh-btn:hover,
+.ceo-gmbh-btn:focus {
   color: #fff;
   background-color: #525252;
   font-weight: 600;
@@ -378,7 +378,7 @@ li {
 
 /* Search Area CSS */
 
-.dorne-search-form {
+.ceo-gmbh-search-form {
   width: 100%;
   position: fixed;
   z-index: 99999;
@@ -391,20 +391,20 @@ li {
   overflow-x: hidden;
 }
 
-.search-form-on .dorne-search-form {
+.search-form-on .ceo-gmbh-search-form {
   top: 0;
 }
 
-.sticky .dorne-search-form {
+.sticky .ceo-gmbh-search-form {
   height: 80px;
 }
 
-.dorne-search-form form {
+.ceo-gmbh-search-form form {
   position: relative;
   z-index: 1;
 }
 
-.dorne-search-form form input {
+.ceo-gmbh-search-form form input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background-color: transparent;
@@ -492,15 +492,15 @@ li {
   color: #000000;
 }
 
-.dorne-search-btn > a,
-.dorne-signin-btn > a {
+.ceo-gmbh-search-btn > a,
+.ceo-gmbh-signin-btn > a {
   color: rgb(0, 0, 0)0, 0, 0);
   display: inline-block;
   margin-right: 40px;
   font-size: 15px;
 }
 
-.dorne-search-btn > a i {
+.ceo-gmbh-search-btn > a i {
   padding-right: 10px;
 }
 
@@ -524,9 +524,8 @@ li {
 
 /* Welcome Area CSS */
 
-.dorne-welcome-area {
+.ceo-gmbh-welcome-area {
   width: 100%;
-  height: 700px;
   position: inherit;
   z-index: 1;
 
@@ -644,7 +643,7 @@ li {
 
 /* Catagory Area CSS */
 
-.dorne-catagory-area {
+.ceo-gmbh-catagory-area {
   position: relative;
   z-index: 9;
 }
@@ -697,7 +696,7 @@ li {
 
 /* Editor's Pick Area CSS */
 
-.dorne-editors-pick-area {
+.ceo-gmbh-editors-pick-area {
   position: relative;
   z-index: 1;
 }
@@ -742,8 +741,8 @@ li {
 
 /* Features Area CSS */
 
-.dorne-features-destinations-area,
-.dorne-features-restaurant-area {
+.ceo-gmbh-features-destinations-area,
+.ceo-gmbh-features-restaurant-area {
   padding: 100px 35px;
   position: relative;
   z-index: 1;
@@ -957,7 +956,7 @@ li {
 
 /* Footer Area CSS */
 
-.dorne-footer-area {
+.ceo-gmbh-footer-area {
   padding: 50px 35px;
   border-top: 1px solid #bec0cc;
 }
@@ -1015,7 +1014,7 @@ li {
 }
 
 .contact-form-area,
-.dorne-map-area {
+.ceo-gmbh-map-area {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
@@ -1233,19 +1232,25 @@ li {
   padding: 0 30px;
 }
 
-.opening-hours-widget {
+.room-price-widget {
   padding: 50px 30px;
-  background-color: #f3edff;
+  background-color: #4676a3;
+  color: white;
   position: relative;
   z-index: 1;
+  border-radius: 15px;
 }
 
-.opening-hours-widget h6 {
+.room-price-widget h6 {
   margin-bottom: 30px;
   font-size: 18px;
 }
 
-.opening-hours li {
+.room-price-widget p{
+  color: white;
+}
+
+.room-price li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1254,11 +1259,11 @@ li {
   justify-content: space-between;
 }
 
-.opening-hours li:first-child p {
+/* .room-price li:first-child p {
   color: #7643ea;
-}
+} */
 
-.opening-hours li:last-child p {
+.room-price li:last-child p {
   margin-bottom: 0;
 }
 
@@ -1333,11 +1338,12 @@ li {
 
 .single-listing-nav li.active a,
 .single-listing-nav li a:hover {
-  color: #7643ea;
+  text-decoration: none;
+  color: #6ea8cc;
 }
 
 .single-listing-nav li.active a:after {
-  background-color: #7643ea;
+  background-color: #6ea8cc;
   content: '';
   bottom: -2px;
   left: 0;
@@ -1357,24 +1363,26 @@ li {
   font-weight: 600;
 }
 
-.listing-menu-area h4 {
+.tour-list-info-area h4 {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 60px;
 }
 
-.single-listing-menu {
-  background-color: #f3edff;
+.single-tour-list-info {
+  background-color: #4676a3;
+  color: white;
   padding: 20px 40px;
   margin-bottom: 5px;
+  border-radius: 10px;
 }
 
-.single-listing-menu p {
+.single-tour-list-info p {
   margin-bottom: 0;
 }
 
-.single-listing-menu:nth-child(odd) {
-  background-color: #fbf9ff;
+.single-tour-list-info:nth-child(odd) {
+  background-color: #9a999a;
 }
 
 .listing-reviews-area h4 {

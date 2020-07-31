@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="full-height position-ref">
     <client-only>
-      <navbar />
+      <Navbar />
     </client-only>
     <nuxt />
     <client-only>
-      <footer />
+      <Footer />
     </client-only>
   </div>
 </template>
@@ -19,3 +19,18 @@ export default {
   }
 }
 </script>
+
+<style lang="css">
+html,
+body {
+  height: 100vh;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.position-ref {
+  position: relative;
+}
+</style>

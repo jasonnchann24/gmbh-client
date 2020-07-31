@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'CEO GmbH',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,11 +30,12 @@ export default {
         rel: 'stylesheet',
         href:
           'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-        type: 'text/css'
+        type: 'text/css',
+        crossorigin: 'anonymous'
       },
       {
         rel: 'stylesheet',
-        href: 'css/style.css',
+        href: '/infinitePagination/css/style.css',
         type: 'text/css'
       }
     ],
@@ -47,19 +48,14 @@ export default {
         src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
         body: true
       },
-      // {
-      //   src:
-      //     'https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk',
-      //   body: true
-      // },
-      { src: '/js/google-map/explore-map-active.js', body: true },
-      { src: '/js/active.js', body: true }
+      { src: '/js/active.js', body: true },
+      { src: '/infinitePagination/js/index.js', body: true }
     ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#763ea' },
   /*
    ** Global CSS
    */
@@ -67,28 +63,50 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/carousel.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/carousel.js', mode: 'client' },
+    { src: '~/plugins/contentPlaceholder.js', mode: 'client' },
+    { src: '~/plugins/vue-moment.js', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    // '@nuxtjs/eslint-module'
-  ],
+  buildModules: ['@nuxtjs/eslint-module'],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth-next',
+    'vue-sweetalert2/nuxt'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:8000/api/',
+    credentials: true
+  },
+
+  auth: {
+    redirect: {
+      home: false
+    },
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:8000',
+        user: {
+          property: 'data'
+        },
+        endpoints: {
+          logout: { url: '/logout', method: 'post' }
+        }
+      }
+    }
+  },
   /*
    ** Build configuration
    */
