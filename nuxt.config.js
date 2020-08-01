@@ -44,10 +44,6 @@ export default {
       { src: '/js/bootstrap/popper.min.js', body: true },
       { src: '/js/bootstrap/bootstrap.min.js', body: true },
       { src: '/js/others/plugins.js', body: true },
-      {
-        src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-        body: true
-      },
       { src: '/js/active.js', body: true },
       { src: '/infinitePagination/js/index.js', body: true }
     ]
@@ -92,7 +88,8 @@ export default {
 
   auth: {
     redirect: {
-      home: false
+      home: false,
+      login: '/'
     },
     strategies: {
       laravelSanctum: {

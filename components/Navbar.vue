@@ -104,10 +104,12 @@
                 <div class="ceo-gmbh-signin-btn">
                   <a
                     v-if="!authenticated"
+                    id="sign-in-btn-link"
                     href="javascript:void(0);"
                     data-toggle="modal"
                     data-target="#modal-login"
                     class="sign-in-link"
+                    @click="addShowClass"
                     >Sign In / Register</a
                   >
                   <div v-else>
@@ -151,6 +153,23 @@ export default {
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true
+      })
+    },
+    addShowClass() {
+      const x = document.getElementById('modal-login')
+      x.classList.add('show')
+      x.classList.add('show')
+      x.addEventListener('click', (event) => {
+        x.classList.add('show')
+        x.classList.add('show')
+        x.classList.add('show')
+        x.classList.add('show')
+      })
+      x.addEventListener('keypress', (event) => {
+        x.classList.add('show')
+        x.classList.add('show')
+        x.classList.add('show')
+        x.classList.add('show')
       })
     }
   }

@@ -1,12 +1,8 @@
 <template>
   <div class="full-height position-ref">
-    <client-only>
-      <Navbar />
-    </client-only>
+    <Navbar />
     <nuxt />
-    <client-only>
-      <Footer />
-    </client-only>
+    <Footer />
   </div>
 </template>
 <script>

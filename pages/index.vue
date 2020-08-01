@@ -109,7 +109,7 @@
     <!-- ***** About Area End ***** -->
 
     <!-- ***** Catagory Area Start ***** -->
-    <section class="ceo-gmbh-catagory-area mt-100">
+    <section class="ceo-gmbh-packages-area mt-100">
       <div class="container">
         <div class="row">
           <div class="col-12 mt-4">
@@ -119,9 +119,9 @@
             </div>
           </div>
         </div>
-        <div class="row mt-4">
+        <div class="row">
           <client-only>
-            <div v-if="PACKAGES" class="col-12">
+            <div v-if="PACKAGES" class="col-12  mt-4">
               <div v-if="PACKAGES && show" class="all-catagories">
                 <div class="row">
                   <!-- Single Catagory Area Brava -->
@@ -254,7 +254,11 @@
               data-wow-delay="0.2s"
             >
               <div class="feature-events-thumb">
-                <img src="img/bg-img/event-1.jpg" alt="" />
+                <img
+                  src="img/bg-img/event-1.jpg"
+                  style="border-radius: 15px"
+                  alt=""
+                />
               </div>
               <div class="feature-events-content">
                 <h5>Tom Hanks</h5>
@@ -280,6 +284,9 @@ export default {
   components: {
     Pagination
   },
+  async fetch() {
+    await this.GET_PACKAGES()
+  },
   data() {
     return {
       show: true
@@ -293,9 +300,7 @@ export default {
       return name.replace(/\s/g, '-')
     }
   },
-  async created() {
-    await this.GET_PACKAGES()
-  },
+
   mounted() {},
   methods: {
     ...mapActions({

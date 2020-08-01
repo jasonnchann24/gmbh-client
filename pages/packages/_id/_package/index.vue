@@ -26,8 +26,8 @@
                 <div class="listing-title">
                   <h4>{{ item.name }}</h4>
                   <h6>
-                    {{ item.from_period | moment('Do/MMM/YYYY') }} -
-                    {{ item.to_period | moment('Do/MMM/YYYY') }}
+                    {{ item.from_period }} -
+                    {{ item.to_period }}
                   </h6>
                 </div>
 
@@ -91,11 +91,7 @@
                     ><i class="fa fa-check pr-3"></i>Click here to book
                     ticket!</nuxtLink
                   >
-                  <a
-                    v-else
-                    data-toggle="modal"
-                    data-target="#modal-login"
-                    href="#"
+                  <a v-else href="#" @click="modalLogin"
                     >Please login to book!</a
                   >
                 </div>
@@ -145,6 +141,16 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'PackageShow',
+  async fetch() {
+    this.loading = true
+    try {
+      await this.GET_PACKAGE(this.$route.params.id)
+    } catch (e) {
+      alert(e.response.data.message)
+    } finally {
+      this.loading = false
+    }
+  },
   data() {
     return {
       loading: false
@@ -159,21 +165,14 @@ export default {
       return this.PACKAGE.data
     }
   },
-  async created() {
-    this.loading = true
-    try {
-      await this.GET_PACKAGE(this.$route.params.id)
-    } catch (e) {
-      alert(e.response.data.message)
-    } finally {
-      this.loading = false
-    }
-  },
 
   methods: {
     ...mapActions({
       GET_PACKAGE: 'packages/GET_PACKAGE'
-    })
+    }),
+    modalLogin() {
+      document.getElementById('sign-in-btn-link').click()
+    }
   }
 }
 </script>

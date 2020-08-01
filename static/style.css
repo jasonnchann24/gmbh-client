@@ -356,10 +356,11 @@ li {
 }
 
 .ceo-gmbh-btn {
+  border: 0;
   min-width: 180px;
   height: 52px;
-  background-color: #525252;
-  border-radius: 0;
+  background-color: #4676a3;
+  border-radius: 15px;
   padding: 0 15px;
   line-height: 50px;
   color: #fff;
@@ -372,8 +373,9 @@ li {
 .ceo-gmbh-btn:hover,
 .ceo-gmbh-btn:focus {
   color: #fff;
-  background-color: #525252;
+  background-color: #6ea8cc;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* Search Area CSS */
@@ -643,7 +645,7 @@ li {
 
 /* Catagory Area CSS */
 
-.ceo-gmbh-catagory-area {
+.ceo-gmbh-packages-area {
   position: relative;
   z-index: 9;
 }
@@ -662,7 +664,6 @@ li {
 
 .all-catagories {
   position: relative;
-  top: -50%;
   z-index: 15;
 }
 
@@ -797,7 +798,7 @@ li {
 }
 
 .single-features-area:hover {
-  background-color: #7643ea;
+  background-color: #4676a3;
   box-shadow: 3px 15px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -852,6 +853,7 @@ li {
   margin-bottom: 50px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
+  border-radius: 15px;
 }
 
 .single-feature-events-area .feature-events-thumb {
@@ -946,7 +948,7 @@ li {
 }
 
 .single-feature-events-area:hover {
-  background-color: #7643ea;
+  background-color: #4676a3;
 }
 
 .single-feature-events-area:hover .feature-events-content h5,
@@ -1019,7 +1021,16 @@ li {
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
   width: 50%;
+  margin-bottom: 100px;
 }
+
+@media screen and (min-width: 768px) {
+  .ceo-gmbh-map-area{
+    padding-top: 100px
+  }
+}
+
+
 
 #googleMap {
   width: 100%;
