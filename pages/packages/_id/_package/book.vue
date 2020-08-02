@@ -73,7 +73,7 @@
                 <form @submit.prevent="createTransaction">
                   <div class="form-group row">
                     <label for="book-package-id" class="col-sm-2 col-form-label"
-                      >Package :
+                      >Package
                     </label>
                     <div class="col-sm-10">
                       <input
@@ -88,13 +88,14 @@
                   </div>
                   <div class="form-group row">
                     <label for="book-adults" class="col-sm-2 col-form-label"
-                      >Adults :
+                      >Adults
                     </label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                       <input
                         id="book-adults"
                         v-model="form.adults"
                         type="number"
+                        min="0"
                         class="form-control"
                         required
                       />
@@ -102,13 +103,14 @@
                   </div>
                   <div class="form-group row">
                     <label for="book-children" class="col-sm-2 col-form-label"
-                      >Children :
+                      >Children
                     </label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                       <input
                         id="book-children"
                         v-model="form.children"
                         type="number"
+                        min="0"
                         class="form-control"
                         required
                       />
@@ -116,13 +118,14 @@
                   </div>
                   <div class="form-group row">
                     <label for="book-infants" class="col-sm-2 col-form-label"
-                      >Infants :
+                      >Infants
                     </label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                       <input
                         id="book-infants"
                         v-model="form.infants"
                         type="number"
+                        min="0"
                         class="form-control"
                       />
                     </div>
@@ -209,12 +212,13 @@ export default {
       try {
         await this.CREATE_TRANSACTION(this.form)
         await this.clearForm()
-        this.$swal({
+        await this.$swal({
           icon: 'success',
           title: 'Created! ',
           text: `Please proceed to fill your booking details. Booking number: ${this.TRANSACTION.data.transaction_number}`,
           showConfirmButton: true
         })
+        this.$router.push(`/transactions/${this.TRANSACTION.data.id}`)
       } catch (e) {
         this.$swal({
           icon: 'error',

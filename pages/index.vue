@@ -113,7 +113,8 @@
       <div class="container">
         <div class="row">
           <div class="col-12 mt-4">
-            <div class="section-heading text-center my-auto">
+            <div class="section-heading dark text-center my-auto">
+              <span></span>
               <h4 class="text-dark">Our Packages</h4>
               <p class="text-dark">Discover the Beautiful World with Us</p>
             </div>

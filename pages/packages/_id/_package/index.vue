@@ -87,11 +87,15 @@
                     v-if="authenticated"
                     :to="`${$route.path}/book`"
                     tag="a"
-                    class="btn text-primary w-100"
+                    class="btn text-primary text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     ><i class="fa fa-check pr-3"></i>Click here to book
                     ticket!</nuxtLink
                   >
-                  <a v-else href="#" @click="modalLogin"
+                  <a
+                    v-else
+                    href="#"
+                    class="btn text-danger text-uppercase w-100 animate__animated animate__pulse animate__infinite"
+                    @click="modalLogin"
                     >Please login to book!</a
                   >
                 </div>

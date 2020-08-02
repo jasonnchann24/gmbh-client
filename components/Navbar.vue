@@ -94,9 +94,9 @@
                       class="dropdown-menu border-0"
                       aria-labelledby="navbarDropdown"
                     >
-                      <a class="dropdown-item" href="#">Contact</a>
-                      <a class="dropdown-item" href="#">Gallery</a>
-                      <a class="dropdown-item" href="#">Testimony</a>
+                      <nuxtLink to="/transactions" class="dropdown-item" tag="a"
+                        >Transactions</nuxtLink
+                      >
                     </div>
                   </li>
                 </ul>

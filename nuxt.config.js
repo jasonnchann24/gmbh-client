@@ -37,6 +37,12 @@ export default {
         rel: 'stylesheet',
         href: '/infinitePagination/css/style.css',
         type: 'text/css'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css',
+        type: 'text/css'
       }
     ],
     script: [
@@ -55,7 +61,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/main.css'],
   /*
    ** Plugins to load before mounting the App
    */
