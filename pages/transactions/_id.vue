@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col-12">
               <div class="section-heading py-5 mb-0">
-                <h4 class="text-dark">TRANSACTION DETAIL</h4>
+                <h4 class="text-dark">BOOKING DETAIL</h4>
                 <p class="text-dark">
                   Transaction Number - {{ item.transaction_number }}
                 </p>
@@ -36,7 +36,7 @@
               <p>
                 Emergency Contact :
                 <span v-if="item.forms.emergency_contact">{{
-                  item.forms.emergency_contact
+                  item.forms.emergency_contact.name
                 }}</span>
                 <span v-else class="text-danger">Not found</span>
               </p>
@@ -49,9 +49,7 @@
               </p>
               <p>
                 Transaction Slip :
-                <span v-if="item.forms.transfer_evidence">{{
-                  item.forms.transfer_evidence
-                }}</span>
+                <span v-if="item.forms.transfer_evidence">Uploaded</span>
                 <span v-else class="text-danger">Not found</span>
               </p>
             </div>
@@ -82,7 +80,7 @@
         <div class="row">
           <div class="col-12">
             <div class="section-heading pt-5 pb-2 mb-0">
-              <h4 class="text-dark">TRANSACTION FORM</h4>
+              <h4 class="text-dark">BOOKING FORM</h4>
             </div>
           </div>
         </div>
@@ -93,6 +91,8 @@
       <master-passenger />
       <!-- EMERGENCY CONTACT SECTION -->
       <emergency-contact />
+      <!-- TRANSACTION SLIP SECTION-->
+      <transaction-slip />
     </div>
     <div v-else>
       <client-only>
@@ -121,13 +121,15 @@ import { mapActions, mapGetters } from 'vuex'
 import PassengerInfo from '@/components/Transaction/PassengerInfo'
 import MasterPassenger from '@/components/Transaction/MasterPassenger'
 import EmergencyContact from '@/components/Transaction/EmergencyContact'
+import TransactionSlip from '@/components/Transaction/TransactionSlip'
 export default {
   name: 'TransactionShow',
   middleware: ['auth'],
   components: {
     PassengerInfo,
     MasterPassenger,
-    EmergencyContact
+    EmergencyContact,
+    TransactionSlip
   },
   async fetch() {
     this.loading = true

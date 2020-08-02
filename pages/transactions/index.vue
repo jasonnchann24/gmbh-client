@@ -10,7 +10,7 @@
             <div class="col-12">
               <div class="section-heading dark text-center">
                 <span></span>
-                <h4>Transactions</h4>
+                <h4>Bookings</h4>
                 <p>Click for more detail</p>
               </div>
             </div>
@@ -130,7 +130,6 @@ export default {
     }),
     badge(item) {
       return (
-        item.forms.documents &&
         item.forms.emergency_contact &&
         item.forms.master_passenger &&
         item.forms.transfer_evidence &&

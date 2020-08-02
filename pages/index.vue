@@ -120,7 +120,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div v-if="!$fetchState.pending" class="row">
           <client-only>
             <div v-if="PACKAGES" class="col-12  mt-4">
               <div v-if="PACKAGES && show" class="all-catagories">
@@ -228,6 +228,14 @@
               </div>
             </div>
           </client-only>
+        </div>
+        <div v-else class="row">
+          <div v-for="index in 3" :key="index" class="col-4 my-5">
+            <content-placeholders :rounded="true">
+              <content-placeholders-heading />
+              <content-placeholders-img />
+            </content-placeholders>
+          </div>
         </div>
       </div>
     </section>

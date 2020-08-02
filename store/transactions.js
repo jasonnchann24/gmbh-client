@@ -1,6 +1,7 @@
 export const state = () => ({
   transaction: {},
-  transactions: {}
+  transactions: {},
+  ts: {}
 })
 
 export const getters = {
@@ -9,6 +10,9 @@ export const getters = {
   },
   TRANSACTIONS(state) {
     return state.transactions
+  },
+  TS(state) {
+    return state.ts
   }
 }
 
@@ -18,6 +22,9 @@ export const mutations = {
   },
   SET_TRANSACTIONS(state, payload) {
     state.transactions = payload
+  },
+  SET_TS(state, payload) {
+    state.ts = payload
   }
 }
 
@@ -33,5 +40,9 @@ export const actions = {
   async GET_TRANSACTION({ commit }, id) {
     const data = await this.$axios.$get(`transactions/${id}`)
     commit('SET_TRANSACTION', data)
+  },
+  async CREATE_TRANSACTION_SLIP({ commit }, payload) {
+    const data = await this.$axios.$post(`transfer-evidence/`, payload)
+    commit('SET_TS', data)
   }
 }

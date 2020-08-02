@@ -15,7 +15,10 @@
             Add Passengers Information
           </button>
         </div>
-        <div v-else class="col-12 col-md-6">
+        <div
+          v-else-if="item.forms.passengers.length > 0"
+          class="col-12 col-md-6"
+        >
           <button
             class="btn btn-block btn-info"
             @click="passengersDetail = !passengersDetail"
@@ -25,12 +28,15 @@
         </div>
       </div>
       <!-- FORM START -->
-      <form @submit.prevent="createPassengers">
+      <form
+        v-if="item.forms.passengers.length < 1"
+        @submit.prevent="createPassengers"
+      >
         <div class="row mt-2">
           <div
             v-for="(passenger, index) in passengers"
             :key="index"
-            class="col-6 my-2 border p-5"
+            class="col-12 col-md-6 my-2 border p-5"
           >
             <p>Passenger Number {{ index + 1 }}</p>
             <div class="form-group">
@@ -94,7 +100,7 @@
               />
             </div>
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-12 col-md-6">
                 <label :for="`t-form-issued${index}`"
                   >Passport Issued Date</label
                 >
@@ -106,7 +112,7 @@
                   required
                 />
               </div>
-              <div class="col-6">
+              <div class="col-12 col-md-6">
                 <label :for="`t-form-expiry${index}`"
                   >Passport Expiry Date</label
                 >
@@ -198,7 +204,7 @@
                 </tr>
                 <tr>
                   <th colspan="7" class="text-right pr-5">Total Price</th>
-                  <td>Rp.{{ item.total_price_amount }}K</td>
+                  <td>Rp. {{ item.total_price_amount }}K</td>
                 </tr>
               </tbody>
             </table>
@@ -285,7 +291,6 @@ export default {
       }
 
       this.$swal({
-        toast: true,
         position: 'top',
         background: '#f5f5f5',
         icon: 'success',

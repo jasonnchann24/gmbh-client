@@ -43,6 +43,7 @@
                     class="form-control"
                     aria-describedby="emailHelp"
                     required
+                    autocomplete="off"
                   />
                 </div>
                 <div class="form-group">
@@ -51,7 +52,7 @@
                     id="login-password"
                     v-model="loginForm.password"
                     type="password"
-                    placeholder="password"
+                    placeholder="Password"
                     class="form-control"
                     required
                   />
