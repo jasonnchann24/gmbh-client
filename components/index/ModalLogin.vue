@@ -257,7 +257,7 @@ export default {
       email: '',
       errorResend: null,
       resendLoading: false,
-      resetPasswordUrl: process.env.API_URL
+      resetPasswordUrl: process.env.SANCTUM_URL
     }
   },
   methods: {
