@@ -21,6 +21,7 @@
           <div
             class="carousel-item active"
             style="background-image: url('https://images.unsplash.com/photo-1473615695634-d284ec918736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')"
+            crossorigin="anonymous"
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
@@ -35,6 +36,7 @@
           <div
             class="carousel-item"
             style="background-image: url('https://images.unsplash.com/photo-1520681979516-e3c118ef971f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); "
+            crossorigin="anonymous"
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
@@ -49,6 +51,7 @@
           <div
             class="carousel-item"
             style="background-image: url('https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80')"
+            crossorigin="anonymous"
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
@@ -132,7 +135,7 @@
                       style="border-radius: 15px"
                       data-wow-delay="0.4s"
                     >
-                      <nuxt-link tag="a" to="/brava">
+                      <nuxt-link tag="a" to="/custom-tour">
                         <div class="catagory-content">
                           <h5 class="text-dark p-0 p-md-2">
                             Custom Tour
@@ -244,6 +247,7 @@
     <section
       class="ceo-gmbh-features-events-area bg-img bg-overlay-9 section-padding-100-50"
       style="background-image: url('https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80')"
+      crossorigin="anonymous"
     >
       <div class="container">
         <div class="row">

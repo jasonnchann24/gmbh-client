@@ -32,7 +32,7 @@
               <div class="col-12">
                 <h3>Sign In</h3>
               </div>
-              <div class="col-12">
+              <div class="col-12 mt-4">
                 <div class="form-group">
                   <label for="login-email">Email address</label>
                   <input
@@ -101,7 +101,7 @@
               <div class="col-12">
                 <h3 class="pt-2 pb-2 pr-2">Register</h3>
               </div>
-              <div class="col-12">
+              <div class="col-12 mt-4">
                 <div class="form-group">
                   <label for="name-register">Full Name</label>
                   <input
@@ -110,6 +110,7 @@
                     type="text"
                     class="form-control"
                     required
+                    placeholder="John Doe"
                   />
                 </div>
                 <div class="form-group">
@@ -120,6 +121,7 @@
                     type="email"
                     class="form-control"
                     required
+                    placeholder="email@email.com"
                   />
                 </div>
                 <div class="form-group">
@@ -193,13 +195,14 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="email-resend">Resend Email address</label>
+                  <label for="email-resend">Resend Verification Email</label>
                   <input
                     id="email-resend"
                     v-model="email"
                     type="email"
                     class="form-control"
                     required
+                    placeholder="email@email.com"
                   />
                 </div>
                 <div v-if="errorResend" class="col-12 mt-4">
@@ -321,9 +324,10 @@ export default {
       } catch (e) {
         this.$swal({
           icon: 'error',
-          title: 'Wrong Credentials / Not Verified Email!',
+          title: 'Something went wrong!',
+          text: 'Wrong Credentials / Not Verified Email!',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 5000,
           timerProgressBar: true
         })
       } finally {

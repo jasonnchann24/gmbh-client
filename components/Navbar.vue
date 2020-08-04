@@ -52,7 +52,7 @@
                       <nuxt-link class="dropdown-item" to="/services"
                         >Photography Exploration</nuxt-link
                       >
-                      <nuxt-link class="dropdown-item" to="/services"
+                      <nuxt-link class="dropdown-item" to="/custom-tour"
                         >Customize Tour</nuxt-link
                       >
                     </div>
