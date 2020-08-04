@@ -11,7 +11,9 @@
             :alt="`${item.package.name}-package`"
             loading="lazy"
           />
-          <h1 class="hero-text text-uppercase display-1 font-weight-bold">
+          <h1
+            class="hero-text text-uppercase display-1 font-weight-bold text-white"
+          >
             {{ item.package.name }}
           </h1>
         </div>

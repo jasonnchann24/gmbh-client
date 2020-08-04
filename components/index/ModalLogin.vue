@@ -10,7 +10,7 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content p-md-3" style="border-radius: 25px">
+      <div class="modal-content p-3" style="border-radius: 25px">
         <div class="modal-header border-0">
           <h5 id="modal-loginLabel" class="modal-title">
             Welcome to CEO GmbH
@@ -75,7 +75,7 @@
                     <button
                       v-if="!loading"
                       type="button"
-                      class="btn btn-block ceo-gmbh-btn mt-4"
+                      class="btn btn-block ceo-gmbh-btn mt-4 text-white"
                       style="background-color: #4d89b9"
                       @click="login"
                     >
@@ -84,7 +84,7 @@
 
                     <button
                       v-else
-                      class="btn btn-block ceo-gmbh-btn mt-4"
+                      class="btn btn-block ceo-gmbh-btn mt-4 text-white"
                       style="background-color: #4d89b9"
                       disabled
                     >
@@ -172,7 +172,7 @@
                     <button
                       v-if="!loading"
                       type="submit"
-                      class="btn btn-block ceo-gmbh-btn"
+                      class="btn btn-block ceo-gmbh-btn text-white"
                       style="background-color: #4d89b9"
                       @click="registerUser"
                     >
@@ -180,7 +180,7 @@
                     </button>
                     <button
                       v-else
-                      class="btn btn-block ceo-gmbh-btn"
+                      class="btn btn-block ceo-gmbh-btn text-white"
                       style="background-color: #4d89b9"
                       disabled
                     >
@@ -216,7 +216,7 @@
                   <button
                     v-if="!resendLoading"
                     type="submit"
-                    class="btn btn-block ceo-gmbh-btn"
+                    class="btn btn-block ceo-gmbh-btn text-white"
                     style="background-color: #4d89b9"
                     @click="resendEmail"
                   >
@@ -224,7 +224,7 @@
                   </button>
                   <button
                     v-else
-                    class="btn btn-block ceo-gmbh-btn"
+                    class="btn btn-block ceo-gmbh-btn text-white"
                     style="background-color: #4d89b9"
                     disabled
                   >

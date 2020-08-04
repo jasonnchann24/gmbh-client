@@ -11,7 +11,9 @@
             :alt="`${item.name}-package`"
             loading="lazy"
           />
-          <h1 class="hero-text text-uppercase display-1 font-weight-bold">
+          <h1
+            class="hero-text text-uppercase display-1 font-weight-bold text-white"
+          >
             {{ item.name }}
           </h1>
         </div>
@@ -56,7 +58,9 @@
                   >
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
-                      <h6 class="text-uppercase">Tour Includes</h6>
+                      <h6 class="text-uppercase text-white font-weight-bolder">
+                        Tour Includes
+                      </h6>
                       <p class="text-white">
                         {{ item.tour_includes }}
                       </p>
@@ -68,7 +72,9 @@
                   >
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
-                      <h6 class="text-uppercase">Tour Excludes</h6>
+                      <h6 class="text-uppercase text-white font-weight-bolder">
+                        Tour Excludes
+                      </h6>
                       <p class="text-white">
                         {{ item.tour_excludes }}
                       </p>
@@ -80,7 +86,7 @@
 
             <!-- Listing Sidebar -->
             <div class="col-12 col-md-8 col-lg-4">
-              <div class="listing-sidebar">
+              <div class="listing-sidebar mt-5">
                 <!-- Listing Verify -->
                 <div class="listing-verify">
                   <nuxtLink
@@ -104,7 +110,9 @@
 
                 <!-- Opening Hours Widget -->
                 <div class="room-price-widget mt-50">
-                  <h6 class="text-uppercase">Room Choices</h6>
+                  <h6 class="text-uppercase text-white font-weight-bolder">
+                    Room Choices
+                  </h6>
                   <p>Prices in Thousands</p>
                   <ul class="room-price">
                     <li v-for="room in item.room_choices" :key="room.id">

@@ -3,18 +3,18 @@
     <!-- ***** Welcome Area Start ***** -->
     <section class="ceo-gmbh-welcome-area bg-img bg-overlay">
       <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
+        id="carousel-toggler"
+        class="carousel slide carousel-fade"
         data-ride="carousel"
       >
         <ol class="carousel-indicators mb-auto">
           <li
-            data-target="#carouselExampleIndicators"
+            data-target="#carousel-toggler"
             data-slide-to="0"
             class="active"
           ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carousel-toggler" data-slide-to="1"></li>
+          <li data-target="#carousel-toggler" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
@@ -65,7 +65,7 @@
         </div>
         <a
           class="carousel-control-prev"
-          href="#carouselExampleIndicators"
+          href="#carousel-toggler"
           role="button"
           data-slide="prev"
         >
@@ -74,7 +74,7 @@
         </a>
         <a
           class="carousel-control-next"
-          href="#carouselExampleIndicators"
+          href="#carousel-toggler"
           role="button"
           data-slide="next"
         >
@@ -338,9 +338,10 @@ a:hover {
 }
 
 .package-image {
-  height: 225px;
-  width: 400px;
+  height: 338px;
+  width: 600px;
   object-fit: cover;
+  object-position: 50% 50%;
   border-radius: 0px 0px 15px 15px;
 }
 
@@ -361,6 +362,7 @@ a:hover {
   position: relative;
   top: 0;
   left: 0;
+  right: 0;
 }
 .image1 {
   position: relative;

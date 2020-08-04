@@ -10,7 +10,9 @@
           alt="customize-tour-hero-image"
           loading="lazy"
         />
-        <h1 class="hero-text text-uppercase display-1 font-weight-bold">
+        <h1
+          class="hero-text text-uppercase display-1 font-weight-bold text-white"
+        >
           CUSTOM TOUR
         </h1>
       </div>
@@ -102,7 +104,7 @@
                   >
                 </select>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-12 col-md-4">
                 <label for="custom-purpose">Trip Purpose</label>
                 <input
                   id="custom-purpose"
@@ -115,22 +117,24 @@
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-12 col-md-6">
                 <label for="custom-date_from">Date From</label>
                 <input
                   id="custom-date_from"
                   v-model="form.date_from"
                   type="date"
                   class="form-control"
+                  required
                 />
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-12 col-md-6">
                 <label for="custom-date_to">Date To</label>
                 <input
                   id="custom-date_to"
                   v-model="form.date_to"
                   type="date"
                   class="form-control"
+                  required
                 />
               </div>
             </div>

@@ -31,8 +31,10 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+          'https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css',
         type: 'text/css',
+        integrity:
+          'sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX',
         crossorigin: 'anonymous'
       },
       {
