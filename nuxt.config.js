@@ -98,6 +98,7 @@ export default {
     // baseURL: 'http://localhost:8000/api/',
     // credentials: true
     baseURL: '/api/',
+    https: true,
     proxy: true
   },
 
