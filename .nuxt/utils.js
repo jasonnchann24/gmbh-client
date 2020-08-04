@@ -150,7 +150,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"BASE_URL":"http://localhost:3000","API_URL":"http://localhost:8000/","API_TEST_URL":"http://apiceogmbh-env.eba-hbpwpdze.ap-southeast-1.elasticbeanstalk.com/"}
+      env: {"BASE_URL":"http://localhost:3000","API_URL":"https://api.jc-demo.com"}
     }
     // Only set once
     if (context.req) {

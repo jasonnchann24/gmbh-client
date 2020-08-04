@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   mode: 'universal',
   /*
@@ -87,10 +88,13 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
+  // baseURL: 'http://localhost:8000/api/',
+
   axios: {
-    baseURL: 'http://localhost:8000/api/',
+    baseURL: process.env.API_URL + '/api/',
     credentials: true
   },
+  // url: 'http://localhost:8000',
 
   auth: {
     redirect: {
@@ -100,7 +104,7 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://localhost:8000',
+        url: process.env.API_URL,
         user: {
           property: 'data'
         },
