@@ -1,4 +1,4 @@
-import redirectSSL from 'redirect-ssl'
+// import redirectSSL from 'redirect-ssl'
 require('dotenv').config()
 export default {
   mode: 'universal',
@@ -134,11 +134,11 @@ export default {
     }
   },
 
-  serverMiddleware: [
-    redirectSSL.create({
-      enabled: process.env.NODE_ENV === 'production'
-    })
-  ],
+  // serverMiddleware: [
+  //   redirectSSL.create({
+  //     enabled: process.env.NODE_ENV === 'production'
+  //   })
+  // ],
   /*
    ** Build configuration
    */
