@@ -60,7 +60,7 @@
                 <div class="row">
                   <div class="col-12">
                     <a
-                      :href="`${resetPasswordUrl}password/reset/`"
+                      :href="`${resetPasswordUrl}/password/reset/`"
                       target="_blank"
                     >
                       Forget your password?
