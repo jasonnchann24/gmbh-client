@@ -104,9 +104,14 @@
                       class="dropdown-menu border-0"
                       aria-labelledby="navbarDropdown"
                     >
-                      <nuxtLink to="/transactions" class="dropdown-item" tag="a"
-                        >Transactions</nuxtLink
-                      >
+                      <div @click="navbarToggle">
+                        <nuxtLink
+                          to="/transactions"
+                          class="dropdown-item"
+                          tag="a"
+                          >Transactions</nuxtLink
+                        >
+                      </div>
                     </div>
                   </li>
                 </ul>
