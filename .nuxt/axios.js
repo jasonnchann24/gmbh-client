@@ -64,21 +64,9 @@ const createAxiosInstance = axiosOptions => {
 
   // Setup interceptors
 
-  setupCredentialsInterceptor(axios)
   setupProgress(axios)
 
   return axios
-}
-
-const setupCredentialsInterceptor = axios => {
-  // Send credentials only to relative and API Backend requests
-  axios.onRequest(config => {
-    if (config.withCredentials === undefined) {
-      if (!/^https?:\/\//i.test(config.url) || config.url.indexOf(config.baseURL) === 0) {
-        config.withCredentials = true
-      }
-    }
-  })
 }
 
 const setupProgress = (axios) => {
@@ -148,8 +136,8 @@ const setupProgress = (axios) => {
 export default (ctx, inject) => {
   // baseURL
   const baseURL = process.browser
-      ? 'https://api.jc-demo.com/api/'
-      : (process.env._AXIOS_BASE_URL_ || 'https://api.jc-demo.com/api/')
+      ? '/api/'
+      : (process.env._AXIOS_BASE_URL_ || '/api/')
 
   // Create fresh objects for all default header scopes
   // Axios creates only one which is shared across SSR requests!

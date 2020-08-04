@@ -83,6 +83,7 @@ export default {
    */
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth-next',
     'vue-sweetalert2/nuxt'
@@ -93,9 +94,22 @@ export default {
    */
 
   axios: {
-    baseURL: process.env.API_URL,
+    // baseURL: process.env.API_URL,
     // baseURL: 'http://localhost:8000/api/',
-    credentials: true
+    // credentials: true
+    baseURL: '/api/',
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': {
+      target: `${process.env.SANCTUM_URL}/api/`,
+      pathRewrite: { '^/api/': '' }
+    },
+    '/laravel': {
+      target: process.env.SANCTUM_URL,
+      pathRewrite: { '^/laravel': '/' }
+    }
   },
 
   auth: {
