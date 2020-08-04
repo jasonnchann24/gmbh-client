@@ -89,13 +89,12 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  // baseURL: 'http://localhost:8000/api/',
 
   axios: {
-    baseURL: process.env.API_URL + '/api/',
+    baseURL: process.env.API_URL,
+    // baseURL: 'http://localhost:8000/api/',
     credentials: true
   },
-  // url: 'http://localhost:8000',
 
   auth: {
     redirect: {
@@ -105,7 +104,9 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: process.env.API_URL,
+        url: process.env.SANCTUM_URL,
+        // url: 'http://localhost:8000',
+
         user: {
           property: 'data'
         },

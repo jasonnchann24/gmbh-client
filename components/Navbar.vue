@@ -11,9 +11,11 @@
                   width="110"
                   height="110"
                   alt="logo-ceo-gmbh"
+                  @click="navbarToggle"
                 />
               </nuxt-link>
               <button
+                id="navbar-toggle"
                 class="navbar-toggler m-0 "
                 type="button"
                 data-toggle="collapse"
@@ -22,7 +24,7 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="fa fa-bars text-secondary"></span>
+                <span id="toggle-icn" class="fa fa-bars text-secondary"></span>
               </button>
               <!-- Nav -->
               <div id="dorneNav" class="collapse navbar-collapse bg-white">
@@ -43,18 +45,26 @@
                       class="dropdown-menu border-0"
                       aria-labelledby="navbarDropdown"
                     >
-                      <nuxt-link class="dropdown-item" to="/tickets"
-                        >Ticketing</nuxt-link
-                      >
-                      <nuxt-link class="dropdown-item" to="/travelpack"
-                        >Tour Packages</nuxt-link
-                      >
-                      <nuxt-link class="dropdown-item" to="/services"
-                        >Photography Exploration</nuxt-link
-                      >
-                      <nuxt-link class="dropdown-item" to="/custom-tour"
-                        >Customize Tour</nuxt-link
-                      >
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/tickets"
+                          >Ticketing</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/travelpack"
+                          >Tour Packages</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/services"
+                          >Photography Exploration</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/custom-tour"
+                          >Customize Tour</nuxt-link
+                        >
+                      </div>
                     </div>
                   </li>
                   <li class="nav-item dropdown">
@@ -109,12 +119,21 @@
                     data-toggle="modal"
                     data-target="#modal-login"
                     class="sign-in-link"
-                    @click="addShowClass"
+                    @click="
+                      addShowClass()
+                      navbarToggle()
+                    "
                     >Sign In / Register</a
                   >
                   <div v-else>
                     <a class="mx-2">Welcome, {{ user.email }}</a>
-                    <a href="javascript:void(0);" class="" @click="logout"
+                    <a
+                      href="javascript:void(0);"
+                      class=""
+                      @click="
+                        logout()
+                        navbarToggle()
+                      "
                       >Logout</a
                     >
                   </div>
@@ -171,6 +190,17 @@ export default {
         x.classList.add('show')
         x.classList.add('show')
       })
+    },
+    navbarToggle() {
+      const element = document.getElementById('dorneNav')
+      const elToggle = document.getElementById('toggle-icn')
+
+      if (
+        element.classList.contains('show') &&
+        window.getComputedStyle(elToggle, ':before')
+      ) {
+        document.getElementById('navbar-toggle').click()
+      }
     }
   }
 }
