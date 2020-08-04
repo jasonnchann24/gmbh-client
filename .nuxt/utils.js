@@ -150,7 +150,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"SANCTUM_URL":"https://api.jc-demo.com","API_PREFIX":"/api/"}
+      env: {"SANCTUM_URL":"https://api.jc-demo.com"}
     }
     // Only set once
     if (context.req) {

@@ -97,21 +97,21 @@ export default {
     // baseURL: process.env.API_URL,
     // baseURL: 'http://localhost:8000/api/',
     credentials: true,
-    baseURL: '/api/',
+    baseURL: `${process.env.SANCTUM_URL}/api/`,
     https: true,
-    proxy: true
+    proxy: false
   },
 
-  proxy: {
-    '/api/': {
-      target: `${process.env.SANCTUM_URL}/api/`,
-      pathRewrite: { '^/api/': '' }
-    },
-    '/laravel': {
-      target: process.env.SANCTUM_URL,
-      pathRewrite: { '^/laravel': '/' }
-    }
-  },
+  // proxy: {
+  //   '/api/': {
+  //     target: `${process.env.SANCTUM_URL}/api/`,
+  //     pathRewrite: { '^/api/': '' }
+  //   },
+  //   '/laravel': {
+  //     target: process.env.SANCTUM_URL,
+  //     pathRewrite: { '^/laravel': '/' }
+  //   }
+  // },
 
   auth: {
     redirect: {
