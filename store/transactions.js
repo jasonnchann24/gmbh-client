@@ -30,7 +30,7 @@ export const mutations = {
 
 export const actions = {
   async CREATE_TRANSACTION({ commit }, payload) {
-    const data = await this.$axios.$post(`transactions/`, payload)
+    const data = await this.$axios.$post(`transactions`, payload)
     commit('SET_TRANSACTION', data)
   },
   async GET_TRANSACTIONS({ commit }, page = 1) {
