@@ -137,7 +137,7 @@
                     >
                       <nuxt-link tag="a" to="/custom-tour">
                         <div class="catagory-content">
-                          <h5 class="text-dark p-0 p-md-2">
+                          <h5 class="text-dark py-2 p-md-2">
                             Custom Tour
                           </h5>
 
@@ -179,7 +179,7 @@
                         "
                       >
                         <div class="catagory-content">
-                          <h5 class="text-dark p-0 p-md-2">
+                          <h5 class="text-dark py-2 p-md-2">
                             {{ item.name }}
                           </h5>
                           <div class="img-hover-zoom parent">
