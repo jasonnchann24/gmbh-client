@@ -94,24 +94,11 @@ export default {
    */
 
   axios: {
-    // baseURL: process.env.API_URL,
-    // baseURL: 'http://localhost:8000/api/',
     credentials: true,
     baseURL: `${process.env.SANCTUM_URL}/api/`,
     https: true,
     proxy: false
   },
-
-  // proxy: {
-  //   '/api/': {
-  //     target: `${process.env.SANCTUM_URL}/api/`,
-  //     pathRewrite: { '^/api/': '' }
-  //   },
-  //   '/laravel': {
-  //     target: process.env.SANCTUM_URL,
-  //     pathRewrite: { '^/laravel': '/' }
-  //   }
-  // },
 
   auth: {
     redirect: {
@@ -122,8 +109,6 @@ export default {
       laravelSanctum: {
         provider: 'laravel/sanctum',
         url: process.env.SANCTUM_URL,
-        // url: 'http://localhost:8000',
-
         user: {
           property: 'data'
         },

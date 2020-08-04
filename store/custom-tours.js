@@ -16,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   async CREATE_CUSTOM_TOUR({ commit }, payload) {
-    const data = await this.$axios.$post('custom-tours/', payload)
+    const data = await this.$axios.$post('custom-tours', payload)
     commit('SET_CUSTOM_TOUR', data)
   }
 }

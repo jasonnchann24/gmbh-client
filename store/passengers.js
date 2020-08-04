@@ -30,15 +30,15 @@ export const mutations = {
 
 export const actions = {
   async CREATE_PASSENGERS({ commit }, payload) {
-    const data = await this.$axios.$post('passengers/', payload)
+    const data = await this.$axios.$post('passengers', payload)
     commit('SET_PASSENGERS', data)
   },
   async CREATE_MASTER_PASSENGER({ commit }, payload) {
-    const data = await this.$axios.$post('master-passenger/', payload)
+    const data = await this.$axios.$post('master-passenger', payload)
     commit('SET_MASTER_PASSENGER', data)
   },
   async CREATE_EMERGENCY_CONTACT({ commit }, payload) {
-    const data = await this.$axios.$post('emergency-contact/', payload)
+    const data = await this.$axios.$post('emergency-contact', payload)
     commit('SET_E_CONTACT', data)
   }
 }

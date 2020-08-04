@@ -42,7 +42,7 @@ export const actions = {
     commit('SET_TRANSACTION', data)
   },
   async CREATE_TRANSACTION_SLIP({ commit }, payload) {
-    const data = await this.$axios.$post(`transfer-evidence/`, payload)
+    const data = await this.$axios.$post(`transfer-evidence`, payload)
     commit('SET_TS', data)
   }
 }
