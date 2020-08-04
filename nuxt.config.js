@@ -1,4 +1,4 @@
-// import redirectSSL from 'redirect-ssl'
+import redirectSSL from 'redirect-ssl'
 require('dotenv').config()
 export default {
   mode: 'universal',
@@ -96,7 +96,7 @@ export default {
   axios: {
     // baseURL: process.env.API_URL,
     // baseURL: 'http://localhost:8000/api/',
-    // credentials: true
+    credentials: true,
     baseURL: '/api/',
     https: true,
     proxy: true
@@ -134,11 +134,11 @@ export default {
     }
   },
 
-  // serverMiddleware: [
-  //   redirectSSL.create({
-  //     enabled: process.env.NODE_ENV === 'production'
-  //   })
-  // ],
+  serverMiddleware: [
+    redirectSSL.create({
+      enabled: process.env.NODE_ENV === 'production'
+    })
+  ],
   /*
    ** Build configuration
    */
