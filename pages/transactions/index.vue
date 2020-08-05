@@ -28,7 +28,11 @@
                 style="text-decoration: none;"
               >
                 <div class="single-features-area mb-50">
-                  <img :src="item.package.image_url" alt="" />
+                  <img
+                    :src="item.package.image_url"
+                    class="package-image"
+                    alt=""
+                  />
                   <!-- Price -->
                   <div class="price-start">
                     <p v-if="badge(item)" class="bg-success">
@@ -152,4 +156,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.package-image {
+  height: 338px;
+  width: 600px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+</style>
