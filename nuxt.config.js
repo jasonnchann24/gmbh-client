@@ -96,7 +96,7 @@ export default {
   axios: {
     credentials: true,
     baseURL: `${process.env.SANCTUM_URL}/api/`,
-    https: true,
+    https: process.env.HTTPS_BOOL,
     proxy: false
   },
 

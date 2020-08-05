@@ -7,6 +7,7 @@ const _876036b2 = () => interopDefault(import('..\\pages\\brava.vue' /* webpackC
 const _fde83afa = () => interopDefault(import('..\\pages\\custom-tour\\index.vue' /* webpackChunkName: "pages_custom-tour_index" */))
 const _cbd298a0 = () => interopDefault(import('..\\pages\\packages\\index.vue' /* webpackChunkName: "pages_packages_index" */))
 const _56ced383 = () => interopDefault(import('..\\pages\\services.vue' /* webpackChunkName: "pages_services" */))
+const _6eeac661 = () => interopDefault(import('..\\pages\\ticketing\\index.vue' /* webpackChunkName: "pages_ticketing_index" */))
 const _73f26e5c = () => interopDefault(import('..\\pages\\tickets.vue' /* webpackChunkName: "pages_tickets" */))
 const _a399e670 = () => interopDefault(import('..\\pages\\transactions\\index.vue' /* webpackChunkName: "pages_transactions_index" */))
 const _50d434d0 = () => interopDefault(import('..\\pages\\travelpack.vue' /* webpackChunkName: "pages_travelpack" */))
@@ -47,6 +48,10 @@ export const routerOptions = {
     path: "/services",
     component: _56ced383,
     name: "services"
+  }, {
+    path: "/ticketing",
+    component: _6eeac661,
+    name: "ticketing"
   }, {
     path: "/tickets",
     component: _73f26e5c,
