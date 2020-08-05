@@ -46,7 +46,7 @@
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/tickets"
+                        <nuxt-link class="dropdown-item" to="/ticketing"
                           >Ticketing</nuxt-link
                         >
                       </div>
