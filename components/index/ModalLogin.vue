@@ -273,7 +273,7 @@ export default {
     async registerUser() {
       this.loading = true
       try {
-        await this.$axios.$post('register/', this.form)
+        await this.$axios.$post('register', this.form)
         await document.getElementById('closeModalBtn').click()
         this.$swal({
           icon: 'success',
