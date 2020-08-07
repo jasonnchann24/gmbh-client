@@ -243,6 +243,7 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 export default {
   name: 'ModalLogin',
   data() {
@@ -276,6 +277,7 @@ export default {
       this.loading = true
       try {
         await this.$axios.$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
+        await Cookies.set('X-XSRF-TOKEN', Cookies.get('XSRF-TOKEN'))
         await this.$axios.$post('register', this.form)
         await document.getElementById('closeModalBtn').click()
         this.$swal({
@@ -294,6 +296,8 @@ export default {
     async resendEmail() {
       this.resendLoading = true
       try {
+        await this.$axios.$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
+        await Cookies.set('X-XSRF-TOKEN', Cookies.get('XSRF-TOKEN'))
         await this.$axios.$post('email/resend', { email: this.email })
         this.$swal({
           icon: 'success',

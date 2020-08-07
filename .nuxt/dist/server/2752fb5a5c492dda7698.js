@@ -1,0 +1,1 @@
+exports.ids=[3],exports.modules={76:function(e,t,n){"use strict";n.r(t);var r={name:"TestimonyPage"},o=n(1);var component=Object(o.a)(r,(function(){var e=this.$createElement;return(this._self._c||e)("div",[this._ssrNode("<h1>Testimony</h1>")])}),[],!1,(function(e){}),null,"64ae2e8a");t.default=component.exports}};
