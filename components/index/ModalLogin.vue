@@ -110,7 +110,7 @@
                     type="text"
                     class="form-control"
                     required
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div class="form-group">
