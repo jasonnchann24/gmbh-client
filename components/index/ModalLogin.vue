@@ -304,11 +304,7 @@ export default {
         await this.$axios
           .$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
           .then((response) => {
-            this.$axios.$post(
-              'email/resend',
-              { email: this.email },
-              { credentials: false }
-            )
+            this.$axios.$post('email/resend', { email: this.email })
           })
           .catch((error) => {
             alert(error)
