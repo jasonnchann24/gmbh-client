@@ -275,14 +275,8 @@ export default {
     async registerUser() {
       this.loading = true
       try {
-        await this.$axios
-          .$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
-          .then((response) => {
-            this.$axios.$post('register', this.form)
-          })
-          .catch((error) => {
-            alert(error)
-          })
+        await this.$axios.$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
+        await this.$axios.$post('register', this.form)
         await document.getElementById('closeModalBtn').click()
         this.$swal({
           icon: 'success',
@@ -300,14 +294,8 @@ export default {
     async resendEmail() {
       this.resendLoading = true
       try {
-        await this.$axios
-          .$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
-          .then((response) => {
-            this.$axios.$post('email/resend', { email: this.email })
-          })
-          .catch((error) => {
-            alert(error)
-          })
+        await this.$axios.$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
+        await this.$axios.$post('email/resend', { email: this.email })
         this.$swal({
           icon: 'success',
           title: 'Verification Email Resent!',
