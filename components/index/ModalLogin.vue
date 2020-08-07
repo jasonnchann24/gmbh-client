@@ -276,9 +276,12 @@ export default {
     async registerUser() {
       this.loading = true
       try {
-        await this.$axios.$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
-        await Cookies.set('XSRF-TOKEN', Cookies.get('XSRF-TOKEN'))
-        await this.$axios.$post('register', this.form)
+        await this.$axios
+          .$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
+          .then(() => {
+            Cookies.set('XSRF-TOKEN', Cookies.get('XSRF-TOKEN'))
+            this.$axios.$post('register', this.form)
+          })
         await document.getElementById('closeModalBtn').click()
         this.$swal({
           icon: 'success',
