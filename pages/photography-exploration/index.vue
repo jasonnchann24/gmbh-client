@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>PACKAGES</h1>
+    <h1>Photography Exploration</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PackagesPage'
+  name: 'PhotoExplorePage'
 }
 </script>
 

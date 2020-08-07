@@ -56,7 +56,9 @@
                         >
                       </div>
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/services"
+                        <nuxt-link
+                          class="dropdown-item"
+                          to="/photography-exploration"
                           >Photography Exploration</nuxt-link
                         >
                       </div>
@@ -83,9 +85,23 @@
                       class="dropdown-menu border-0"
                       aria-labelledby="navbarDropdown"
                     >
-                      <a class="dropdown-item" href="#">Contact</a>
-                      <a class="dropdown-item" href="#">Gallery</a>
-                      <a class="dropdown-item" href="#">Testimony</a>
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/about-us/contact"
+                          >Contact</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link class="dropdown-item" to="/about-us/gallery"
+                          >Gallery</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link
+                          class="dropdown-item"
+                          to="/about-us/testimony"
+                          >Testimony</nuxt-link
+                        >
+                      </div>
                     </div>
                   </li>
                   <li v-if="authenticated" class="nav-item dropdown">

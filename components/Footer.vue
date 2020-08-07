@@ -25,18 +25,40 @@
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Destination</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">About</a></li>
+                  <li><nuxtLink to="/" tag="a">Home</nuxtLink></li>
+                  <li>
+                    <nuxtLink to="/ticketing" tag="a">Ticketing</nuxtLink>
+                  </li>
+                  <li>
+                    <nuxtLink to="/packages" tag="a">Tour Packages</nuxtLink>
+                  </li>
+                  <li>
+                    <nuxtLink to="/photography-exploration" tag="a"
+                      >Photography Exploration</nuxtLink
+                    >
+                  </li>
+                  <li>
+                    <nuxtLink to="/custom-tour" tag="a"
+                      >Customize Tour</nuxtLink
+                    >
+                  </li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Discounts</a></li>
+                  <li>
+                    <nuxtLink to="/about-us/contact" href="#"
+                      >Contact Us</nuxtLink
+                    >
+                  </li>
+                  <li>
+                    <nuxtLink to="/about-us/gallery" href="#">Gallery</nuxtLink>
+                  </li>
+                  <li>
+                    <nuxtLink to="/about-us/testimony" href="#"
+                      >Testimony</nuxtLink
+                    >
+                  </li>
                 </ul>
               </div>
             </div>

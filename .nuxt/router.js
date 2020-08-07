@@ -6,11 +6,15 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _876036b2 = () => interopDefault(import('..\\pages\\brava.vue' /* webpackChunkName: "pages_brava" */))
 const _fde83afa = () => interopDefault(import('..\\pages\\custom-tour\\index.vue' /* webpackChunkName: "pages_custom-tour_index" */))
 const _cbd298a0 = () => interopDefault(import('..\\pages\\packages\\index.vue' /* webpackChunkName: "pages_packages_index" */))
+const _92747a38 = () => interopDefault(import('..\\pages\\photography-exploration\\index.vue' /* webpackChunkName: "pages_photography-exploration_index" */))
 const _56ced383 = () => interopDefault(import('..\\pages\\services.vue' /* webpackChunkName: "pages_services" */))
 const _6eeac661 = () => interopDefault(import('..\\pages\\ticketing\\index.vue' /* webpackChunkName: "pages_ticketing_index" */))
 const _73f26e5c = () => interopDefault(import('..\\pages\\tickets.vue' /* webpackChunkName: "pages_tickets" */))
 const _a399e670 = () => interopDefault(import('..\\pages\\transactions\\index.vue' /* webpackChunkName: "pages_transactions_index" */))
 const _50d434d0 = () => interopDefault(import('..\\pages\\travelpack.vue' /* webpackChunkName: "pages_travelpack" */))
+const _5c29d62d = () => interopDefault(import('..\\pages\\about-us\\contact.vue' /* webpackChunkName: "pages_about-us_contact" */))
+const _4cc37f42 = () => interopDefault(import('..\\pages\\about-us\\gallery.vue' /* webpackChunkName: "pages_about-us_gallery" */))
+const _fe10075e = () => interopDefault(import('..\\pages\\about-us\\testimony.vue' /* webpackChunkName: "pages_about-us_testimony" */))
 const _d9a4bda0 = () => interopDefault(import('..\\pages\\transactions\\_id.vue' /* webpackChunkName: "pages_transactions__id" */))
 const _2930d683 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\index.vue' /* webpackChunkName: "pages_packages__id__package_index" */))
 const _55b79470 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\book.vue' /* webpackChunkName: "pages_packages__id__package_book" */))
@@ -45,6 +49,10 @@ export const routerOptions = {
     component: _cbd298a0,
     name: "packages"
   }, {
+    path: "/photography-exploration",
+    component: _92747a38,
+    name: "photography-exploration"
+  }, {
     path: "/services",
     component: _56ced383,
     name: "services"
@@ -64,6 +72,18 @@ export const routerOptions = {
     path: "/travelpack",
     component: _50d434d0,
     name: "travelpack"
+  }, {
+    path: "/about-us/contact",
+    component: _5c29d62d,
+    name: "about-us-contact"
+  }, {
+    path: "/about-us/gallery",
+    component: _4cc37f42,
+    name: "about-us-gallery"
+  }, {
+    path: "/about-us/testimony",
+    component: _fe10075e,
+    name: "about-us-testimony"
   }, {
     path: "/transactions/:id",
     component: _d9a4bda0,
