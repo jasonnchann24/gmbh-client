@@ -47,15 +47,15 @@
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
                   <li>
-                    <nuxtLink to="/about-us/contact" href="#"
+                    <nuxtLink to="/about-us/contact" tag="a"
                       >Contact Us</nuxtLink
                     >
                   </li>
                   <li>
-                    <nuxtLink to="/about-us/gallery" href="#">Gallery</nuxtLink>
+                    <nuxtLink to="/about-us/gallery" tag="a">Gallery</nuxtLink>
                   </li>
                   <li>
-                    <nuxtLink to="/about-us/testimony" href="#"
+                    <nuxtLink to="/about-us/testimony" tag="a"
                       >Testimony</nuxtLink
                     >
                   </li>

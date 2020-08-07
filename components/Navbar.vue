@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="header" class="header_area border-0">
+    <header id="header" class="header_area border-0" style="height:125px">
       <div class="container-fluid h-100">
         <div class="row h-100">
           <div class="col-12 h-100">
@@ -8,8 +8,8 @@
               <nuxt-link to="/" class="navbar-brand" tag="a">
                 <img
                   src="/images/logo.png"
-                  width="110"
-                  height="110"
+                  width="150"
+                  height="150"
                   alt="logo-ceo-gmbh"
                   @click="navbarToggle"
                 />
@@ -28,7 +28,7 @@
               </button>
               <!-- Nav -->
               <div id="dorneNav" class="collapse navbar-collapse bg-white">
-                <ul id="dorneMenu" class="navbar-nav mr-auto">
+                <ul id="dorneMenu" class="navbar-nav mr-auto ml-lg-5">
                   <li class="nav-item dropdown">
                     <a
                       id="navbarDropdown-1"
@@ -87,7 +87,7 @@
                     >
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/about-us/contact"
-                          >Contact</nuxt-link
+                          >Contact Us</nuxt-link
                         >
                       </div>
                       <div @click="navbarToggle">
@@ -132,7 +132,7 @@
                   </li>
                 </ul>
                 <!-- Signin btn -->
-                <div class="ceo-gmbh-signin-btn">
+                <div class="ceo-gmbh-signin-btn mr-lg-5">
                   <a
                     v-if="!authenticated"
                     id="sign-in-btn-link"
@@ -150,7 +150,7 @@
                     <a class="mx-2">Welcome, {{ user.email }}</a>
                     <a
                       href="javascript:void(0);"
-                      class=""
+                      class="p-4 p-lg-0"
                       @click="
                         logout()
                         navbarToggle()
@@ -231,10 +231,15 @@ export default {
 .sign-in-link {
   color: #67a6c9;
   text-decoration: none;
+  font-size: 18px !important;
 }
 
 a:hover {
   color: #8eadbe;
   text-decoration: none;
+}
+
+.nav-link {
+  font-size: 18px !important;
 }
 </style>

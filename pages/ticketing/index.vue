@@ -223,11 +223,19 @@
           </form>
         </div>
       </div>
-      <div v-else class="row my-5" style="height: 400px">
-        <div class="col-12 text-center mt-100">
+      <div v-else class="row my-5" style="height: 250px">
+        <div class="col-12 text-center mt-50">
           <h4 class="text-danger font-weight-bold">
-            Please login to request your custom tour!
+            Please login to request your ticket!
           </h4>
+          <button
+            type="button"
+            class="ceo-gmbh-btn text-white mt-4"
+            data-toggle="modal"
+            data-target="#modal-login"
+          >
+            LOGIN
+          </button>
         </div>
       </div>
     </div>
