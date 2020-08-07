@@ -223,8 +223,8 @@
           </form>
         </div>
       </div>
-      <div v-else class="row my-5">
-        <div class="col-12 text-center">
+      <div v-else class="row my-5" style="height: 400px">
+        <div class="col-12 text-center mt-100">
           <h4 class="text-danger font-weight-bold">
             Please login to request your custom tour!
           </h4>

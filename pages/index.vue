@@ -91,12 +91,15 @@
         <div class="row">
           <div class="col-12">
             <div class="about-content text-center">
-              <h3 class="font-weight-bold">
+              <h3
+                class="font-weight-bold wow fadeInUpBig"
+                data-wow-delay="0.5s"
+              >
                 Discover the beautiful world with
                 <br />
                 <span>CEO Travel GmbH</span>
               </h3>
-              <p>
+              <p class="wow fadeIn" data-wow-delay="2s" data-wow-duration="1s">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                 odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem
                 reprehenderit, at sint dolor natus fugit minima facere vel
