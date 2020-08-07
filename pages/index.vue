@@ -299,6 +299,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import Pagination from '@/components/Core/Pagination'
+
 export default {
   name: 'IndexPage',
   components: {

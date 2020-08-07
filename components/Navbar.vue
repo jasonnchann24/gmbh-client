@@ -165,19 +165,15 @@
         </div>
       </div>
     </header>
-    <modal-login />
   </div>
   <!-- ***** Header Area End ***** -->
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import ModalLogin from '@/components/index/ModalLogin'
 export default {
   name: 'Navbar',
-  components: {
-    ModalLogin
-  },
+  components: {},
   computed: {
     ...mapGetters({
       user: 'loggedInUser',

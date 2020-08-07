@@ -1,17 +1,23 @@
 <template>
-  <div class="full-height position-ref">
-    <Navbar />
-    <nuxt />
-    <Footer />
+  <div>
+    <div class="full-height position-ref">
+      <Navbar />
+      <nuxt />
+      <Footer />
+    </div>
+    <modal-login />
   </div>
 </template>
 <script>
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ModalLogin from '@/components/index/ModalLogin'
+
 export default {
   components: {
     Navbar,
-    Footer
+    Footer,
+    ModalLogin
   }
 }
 </script>
