@@ -61,7 +61,7 @@
                   <div class="row">
                     <div class="col-12">
                       <a
-                        :href="`${resetPasswordUrl}/password/reset/`"
+                        :href="`${sanctum_url}/password/reset/`"
                         target="_blank"
                       >
                         Forget your password?
@@ -260,7 +260,7 @@ export default {
       email: '',
       errorResend: null,
       resendLoading: false,
-      resetPasswordUrl: process.env.SANCTUM_URL
+      sanctum_url: process.env.SANCTUM_URL
     }
   },
   methods: {
@@ -277,9 +277,12 @@ export default {
       this.loading = true
       try {
         await this.$axios
-          .$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
+          .$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
           .then((response) => {
             this.$axios.$post('register', this.form)
+          })
+          .catch((error) => {
+            alert(error)
           })
         await document.getElementById('closeModalBtn').click()
         this.$swal({
@@ -298,9 +301,18 @@ export default {
     async resendEmail() {
       this.resendLoading = true
       try {
-        await this.$axios.$get(`${this.resetPasswordUrl}/sanctum/csrf-cookie`)
-        await Cookies.set('XSRF-TOKEN', Cookies.get('XSRF-TOKEN'))
-        await this.$axios.$post('email/resend', { email: this.email })
+        await this.$axios
+          .$get(`${this.sanctum_url}/sanctum/csrf-cookie`)
+          .then((response) => {
+            this.$axios.$post(
+              'email/resend',
+              { email: this.email },
+              { credentials: false }
+            )
+          })
+          .catch((error) => {
+            alert(error)
+          })
         this.$swal({
           icon: 'success',
           title: 'Verification Email Resent!',
