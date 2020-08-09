@@ -1,0 +1,1 @@
+exports.ids=[2],exports.modules={77:function(e,t,r){"use strict";r.r(t);var l={name:"GalleryPage"},n=r(1);var component=Object(n.a)(l,(function(){var e=this.$createElement;return(this._self._c||e)("div",[this._ssrNode("<h1>Gallery</h1>")])}),[],!1,(function(e){}),null,"9104a650");t.default=component.exports}};

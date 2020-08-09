@@ -61,7 +61,7 @@
                   <div class="row">
                     <div class="col-12">
                       <a
-                        :href="`${sanctum_url}/password/reset/`"
+                        :href="`${sanctum_url}/password/reset`"
                         target="_blank"
                       >
                         Forget your password?
@@ -239,6 +239,9 @@
         </div>
       </div>
     </div>
+    <client-only>
+      <div v-if="modalShow" class="outside" @click="away"></div>
+    </client-only>
   </div>
 </template>
 
@@ -262,9 +265,20 @@ export default {
       sanctum_url: process.env.SANCTUM_URL
     }
   },
+  computed: {
+    modalShow() {
+      if (process.client) {
+        return document.getElementById('dorneNav').classList.contains('show')
+      }
+      return {}
+    }
+  },
   methods: {
     changeModal() {
       this.register = !this.register
+    },
+    away() {
+      document.getElementById('navbar-toggle').click()
     },
     clearForm() {
       Object.assign(this.$data, this.$options.data())
@@ -342,4 +356,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.outside {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+}
+</style>
