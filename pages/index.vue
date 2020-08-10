@@ -100,9 +100,9 @@
                 <span>CEO Travel GmbH</span>
               </h3>
               <p
-                class="wow fadeIn"
+                class="wow fadeIn mt-50"
                 data-wow-delay="1.3s"
-                data-wow-duration="1s"
+                data-wow-duration="0.8s"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                 odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem

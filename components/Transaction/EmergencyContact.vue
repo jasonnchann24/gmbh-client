@@ -8,7 +8,7 @@
         <div v-if="!item.forms.emergency_contact" class="col-12 col-md-6">
           <button
             v-if="item.forms.master_passenger"
-            class="btn btn-block btn-secondary"
+            class="btn btn-block btn-primary"
             @click="eContactShow = !eContactShow"
           >
             Create Emergency Contact
@@ -19,7 +19,7 @@
         </div>
         <div v-else class="col-12 col-md-6">
           <button
-            class="btn btn-block btn-info"
+            class="btn btn-block btn-success"
             @click="showEmergencyContactDetail = !showEmergencyContactDetail"
           >
             Emergency Contact Detail

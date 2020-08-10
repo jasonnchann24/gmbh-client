@@ -93,14 +93,15 @@
                     v-if="authenticated"
                     :to="`${$route.path}/book`"
                     tag="a"
-                    class="btn text-primary text-uppercase w-100 animate__animated animate__pulse animate__infinite"
+                    class="btn text-white text-uppercase w-100 animate__animated animate__pulse animate__infinite"
+                    style="background-color: #4676A3"
                     ><i class="fa fa-check pr-3"></i>Click here to book
                     ticket!</nuxtLink
                   >
                   <a
                     v-else
                     href="#"
-                    class="btn text-danger text-uppercase w-100 animate__animated animate__pulse animate__infinite"
+                    class="btn btn-danger text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     @click="modalLogin"
                     >Please login to book!</a
                   >
@@ -110,10 +111,10 @@
 
                 <!-- Opening Hours Widget -->
                 <div class="room-price-widget mt-50">
-                  <h6 class="text-uppercase text-white font-weight-bolder">
+                  <h6 class="text-uppercase text-dark font-weight-bolder">
                     Room Choices
                   </h6>
-                  <p>Prices in Thousands</p>
+                  <p class="text-muted">Prices in Thousands</p>
                   <ul class="room-price">
                     <li v-for="room in item.room_choices" :key="room.id">
                       <p>{{ room.room_name }}</p>

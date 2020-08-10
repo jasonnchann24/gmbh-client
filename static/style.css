@@ -1237,7 +1237,9 @@ li {
 
 .room-price-widget {
   padding: 50px 30px;
-  background-color: #4676a3;
+  border-color: #6ea8cc;
+  border-width: 2px !important;
+  border: solid #6ea8cc;
   color: white;
   position: relative;
   z-index: 1;
@@ -1250,7 +1252,7 @@ li {
 }
 
 .room-price-widget p{
-  color: white;
+  color: rgb(31, 31, 31);
 }
 
 .room-price li {

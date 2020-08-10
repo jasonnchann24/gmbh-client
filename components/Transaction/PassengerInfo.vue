@@ -8,7 +8,7 @@
         </div>
         <div v-if="item.forms.passengers.length == 0" class="col-12 col-md-6">
           <button
-            class="btn btn-block btn-secondary"
+            class="btn btn-block btn-primary"
             :disabled="disabled"
             @click="addPassengers"
           >
@@ -20,7 +20,7 @@
           class="col-12 col-md-6"
         >
           <button
-            class="btn btn-block btn-info"
+            class="btn btn-block btn-success"
             @click="passengersDetail = !passengersDetail"
           >
             All Passengers Detail
