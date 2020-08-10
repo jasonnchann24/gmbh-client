@@ -52,7 +52,11 @@ export default {
     script: [
       { src: '/js/jquery/jquery-2.2.4.min.js', body: true },
       { src: '/js/bootstrap/popper.min.js', body: true },
-      { src: '/js/bootstrap/bootstrap.min.js', body: true },
+      {
+        src:
+          'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js',
+        body: true
+      },
       { src: '/js/others/plugins.js', body: true },
       { src: '/js/active.js', body: true },
       { src: '/infinitePagination/js/index.js', body: true }

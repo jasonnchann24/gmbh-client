@@ -6,6 +6,7 @@
         id="carousel-toggler"
         class="carousel slide carousel-fade"
         data-ride="carousel"
+        data-touch="true"
       >
         <ol class="carousel-indicators mb-auto">
           <li
@@ -101,8 +102,8 @@
               </h3>
               <p
                 class="wow fadeIn mt-50"
-                data-wow-delay="1.3s"
-                data-wow-duration="0.8s"
+                data-wow-delay="0.8s"
+                data-wow-duration="0.5s"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                 odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem
@@ -125,8 +126,12 @@
           <div class="col-12 mt-4">
             <div class="section-heading dark text-center my-auto">
               <span></span>
-              <h4 class="text-dark">Our Packages</h4>
-              <p class="text-dark">Discover the Beautiful World with Us</p>
+              <h4 class="text-dark wow fadeInUp" data-wow-delay="0.5s">
+                Our Packages
+              </h4>
+              <p class="text-dark wow fadeInUp" data-wow-delay="0.6s">
+                Discover the Beautiful World with Us
+              </p>
             </div>
           </div>
         </div>
@@ -261,8 +266,10 @@
           <div class="col-12">
             <div class="section-heading text-center">
               <span></span>
-              <h4>Testimonials</h4>
-              <p>Our happy customers</p>
+              <h4 class="wow fadeInUp" data-wow-delay="0.5s">Testimonials</h4>
+              <p class="wow fadeInUp" data-wow-delay="0.6s">
+                Our happy customers
+              </p>
             </div>
           </div>
         </div>
