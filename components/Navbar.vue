@@ -42,10 +42,7 @@
                     >
                       Our Services
                     </a>
-                    <div
-                      class="dropdown-menu border-0"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/ticketing"
                           >Ticketing</nuxt-link
@@ -82,10 +79,7 @@
                     >
                       About Us
                     </a>
-                    <div
-                      class="dropdown-menu border-0"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/about-us/contact"
                           >Contact Us</nuxt-link
@@ -105,6 +99,8 @@
                       </div>
                     </div>
                   </li>
+                </ul>
+                <ul id="dorneMenu2" class="navbar-nav ml-auto mr-lg-5">
                   <li v-if="authenticated" class="nav-item dropdown">
                     <a
                       id="navbarDropdown-3"
@@ -115,12 +111,9 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Customer Section
+                      Welcome, {{ user.name }}
                     </a>
-                    <div
-                      class="dropdown-menu border-0"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <div @click="navbarToggle">
                         <nuxtLink
                           to="/transactions"
@@ -129,13 +122,21 @@
                           >Transactions</nuxtLink
                         >
                       </div>
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item"
+                        @click="
+                          logout()
+                          navbarToggle()
+                        "
+                        >Logout</a
+                      >
                     </div>
                   </li>
                 </ul>
                 <!-- Signin btn -->
-                <div class="ceo-gmbh-signin-btn mr-lg-5">
+                <div v-if="!authenticated" class="ceo-gmbh-signin-btn mr-lg-5">
                   <a
-                    v-if="!authenticated"
                     id="sign-in-btn-link"
                     href="javascript:void(0);"
                     data-toggle="modal"
@@ -147,18 +148,6 @@
                     "
                     >Sign In / Register</a
                   >
-                  <div v-else>
-                    <a class="mx-2">Welcome, {{ user.email }}</a>
-                    <a
-                      href="javascript:void(0);"
-                      class="p-4 p-lg-0"
-                      @click="
-                        logout()
-                        navbarToggle()
-                      "
-                      >Logout</a
-                    >
-                  </div>
                 </div>
               </div>
             </nav>
@@ -255,6 +244,13 @@ a:hover {
 
 .nav-link {
   font-size: 18px !important;
+}
+
+.dropdown-item {
+  font-size: 17px !important;
+  font-weight: 400;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
 }
 
 .outside {
