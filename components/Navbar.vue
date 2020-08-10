@@ -23,6 +23,7 @@
                 aria-controls="dorneNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                @click="showMethod"
               >
                 <span id="toggle-icn" class="fa fa-bars text-secondary"></span>
               </button>
@@ -165,6 +166,7 @@
         </div>
       </div>
     </header>
+    <div v-if="show" class="outside" @click="away"></div>
   </div>
   <!-- ***** Header Area End ***** -->
 </template>
@@ -174,6 +176,11 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Navbar',
   components: {},
+  data() {
+    return {
+      show: false
+    }
+  },
   computed: {
     ...mapGetters({
       user: 'loggedInUser',
@@ -190,6 +197,17 @@ export default {
         timer: 3000,
         timerProgressBar: true
       })
+    },
+    away() {
+      document.getElementById('navbar-toggle').click()
+    },
+    showMethod() {
+      const el = document.getElementById('dorneNav')
+      if (el.classList.contains('show')) {
+        this.show = false
+      } else {
+        this.show = true
+      }
     },
     addShowClass() {
       const x = document.getElementById('modal-login')
@@ -237,5 +255,14 @@ a:hover {
 
 .nav-link {
   font-size: 18px !important;
+}
+
+.outside {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
 }
 </style>
