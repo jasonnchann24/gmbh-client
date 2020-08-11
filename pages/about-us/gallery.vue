@@ -11,62 +11,65 @@
         </div>
       </div>
     </div>
-    <div v-if="GALLERY.data && slides.length > 0" id="agile">
-      <client-only>
-        <agile
-          v-if="slides.length > 0"
-          ref="mainHero"
-          class="main slider-for"
-          :options="options1"
-          :as-nav-for="asNavFor1"
-        >
-          <div
-            v-for="(slide, index) in slides"
-            :key="index"
-            class="slide"
-            :class="`slide--${index}`"
-          >
-            <img :src="slide" />
-          </div>
-        </agile>
-        <agile
-          v-if="slides.length > 0"
-          ref="thumbnails"
-          class="thumbnails slider-nav"
-          :options="options2"
-          :as-nav-for="asNavFor2"
-          @before-change="syncSliders($refs.thumbnails.getCurrentSlide())"
-        >
-          <div
-            v-for="(slide, index) in slides"
-            :key="index"
-            class="slide slide--thumbniail"
-            :class="`slide--${index}`"
-            @click="
-              $refs.thumbnails.goTo(index)
-              syncSliders(index)
-            "
-          >
-            <img :src="slide" />
-          </div>
-          <template slot="prevButton"
-            ><i class="fas fa-chevron-left"></i
-          ></template>
-          <template slot="nextButton"
-            ><i class="fas fa-chevron-right"></i
-          ></template>
-        </agile>
-      </client-only>
-    </div>
-    <div v-else class="row mb-100 mx-5 px-2 text-center">
-      <div v-for="index in 2" :key="index" class="col-12 mb-4">
+    <transition name="fade" mode="out-in">
+      <div v-if="GALLERY.data && slides.length > 0" id="agile" key="1">
         <client-only>
-          <content-placeholders :rounded="true">
-            <content-placeholders-img />
-          </content-placeholders>
+          <agile
+            v-if="slides.length > 0"
+            ref="mainHero"
+            class="main slider-for"
+            :options="options1"
+            :as-nav-for="asNavFor1"
+          >
+            <div
+              v-for="(slide, index) in slides"
+              :key="index"
+              class="slide"
+              :class="`slide--${index}`"
+            >
+              <img :src="slide" />
+            </div>
+          </agile>
+          <agile
+            v-if="slides.length > 0"
+            ref="thumbnails"
+            class="thumbnails slider-nav"
+            :options="options2"
+            :as-nav-for="asNavFor2"
+            @before-change="syncSliders($refs.thumbnails.getCurrentSlide())"
+          >
+            <div
+              v-for="(slide, index) in slides"
+              :key="index"
+              class="slide slide--thumbniail"
+              :class="`slide--${index}`"
+              @click="
+                $refs.thumbnails.goTo(index)
+                syncSliders(index)
+              "
+            >
+              <img :src="slide" />
+            </div>
+            <template slot="prevButton"
+              ><i class="fas fa-chevron-left"></i
+            ></template>
+            <template slot="nextButton"
+              ><i class="fas fa-chevron-right"></i
+            ></template>
+          </agile>
         </client-only>
       </div>
-    </div>
+      <div v-else key="2" class="row mb-100 mx-5 px-2 text-center">
+        <div v-for="index in 2" :key="index" class="col-12 mb-4">
+          <client-only>
+            <content-placeholders :rounded="true">
+              <content-placeholders-img />
+            </content-placeholders>
+          </client-only>
+        </div>
+      </div>
+    </transition>
+
     <div class="row mx-5 justify-content-center mb-100">
       <nav
         v-if="GALLERY.links && GALLERY.meta.last_page > 1"
@@ -181,17 +184,12 @@ export default {
         this.page++
         this.slides = []
         await this.getGallery(this.page)
-        this.$refs.mainHero.reload()
-        this.$refs.thumbnails.reload()
         this.loading = false
       } else if (action === 'prev') {
         this.page--
         this.slides = []
 
         await this.getGallery(this.page)
-        this.$refs.mainHero.reload()
-        this.$refs.thumbnails.reload()
-
         this.loading = false
       }
     }
@@ -242,5 +240,14 @@ export default {
   -o-object-position: center;
   object-position: center;
   width: 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.7s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
