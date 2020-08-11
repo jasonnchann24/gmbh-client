@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="header" class="header_area border-0" style="height:125px">
+    <header id="header" class="header_area border-bottom" style="height:125px">
       <div class="container-fluid h-100">
         <div class="row h-100">
           <div class="col-12 h-100">
@@ -42,7 +42,10 @@
                     >
                       Our Services
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div
+                      class="dropdown-menu  animate slideIn border-info"
+                      aria-labelledby="navbarDropdown"
+                    >
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/ticketing"
                           >Ticketing</nuxt-link
@@ -79,7 +82,10 @@
                     >
                       About Us
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div
+                      class="dropdown-menu animate slideIn border-info"
+                      aria-labelledby="navbarDropdown"
+                    >
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/about-us/contact"
                           >Contact Us</nuxt-link
@@ -113,7 +119,10 @@
                     >
                       Welcome, {{ user.name }}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div
+                      class="dropdown-menu animate slideIn border-info"
+                      aria-labelledby="navbarDropdown"
+                    >
                       <div @click="navbarToggle">
                         <nuxtLink
                           to="/transactions"
@@ -238,7 +247,7 @@ export default {
 }
 
 a:hover {
-  color: #8eadbe;
+  color: #0348f8;
   text-decoration: none;
 }
 
@@ -252,7 +261,49 @@ a:hover {
   margin-top: 2.5px;
   margin-bottom: 2.5px;
 }
+@media (min-width: 0px) {
+  .animate {
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
 
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
 .outside {
   width: 100vw;
   height: 100vh;

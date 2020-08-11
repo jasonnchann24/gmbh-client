@@ -16,6 +16,7 @@ let store = {};
   store.modules = store.modules || {}
 
   resolveStoreModules(require('..\\store\\custom-tours.js'), 'custom-tours.js')
+  resolveStoreModules(require('..\\store\\gallery.js'), 'gallery.js')
   resolveStoreModules(require('..\\store\\packages.js'), 'packages.js')
   resolveStoreModules(require('..\\store\\passengers.js'), 'passengers.js')
   resolveStoreModules(require('..\\store\\tickets.js'), 'tickets.js')
