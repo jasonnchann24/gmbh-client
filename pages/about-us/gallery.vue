@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col-12 mt-50">
+        <div class="col-12 mt-100">
           <div class="section-heading dark text-center">
             <span></span>
             <h4>Gallery</h4>
@@ -10,63 +10,65 @@
           </div>
         </div>
       </div>
-      <div v-if="GALLERY.data" class="row mb-100">
-        <li v-for="(item, index) in GALLERY.data" :key="item.id">
-          <img
-            :src="item.image_url"
-            :class="
-              `wow ${animations[Math.floor(Math.random() * animations.length)]}`
-            "
-            :data-wow-delay="`${index * 0.05}s`"
-            :data-wow-durations="
-              `${duration[Math.floor(Math.random() * duration.length)]}s`
-            "
-            :alt="item.image_url"
-          />
-        </li>
-      </div>
-      <div v-else class="row mb-100">
-        <div v-for="index in 4" :key="index" class="col-6 mb-4">
+    </div>
+    <div v-if="GALLERY.data" class="row mb-100 mx-0 px-2 w-100">
+      <li v-for="(item, index) in GALLERY.data" :key="item.id">
+        <img
+          :src="item.image_url"
+          :class="
+            `wow ${animations[Math.floor(Math.random() * animations.length)]}`
+          "
+          :data-wow-delay="`${index * 0.05}s`"
+          :data-wow-durations="
+            `${duration[Math.floor(Math.random() * duration.length)]}s`
+          "
+          :alt="item.image_url"
+        />
+      </li>
+    </div>
+    <div v-else class="row mb-100 mx-0 px-2 w-100">
+      <div v-for="index in 4" :key="index" class="col-6 mb-4">
+        <client-only>
           <content-placeholders :rounded="true">
             <content-placeholders-img />
           </content-placeholders>
-        </div>
+        </client-only>
       </div>
-      <div class="row">
-        <nav
-          v-if="GALLERY.links && GALLERY.meta.last_page > 1"
-          aria-label="Page navigation example"
-        >
-          <ul class="pagination pagination-lg ">
-            <li v-if="GALLERY.links.prev" class="page-item">
-              <a
-                class="page-link border-0"
-                href="javascript:void(0);"
-                aria-label="Previous"
-                @click="changePage('prev')"
-              >
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item disabled ">
-              <a v-if="!loading" class="page-link border-0" href="#">{{
-                GALLERY.meta.current_page
-              }}</a>
-              <a v-else class="page-link border-0">Loading...</a>
-            </li>
-            <li v-if="GALLERY.links.next" class="page-item">
-              <a
-                class="page-link border-0"
-                href="javascript:void(0)"
-                aria-label="Next"
-                @click="changePage('next')"
-              >
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    </div>
+    <div class="row mx-5">
+      <nav
+        v-if="GALLERY.links && GALLERY.meta.last_page > 1"
+        aria-label="Page navigation example"
+      >
+        <ul class="pagination pagination-lg ">
+          <li v-if="GALLERY.links.prev" class="page-item">
+            <a
+              class="page-link border-0"
+              href="javascript:void(0);"
+              aria-label="Previous"
+              @click="changePage('prev')"
+            >
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item disabled ">
+            <a v-if="!loading" class="page-link border-0" href="#">{{
+              GALLERY.meta.current_page
+            }}</a>
+            <a v-else class="page-link border-0">Loading...</a>
+          </li>
+          <li v-if="GALLERY.links.next" class="page-item">
+            <a
+              class="page-link border-0"
+              href="javascript:void(0)"
+              aria-label="Next"
+              @click="changePage('next')"
+            >
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </template>
@@ -77,8 +79,8 @@ export default {
   name: 'GalleryPage',
   data() {
     return {
-      animations: ['fadeInUp', 'fadeInDown', 'fadeInLeft', 'fadeInRight'],
-      duration: ['0.3', '0,5', '0,7'],
+      animations: ['fadeInUp', 'fadeInDown', 'fadeIn'],
+      duration: ['0.3', '0,5'],
       page: 1,
       loading: false
     }
@@ -120,7 +122,7 @@ ul {
 li {
   height: 40vh;
   flex-grow: 1;
-  margin: 1px;
+  margin: 1.5px;
 }
 
 li:last-child {
