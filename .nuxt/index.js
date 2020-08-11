@@ -17,6 +17,7 @@ import nuxt_plugin_axios_9a6c376e from 'nuxt_plugin_axios_9a6c376e' // Source: .
 import nuxt_plugin_carousel_2496c93e from 'nuxt_plugin_carousel_2496c93e' // Source: ..\\plugins\\carousel.js (mode: 'client')
 import nuxt_plugin_contentPlaceholder_fe334272 from 'nuxt_plugin_contentPlaceholder_fe334272' // Source: ..\\plugins\\contentPlaceholder.js (mode: 'client')
 import nuxt_plugin_vuemoment_732aa8ba from 'nuxt_plugin_vuemoment_732aa8ba' // Source: ..\\plugins\\vue-moment.js (mode: 'client')
+import nuxt_plugin_vueagile_726cdbff from 'nuxt_plugin_vueagile_726cdbff' // Source: ..\\plugins\\vue-agile (mode: 'client')
 import nuxt_plugin_auth_6c9797c7 from 'nuxt_plugin_auth_6c9797c7' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -197,6 +198,10 @@ async function createApp (ssrContext) {
 
   if (process.client && typeof nuxt_plugin_vuemoment_732aa8ba === 'function') {
     await nuxt_plugin_vuemoment_732aa8ba(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vueagile_726cdbff === 'function') {
+    await nuxt_plugin_vueagile_726cdbff(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_6c9797c7 === 'function') {

@@ -11,23 +11,55 @@
         </div>
       </div>
     </div>
-    <div v-if="GALLERY.data" class="row mb-100 mx-0 px-2 w-100">
-      <li v-for="(item, index) in GALLERY.data" :key="item.id">
-        <img
-          :src="item.image_url"
-          :class="
-            `wow ${animations[Math.floor(Math.random() * animations.length)]}`
-          "
-          :data-wow-delay="`${index * 0.05}s`"
-          :data-wow-durations="
-            `${duration[Math.floor(Math.random() * duration.length)]}s`
-          "
-          :alt="item.image_url"
-        />
-      </li>
+    <div v-if="GALLERY.data && slides.length > 0" id="agile">
+      <client-only>
+        <agile
+          v-if="slides.length > 0"
+          ref="mainHero"
+          class="main slider-for"
+          :options="options1"
+          :as-nav-for="asNavFor1"
+        >
+          <div
+            v-for="(slide, index) in slides"
+            :key="index"
+            class="slide"
+            :class="`slide--${index}`"
+          >
+            <img :src="slide" />
+          </div>
+        </agile>
+        <agile
+          v-if="slides.length > 0"
+          ref="thumbnails"
+          class="thumbnails slider-nav"
+          :options="options2"
+          :as-nav-for="asNavFor2"
+          @before-change="syncSliders($refs.thumbnails.getCurrentSlide())"
+        >
+          <div
+            v-for="(slide, index) in slides"
+            :key="index"
+            class="slide slide--thumbniail"
+            :class="`slide--${index}`"
+            @click="
+              $refs.thumbnails.goTo(index)
+              syncSliders(index)
+            "
+          >
+            <img :src="slide" />
+          </div>
+          <template slot="prevButton"
+            ><i class="fas fa-chevron-left"></i
+          ></template>
+          <template slot="nextButton"
+            ><i class="fas fa-chevron-right"></i
+          ></template>
+        </agile>
+      </client-only>
     </div>
-    <div v-else class="row mb-100 mx-0 px-2 w-100">
-      <div v-for="index in 4" :key="index" class="col-6 mb-4">
+    <div v-else class="row mb-100 mx-5 px-2 text-center">
+      <div v-for="index in 2" :key="index" class="col-12 mb-4">
         <client-only>
           <content-placeholders :rounded="true">
             <content-placeholders-img />
@@ -35,7 +67,7 @@
         </client-only>
       </div>
     </div>
-    <div class="row mx-5">
+    <div class="row mx-5 justify-content-center mb-100">
       <nav
         v-if="GALLERY.links && GALLERY.meta.last_page > 1"
         aria-label="Page navigation example"
@@ -77,35 +109,89 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'GalleryPage',
+
   data() {
     return {
-      animations: ['fadeInUp', 'fadeInDown', 'fadeIn'],
-      duration: ['0.3', '0,5'],
       page: 1,
-      loading: false
+      loading: false,
+      loaded: false,
+      asNavFor1: [this.$refs.thumbnails],
+      asNavFor2: [this.$refs.mainHero],
+      options1: {
+        dots: false,
+        fade: true,
+        navButtons: false
+      },
+
+      options2: {
+        autoplay: true,
+        autoplaySpeed: 4000,
+        centerMode: true,
+        dots: false,
+        navButtons: false,
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 5
+            }
+          },
+
+          {
+            breakpoint: 1000,
+            settings: {
+              navButtons: false
+            }
+          }
+        ]
+      },
+
+      slides: []
     }
   },
+
   computed: {
     ...mapGetters({
       GALLERY: 'gallery/GALLERY'
     })
   },
   created() {
-    this.GET_GALLERY(this.page)
+    this.getGallery(this.page)
   },
+
   methods: {
     ...mapActions({
       GET_GALLERY: 'gallery/GET_GALLERY'
     }),
+    syncSliders(slideNext) {
+      this.$refs.mainHero.goTo(slideNext)
+    },
+    async getGallery(page) {
+      await this.GET_GALLERY(page)
+      await this.GALLERY.data.forEach(this.pushSlides)
+      this.loaded = true
+    },
+    pushSlides(item, index) {
+      this.slides.push(item.image_url)
+    },
     async changePage(action) {
       this.loading = true
       if (action === 'next') {
         this.page++
-        await this.GET_GALLERY(this.page)
+        this.slides = []
+        await this.getGallery(this.page)
+        this.$refs.mainHero.reload()
+        this.$refs.thumbnails.reload()
         this.loading = false
       } else if (action === 'prev') {
         this.page--
-        await this.GET_GALLERY(this.page)
+        this.slides = []
+
+        await this.getGallery(this.page)
+        this.$refs.mainHero.reload()
+        this.$refs.thumbnails.reload()
+
         this.loading = false
       }
     }
@@ -114,53 +200,47 @@ export default {
 </script>
 
 <style scoped>
-ul {
+#agile {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 30px;
+}
+.main {
+  margin-bottom: 30px;
+}
+
+.thumbnails {
+  margin: 0 -5px;
+  width: calc(100% + 10px);
+}
+
+.slide {
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  display: -webkit-box;
   display: flex;
-  flex-wrap: wrap;
+  height: 450px;
+  -webkit-box-pack: center;
+  justify-content: center;
 }
-
-li {
-  height: 40vh;
-  flex-grow: 1;
-  margin: 1.5px;
+.slide--thumbniail {
+  cursor: pointer;
+  height: 100px;
+  padding: 0 5px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
-
-li:last-child {
-  flex-grow: 10;
+.slide--thumbniail:hover {
+  opacity: 0.75;
 }
-
-img {
-  max-height: 100%;
-  min-width: 100%;
+.slide img {
+  height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
-  vertical-align: bottom;
-}
-
-@media (max-aspect-ratio: 1/1) {
-  li {
-    height: 30vh;
-  }
-}
-
-@media (max-height: 480px) {
-  li {
-    height: 80vh;
-  }
-}
-
-@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
-  ul {
-    flex-direction: row;
-  }
-
-  li {
-    height: auto;
-    width: 100%;
-  }
-  img {
-    width: 100%;
-    max-height: 75vh;
-    min-width: 0;
-  }
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
 }
 </style>

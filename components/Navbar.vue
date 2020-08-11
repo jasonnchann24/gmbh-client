@@ -65,7 +65,7 @@
                       </div>
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/custom-tour"
-                          >Customize Tour</nuxt-link
+                          >Custom Tour</nuxt-link
                         >
                       </div>
                     </div>

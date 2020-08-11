@@ -76,7 +76,8 @@ export default {
   plugins: [
     { src: '~/plugins/carousel.js', mode: 'client' },
     { src: '~/plugins/contentPlaceholder.js', mode: 'client' },
-    { src: '~/plugins/vue-moment.js', mode: 'client' }
+    { src: '~/plugins/vue-moment.js', mode: 'client' },
+    { src: '~/plugins/vue-agile', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules

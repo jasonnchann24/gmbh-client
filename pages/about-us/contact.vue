@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="col-12 mt-50">
+        <div class="col-12 mt-100">
           <div class="section-heading dark text-center mb-0">
             <span></span>
             <h4>CONTACT US</h4>
