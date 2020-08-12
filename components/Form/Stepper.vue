@@ -1,70 +1,218 @@
 <template>
   <div>
-    <h5 class="mb-0 text-center">Passenger {{ idNumber }}</h5>
+    <h4 class="my-2 py-2 text-center">
+      Passenger {{ parseInt(idNumber) + 1 }} - {{ passenger.title }}
+      {{ passenger.person_name }}
+    </h4>
     <div :id="`stepsAccordion-${idNumber}`" class="accordion">
-      <div class="card border-0 text-center my-4 shadow">
-        <div class="card-header bg-light">
-          <ul class="nav nav-tabs card-header-tabs">
+      <div
+        class="card border-0 text-center my-4 shadow"
+        style="border-radius: 15px"
+      >
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs mt-4">
             <li class="nav-item">
               <a
                 class="nav-link"
                 data-toggle="collapse"
                 :data-target="`#stepOne-${idNumber}`"
                 role="button"
-                aria-expanded="false"
+                aria-expanded="true"
                 :aria-controls="`stepOne-${idNumber}`"
               >
-                Step One
+                Person Details
               </a>
             </li>
             <li class="nav-item">
               <a
+                v-if="!stepTwoDisable"
                 class="nav-link"
                 data-toggle="collapse"
                 :data-target="`#stepTwo-${idNumber}`"
                 role="button"
                 aria-expanded="false"
                 :aria-controls="`stepTwo-${idNumber}`"
-                >Step Two</a
+                >Passport</a
               >
+              <a v-else class="nav-link disabled">Passport (Disabled)</a>
             </li>
           </ul>
         </div>
-        <div
-          :id="`stepOne-${idNumber}`"
-          class="collapse "
-          :data-parent="`#stepsAccordion-${idNumber}`"
-        >
-          <div class="card-body ">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a
-              class="btn btn-primary"
-              data-toggle="collapse"
-              :data-target="`#stepTwo-${idNumber}`"
-              role="button"
-              aria-expanded="false"
-              :aria-controls="`stepTwo-${idNumber}`"
-              >Go somewhere</a
-            >
+        <form @submit.prevent="pushPassenger">
+          <div
+            :id="`stepOne-${idNumber}`"
+            class="collapse show "
+            :data-parent="`#stepsAccordion-${idNumber}`"
+          >
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-12 col-md-8 my-4 mx-auto text-left">
+                  <div class="form-group">
+                    <label :for="`t-form-name${idNumber}`">Full Name</label>
+                    <input
+                      :id="`t-form-name${idNumber}`"
+                      v-model="passenger.person_name"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter passenger's full name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-6">
+                      <label :for="`t-form-title${idNumber}`">Title</label>
+                      <select
+                        :id="`t-form-title${idNumber}`"
+                        v-model="passenger.title"
+                        class="form-control"
+                        required
+                      >
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Ms.">Ms.</option>
+                        <option Value="Mrs.">Mrs.</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <label :for="`t-form-food${idNumber}`"
+                        >Food Preference</label
+                      >
+                      <select
+                        :id="`t-form-food${idNumber}`"
+                        v-model="passenger.food_preference"
+                        class="form-control"
+                        required
+                      >
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                        <option value="Muslim-Food">Muslim-Food</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label :for="`t-form-dob${idNumber}`">Date of Birth</label>
+                    <input
+                      :id="`t-form-dob${idNumber}`"
+                      v-model="passenger.dob"
+                      type="date"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label :for="`t-form-room${idNumber}`">Room Choice</label>
+                    <select
+                      :id="`t-form-room${idNumber}`"
+                      v-model="passenger.room_choice_id"
+                      class="form-control"
+                      required
+                    >
+                      <option value="" disabled selected>Choose...</option>
+                      <option
+                        v-for="roomChoice in item.package.room_choices"
+                        :key="roomChoice.id"
+                        :value="roomChoice.id"
+                        >{{ roomChoice.room_name }} - Rp.
+                        {{ roomChoice.room_price }}.000</option
+                      >
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer border-0 text-right bg-white">
+              <a
+                v-if="!stepTwoDisable"
+                class="btn btn-primary text-white my-2 "
+                data-toggle="collapse"
+                :data-target="`#stepTwo-${idNumber}`"
+                role="button"
+                aria-expanded="false"
+                :aria-controls="`stepTwo-${idNumber}`"
+                >Next</a
+              >
+              <button v-else class="btn btn-secondary text-white my-2" disabled>
+                Please complete all fields
+              </button>
+            </div>
           </div>
-        </div>
-        <div
-          :id="`stepTwo-${idNumber}`"
-          class="collapse"
-          :data-parent="`#stepsAccordion-${idNumber}`"
-        >
-          <div class="card-body ">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
+          <div
+            :id="`stepTwo-${idNumber}`"
+            class="collapse"
+            :data-parent="`#stepsAccordion-${idNumber}`"
+          >
+            <div class="card-body ">
+              <div class="row">
+                <div class="col-12 col-md-8 my-4 mx-auto text-left">
+                  <div class="form-group">
+                    <label :for="`t-form-passport${idNumber}`"
+                      >Passport Number</label
+                    >
+                    <input
+                      :id="`t-form-passport${idNumber}`"
+                      v-model="passenger.passport_number"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter passenger's passport number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                      <label :for="`t-form-issued${idNumber}`"
+                        >Passport Issued Date</label
+                      >
+                      <input
+                        :id="`t-form-issued${idNumber}`"
+                        v-model="passenger.issued_date"
+                        type="date"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label :for="`t-form-expiry${idNumber}`"
+                        >Passport Expiry Date</label
+                      >
+                      <input
+                        :id="`t-form-expiry${idNumber}`"
+                        v-model="passenger.expiry_date"
+                        type="date"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label :for="`t-form-country${idNumber}`"
+                      >Issuing Country</label
+                    >
+                    <input
+                      :id="`t-form-country${idNumber}`"
+                      v-model="passenger.issuing_country"
+                      type="text"
+                      class="form-control"
+                      placeholder="Passport issuing country"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer border-0 text-right bg-white">
+              <a
+                class="btn btn-primary text-white my-2 "
+                data-toggle="collapse"
+                :data-target="`#stepTwo-${idNumber}`"
+                role="button"
+                aria-expanded="false"
+                :aria-controls="`stepTwo-${idNumber}`"
+                >Go somewhere</a
+              >
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -103,6 +251,24 @@ export default {
     }),
     item() {
       return this.TRANSACTION.data
+    },
+    stepTwoDisable() {
+      const rules =
+        this.passenger.person_name === '' ||
+        this.passenger.title === '' ||
+        this.passenger.dob === null ||
+        this.passenger.room_choice_id === null ||
+        this.passenger.food_preference === ''
+
+      return rules
+    },
+    stepThreeDisable() {
+      const rules =
+        this.passenger.passport_number === '' ||
+        this.passenger.issued_date === null ||
+        this.passenger.expiry_date === null ||
+        this.passenger.issuing_country === ''
+      return rules
     }
   },
   mounted() {},
@@ -118,6 +284,15 @@ export default {
 <style scoped>
 .card-header .nav-link[aria-expanded='true'] {
   background-color: #fff;
-  color: blue;
+  color: #408bb9 !important;
+}
+
+.nav-link {
+  border-radius: 10px 10px 0 0;
+  color: #fff !important;
+}
+
+.card-header {
+  background-color: #6ea8cc;
 }
 </style>
