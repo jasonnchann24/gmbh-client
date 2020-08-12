@@ -28,7 +28,10 @@
                 <span id="toggle-icn" class="fa fa-bars text-secondary"></span>
               </button>
               <!-- Nav -->
-              <div id="dorneNav" class="collapse navbar-collapse bg-white">
+              <div
+                id="dorneNav"
+                class="collapse navbar-collapse bg-white animate slideIn"
+              >
                 <ul id="dorneMenu" class="navbar-nav mr-auto ml-lg-5">
                   <li class="nav-item dropdown">
                     <a
@@ -43,7 +46,7 @@
                       Our Services
                     </a>
                     <div
-                      class="dropdown-menu  animate slideIn border-info"
+                      class="dropdown-menu  animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">
@@ -83,7 +86,7 @@
                       About Us
                     </a>
                     <div
-                      class="dropdown-menu animate slideIn border-info"
+                      class="dropdown-menu animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">
@@ -120,7 +123,7 @@
                       Welcome, {{ user.name }}
                     </a>
                     <div
-                      class="dropdown-menu animate slideIn border-info"
+                      class="dropdown-menu animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">

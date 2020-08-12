@@ -58,10 +58,10 @@
                   >
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
-                      <h6 class="text-uppercase text-white font-weight-bolder">
+                      <h5 class="text-uppercase text-white font-weight-bolder">
                         Tour Includes
-                      </h6>
-                      <p class="text-white">
+                      </h5>
+                      <p class="text-white tour-ex-in">
                         {{ item.tour_includes }}
                       </p>
                     </div>
@@ -72,10 +72,10 @@
                   >
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
-                      <h6 class="text-uppercase text-white font-weight-bolder">
+                      <h5 class="text-uppercase text-white font-weight-bolder">
                         Tour Excludes
-                      </h6>
-                      <p class="text-white">
+                      </h5>
+                      <p class="text-white tour-ex-in">
                         {{ item.tour_excludes }}
                       </p>
                     </div>
@@ -209,5 +209,10 @@ export default {
     font-size: 1.2em;
     letter-spacing: 10px;
   }
+}
+
+.tour-ex-in {
+  line-height: 1.7em;
+  margin-top: 1.3em;
 }
 </style>

@@ -15,7 +15,8 @@ const _50d434d0 = () => interopDefault(import('..\\pages\\travelpack.vue' /* web
 const _5c29d62d = () => interopDefault(import('..\\pages\\about-us\\contact.vue' /* webpackChunkName: "pages_about-us_contact" */))
 const _4cc37f42 = () => interopDefault(import('..\\pages\\about-us\\gallery.vue' /* webpackChunkName: "pages_about-us_gallery" */))
 const _fe10075e = () => interopDefault(import('..\\pages\\about-us\\testimony.vue' /* webpackChunkName: "pages_about-us_testimony" */))
-const _d9a4bda0 = () => interopDefault(import('..\\pages\\transactions\\_id.vue' /* webpackChunkName: "pages_transactions__id" */))
+const _09f5fd52 = () => interopDefault(import('..\\pages\\transactions\\_id\\index.vue' /* webpackChunkName: "pages_transactions__id_index" */))
+const _7d2e7349 = () => interopDefault(import('..\\pages\\transactions\\_id\\passengers.vue' /* webpackChunkName: "pages_transactions__id_passengers" */))
 const _2930d683 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\index.vue' /* webpackChunkName: "pages_packages__id__package_index" */))
 const _55b79470 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\book.vue' /* webpackChunkName: "pages_packages__id__package_book" */))
 const _a4c2b406 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
@@ -86,8 +87,12 @@ export const routerOptions = {
     name: "about-us-testimony"
   }, {
     path: "/transactions/:id",
-    component: _d9a4bda0,
+    component: _09f5fd52,
     name: "transactions-id"
+  }, {
+    path: "/transactions/:id/passengers",
+    component: _7d2e7349,
+    name: "transactions-id-passengers"
   }, {
     path: "/packages/:id/:package?",
     component: _2930d683,

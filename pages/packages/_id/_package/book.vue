@@ -59,9 +59,9 @@
           </div>
         </div>
         <div class="ceo-gmbh-map-area equal-height">
-          <div class="container">
+          <div class="container ">
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 text-center">
                 <h4
                   class="section-heading dark text-uppercase mb-4"
                   style="font-weight: 800"
@@ -71,13 +71,19 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
-                <form @submit.prevent="createTransaction">
-                  <div class="form-group row">
-                    <label for="book-package-id" class="col-sm-2 col-form-label"
+              <div class="col-12 text-center">
+                <form
+                  class="p-2 mx-auto mx-lg-5 bg-light shadow-form"
+                  style="border-radius: 15px"
+                  @submit.prevent="createTransaction"
+                >
+                  <div class="form-group row align-self-center mt-4">
+                    <label
+                      for="book-package-id"
+                      class="col-6 col-form-label text-right"
                       >Package
                     </label>
-                    <div class="col-sm-10">
+                    <div class="col-6 text-left">
                       <input
                         id="book-package-id"
                         :value="item.name"
@@ -89,59 +95,72 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="book-adults" class="col-sm-2 col-form-label"
+                    <label
+                      for="book-adults"
+                      class="col-6 text-right col-form-label"
                       >Adults
                     </label>
-                    <div class="col-sm-5">
+                    <div class="col-3 col-lg-2">
                       <input
                         id="book-adults"
                         v-model="form.adults"
                         type="number"
                         min="0"
                         class="form-control"
+                        placeholder="0"
                         required
                       />
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="book-children" class="col-sm-2 col-form-label"
+                    <label
+                      for="book-children"
+                      class="col-6 text-right col-form-label"
                       >Children
                     </label>
-                    <div class="col-sm-5">
+                    <div class="col-3 col-lg-2">
                       <input
                         id="book-children"
                         v-model="form.children"
                         type="number"
                         min="0"
+                        placeholder="0"
                         class="form-control"
                         required
                       />
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="book-infants" class="col-sm-2 col-form-label"
+                    <label
+                      for="book-infants"
+                      class="col-6 text-right col-form-label"
                       >Infants
                     </label>
-                    <div class="col-sm-5">
+                    <div class="col-3 col-lg-2">
                       <input
                         id="book-infants"
                         v-model="form.infants"
                         type="number"
                         min="0"
+                        placeholder="0"
                         class="form-control"
                       />
                     </div>
                   </div>
-                  <button
-                    v-if="!loading"
-                    type="submit"
-                    class="ceo-gmbh-btn mt-2 mb-5"
-                  >
-                    Make Booking
-                  </button>
-                  <button v-else disabled class="ceo-gmbh-btn mt-2 mb-5">
-                    Making your booking ...
-                  </button>
+                  <div class="row">
+                    <div class="col-6 col-lg-4 mx-auto">
+                      <button
+                        v-if="!loading"
+                        type="submit"
+                        class="ceo-gmbh-btn btn-block mt-2 mb-5"
+                      >
+                        Make Booking
+                      </button>
+                      <button v-else disabled class="ceo-gmbh-btn mt-2 mb-5">
+                        Making your booking ...
+                      </button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -187,7 +206,11 @@ export default {
   },
   data() {
     return {
-      form: {},
+      form: {
+        adults: 0,
+        infants: 0,
+        children: 0
+      },
       loading: false
     }
   },
@@ -257,5 +280,11 @@ export default {
     font-size: 1.2em;
     letter-spacing: 10px;
   }
+}
+
+.shadow-form {
+  -webkit-box-shadow: 4px 4px 15px 0px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 4px 4px 15px 0px rgba(128, 128, 128, 1);
+  box-shadow: 4px 4px 15px 0px rgba(128, 128, 128, 1);
 }
 </style>
