@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #f4f4f4">
+  <div style="background-color: #f4f4f4;">
     <div class="container">
       <div class="row">
         <div class="col-12 mt-100">
@@ -21,7 +21,23 @@
         </div>
       </client-only>
     </div>
-    <!-- FORM START -->
+    <div v-else>
+      <client-only>
+        <div class="container">
+          <div class="row">
+            <content-placeholders :rounded="true">
+              <content-placeholders-heading />
+              <content-placeholders-img />
+            </content-placeholders>
+
+            <content-placeholders :rounded="true">
+              <content-placeholders-heading />
+              <content-placeholders-img />
+            </content-placeholders>
+          </div>
+        </div>
+      </client-only>
+    </div>
   </div>
 </template>
 
@@ -30,6 +46,7 @@ import { mapActions, mapGetters } from 'vuex'
 import Stepper from '@/components/Form/Stepper'
 export default {
   name: 'AddPassengersPage',
+  middleware: ['auth'],
   components: {
     Stepper
   },
