@@ -21,7 +21,7 @@
       >
         <div class="card-header">
           <ul
-            class="nav nav-tabs nav-fill flex-column flex-sm-row card-header-tabs mt-4"
+            class="nav nav-tabs nav-fill flex-column flex-sm-row card-header-tabs mt-lg-4"
           >
             <li class="nav-item">
               <a
