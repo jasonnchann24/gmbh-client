@@ -55,7 +55,7 @@
                         >
                       </div>
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/travelpack"
+                        <nuxt-link class="dropdown-item" to="/packages"
                           >Tour Packages</nuxt-link
                         >
                       </div>

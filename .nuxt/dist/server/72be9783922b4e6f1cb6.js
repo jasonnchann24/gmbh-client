@@ -1,0 +1,1 @@
+exports.ids=[10],exports.modules={79:function(t,e,o){"use strict";o.r(e);var r={name:"PhotoExplorePage"},n=o(1);var component=Object(n.a)(r,(function(){var t=this.$createElement;return(this._self._c||t)("div",[this._ssrNode("<h1>Photography Exploration</h1>")])}),[],!1,(function(t){}),null,"e91d6556");e.default=component.exports}};
