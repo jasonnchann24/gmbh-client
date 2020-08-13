@@ -31,13 +31,30 @@
           <div class="col-12 col-md-6 mt-2">
             <form @submit.prevent="uploadFile">
               <div class="form-group">
-                <label for="ts-upload">Upload Transaction Slip</label>
-                <input
-                  id="ts-upload"
-                  type="file"
-                  class="form-control-file"
-                  @change="slipFile"
-                />
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span id="ts-uploadAddon" class="input-group-text"
+                      >Upload Transaction Slip</span
+                    >
+                  </div>
+                  <div class="custom-file">
+                    <input
+                      id="ts-upload"
+                      type="file"
+                      class="custom-file-input"
+                      aria-describedby="ts-uploadAddon"
+                      @change="slipFile"
+                    />
+                    <label class="custom-file-label" for="ts-upload"
+                      ><span v-if="!slipName">
+                        Choose file
+                      </span>
+                      <span v-else>
+                        {{ slipName }}
+                      </span>
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="row">
                 <div class="col-12">
@@ -86,6 +103,7 @@ export default {
       uploadForm: false,
       showTransactionSlip: false,
       slip: null,
+      slipName: null,
       loading: false
     }
   },
@@ -104,7 +122,9 @@ export default {
     }),
     slipFile(e) {
       const file = e.target.files[0]
+      const fileName = e.target.files[0].name
       this.slip = file
+      this.slipName = fileName
     },
     async uploadFile() {
       this.loading = true

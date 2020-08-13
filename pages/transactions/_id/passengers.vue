@@ -20,6 +20,28 @@
           </div>
         </div>
       </client-only>
+      <div
+        v-if="PASSENGERS.length == item.adults + item.children + item.infants"
+        class="container pb-4"
+      >
+        <div class="row">
+          <div class="col-12">
+            <button
+              class="btn btn-block btn-lg btn-success mb-4 "
+              type="button"
+              :disabled="formLoading"
+              @click="createPassengers"
+            >
+              <span v-if="!formLoading">
+                Submit all passengers
+              </span>
+              <span v-else>
+                Submitting ...
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <div v-else>
       <client-only>
@@ -42,7 +64,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import Stepper from '@/components/Form/Stepper'
 export default {
   name: 'AddPassengersPage',
@@ -58,7 +80,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      TRANSACTION: 'transactions/TRANSACTION'
+      TRANSACTION: 'transactions/TRANSACTION',
+      PASSENGERS: `stepper-form/PASSENGERS`
     }),
     disabled() {
       return this.passengers > 0
@@ -77,11 +100,14 @@ export default {
       CREATE_PASSENGERS: 'passengers/CREATE_PASSENGERS',
       GET_TRANSACTION: 'transactions/GET_TRANSACTION'
     }),
+    ...mapMutations({
+      RESET_STEPPER: 'stepper-form/RESET_STEPPER'
+    }),
     async createPassengers() {
       this.formLoading = true
       const form = {
         transaction_id: this.$route.params.id,
-        passengers: this.passengers
+        passengers: this.PASSENGERS
       }
       try {
         await this.CREATE_PASSENGERS(form)
@@ -93,6 +119,8 @@ export default {
           text: `Passengers Created!`,
           showConfirmButton: true
         })
+        this.$router.push(`/transactions/${this.$route.params.id}`)
+        this.RESET_STEPPER()
       } catch (e) {
         this.$swal({
           background: '#f5f5f5',

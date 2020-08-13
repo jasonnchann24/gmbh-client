@@ -14,5 +14,8 @@ export const mutations = {
   },
   SET_PASSENGER(state, { payload, index }) {
     state.passengers[index] = payload
+  },
+  RESET_STEPPER(state) {
+    state.passengers = []
   }
 }

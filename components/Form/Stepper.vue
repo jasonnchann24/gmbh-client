@@ -1,9 +1,19 @@
 <template>
   <div>
-    <h4 class="my-2 py-2 text-center">
-      Passenger {{ parseInt(idNumber) + 1 }} - {{ passenger.title }}
-      {{ passenger.person_name }}
-    </h4>
+    <div class="row">
+      <div class="col-12">
+        <h4 class="my-2 py-2 text-center">
+          Passenger {{ parseInt(idNumber) + 1 }} - {{ passenger.title }}
+          {{ passenger.person_name }}
+        </h4>
+        <div v-if="saved > 0" class="row">
+          <div class="col-12 text-center">
+            <i class="pe-7s-check text-success display-4"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div :id="`stepsAccordion-${idNumber}`" class="accordion">
       <div
         class="card border-0 text-center my-4 shadow"
@@ -75,6 +85,7 @@
                       class="form-control"
                       placeholder="Enter passenger's full name"
                       required
+                      :readonly="saved > 0"
                     />
                   </div>
                   <div class="form-group row">
@@ -85,6 +96,7 @@
                         v-model="passenger.title"
                         class="form-control"
                         required
+                        :readonly="saved > 0"
                       >
                         <option value="" disabled selected>Choose...</option>
                         <option value="Mr.">Mr.</option>
@@ -101,6 +113,7 @@
                         v-model="passenger.food_preference"
                         class="form-control"
                         required
+                        :readonly="saved > 0"
                       >
                         <option value="" disabled selected>Choose...</option>
                         <option value="Vegetarian">Vegetarian</option>
@@ -117,6 +130,7 @@
                       type="date"
                       class="form-control"
                       required
+                      :readonly="saved > 0"
                     />
                   </div>
                   <div class="form-group">
@@ -126,6 +140,7 @@
                       v-model="room_choice"
                       class="form-control"
                       required
+                      :readonly="saved > 0"
                     >
                       <option value="" disabled selected>Choose...</option>
                       <option
@@ -151,7 +166,11 @@
                 :aria-controls="`stepTwo-${idNumber}`"
                 >Next</a
               >
-              <button v-else class="btn btn-secondary text-white my-2" disabled>
+              <button
+                v-else
+                class="btn btn-lg btn-secondary text-white my-2"
+                disabled
+              >
                 Please complete all fields
               </button>
             </div>
@@ -175,6 +194,7 @@
                       class="form-control"
                       placeholder="Enter passenger's passport number"
                       required
+                      :readonly="saved > 0"
                     />
                   </div>
                   <div class="form-group row">
@@ -188,6 +208,7 @@
                         type="date"
                         class="form-control"
                         required
+                        :readonly="saved > 0"
                       />
                     </div>
                     <div class="col-12 col-md-6">
@@ -200,6 +221,7 @@
                         type="date"
                         class="form-control"
                         required
+                        :readonly="saved > 0"
                       />
                     </div>
                   </div>
@@ -214,6 +236,7 @@
                       class="form-control"
                       placeholder="Passport issuing country"
                       required
+                      :readonly="saved > 0"
                     />
                   </div>
                 </div>
@@ -230,7 +253,11 @@
                 :aria-controls="`stepThree-${idNumber}`"
                 >Next</a
               >
-              <button v-else class="btn btn-secondary text-white my-2" disabled>
+              <button
+                v-else
+                class="btn btn-lg btn-secondary text-white my-2"
+                disabled
+              >
                 Please complete all fields
               </button>
             </div>
@@ -301,16 +328,27 @@
             <div class="card-footer border-0 text-right bg-white">
               <div class="row">
                 <div class="col-12 text-center">
-                  <!-- v-if="!stepTwoDisable" -->
                   <button
+                    v-if="!stepTwoDisable && !stepThreeDisable && saved == 0"
                     class="btn btn-lg btn-success text-white my-2 px-4"
                     type="submit"
                   >
                     Save Passenger
                   </button>
-                  <!-- <button v-else class="btn btn-secondary text-white my-2" disabled>
-                Please complete all fields
-              </button> -->
+                  <button
+                    v-else-if="saved == 1"
+                    class="btn btn-lg btn-success text-white my-2 px-4"
+                    disabled
+                  >
+                    Passenger Saved
+                  </button>
+                  <button
+                    v-else
+                    class="btn btn-lg btn-secondary text-white my-2 px-4"
+                    disabled
+                  >
+                    Please complete all fields
+                  </button>
                 </div>
               </div>
             </div>
@@ -346,7 +384,8 @@ export default {
         food_preference: '',
         room_choice_id: null
       },
-      room_choice: null
+      room_choice: null,
+      saved: 0
     }
   },
 
@@ -384,10 +423,28 @@ export default {
       PUSH_PASSENGER: 'stepper-form/PUSH_PASSENGER'
     }),
     pushPassenger() {
-      this.passenger.room_choice_id = this.room_choice.id
-      if (!this.stepTwoDisable && !this.stepThreeDisable) {
-        this.PUSH_PASSENGER(this.passenger)
-      }
+      this.$swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, save passenger!'
+      }).then((result) => {
+        if (result.value) {
+          this.passenger.room_choice_id = this.room_choice.id
+          if (!this.stepTwoDisable && !this.stepThreeDisable) {
+            this.PUSH_PASSENGER(this.passenger)
+            this.saved++
+            this.$swal({
+              icon: 'success',
+              title: 'Saved! Please proceed.',
+              showConfirmButton: true
+            })
+          }
+        }
+      })
     }
   }
 }
