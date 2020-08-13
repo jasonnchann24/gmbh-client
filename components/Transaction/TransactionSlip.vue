@@ -32,11 +32,6 @@
             <form @submit.prevent="uploadFile">
               <div class="form-group">
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span id="ts-uploadAddon" class="input-group-text"
-                      >Upload Transaction Slip</span
-                    >
-                  </div>
                   <div class="custom-file">
                     <input
                       id="ts-upload"
@@ -49,7 +44,7 @@
                       ><span v-if="!slipName">
                         Choose file
                       </span>
-                      <span v-else>
+                      <span v-else class="text-truncate">
                         {{ slipName }}
                       </span>
                     </label>
@@ -77,7 +72,7 @@
       <div v-else-if="showTransactionSlip && item.forms.transfer_evidence">
         <div class="row mt-4">
           <div class="col-12 mt-4">
-            <button type="button" class="btn btn-block btn-success">
+            <button type="button" class="btn btn-block btn-info">
               <a
                 :href="item.forms.transfer_evidence.image_url"
                 target="_blank"
