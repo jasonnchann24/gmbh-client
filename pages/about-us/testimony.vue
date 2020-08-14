@@ -1,20 +1,47 @@
 <template>
   <div>
-    <section class="ceo-gmbh-welcome-area bg-img bg-overlay">
-      <div class="hero-container">
-        <img
-          src="/images/under-construct.jpg"
-          class="img-fluid"
-          width="100%"
-          style="max-height: 100vh; object-fit: cover; filter: brightness(0.8);"
-          alt="customize-tour-hero-image"
-          loading="lazy"
-        />
-        <h1
-          class="hero-text text-uppercase display-1 font-weight-bold text-white"
-        >
-          SITE UNDER CONSTRUCTION
-        </h1>
+    <section
+      class="ceo-gmbh-features-events-area bg-img bg-overlay-9 section-padding-100-50"
+      style="background-image: url('https://images.unsplash.com/photo-1579863197600-9f2bc8b3e66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80')"
+      crossorigin="anonymous"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-heading text-center">
+              <span></span>
+              <h4 class="wow fadeInUp" data-wow-delay="0.5s">Testimonials</h4>
+              <p class="wow fadeInUp" data-wow-delay="0.6s">
+                Our happy customers
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div v-for="index in 8" :key="index" class="col-12 col-lg-6">
+            <div
+              class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
+              :data-wow-delay="`${index * 0.15}s`"
+            >
+              <div class="feature-events-thumb">
+                <img
+                  src="/img/bg-img/event-1.jpg"
+                  style="border-radius: 15px"
+                  alt=""
+                />
+              </div>
+              <div class="feature-events-content">
+                <h5>Tom Hanks</h5>
+                <h6>Jakarta</h6>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repudiandae iste at vitae, totam odio provident?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

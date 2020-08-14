@@ -3,18 +3,18 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _876036b2 = () => interopDefault(import('..\\pages\\brava.vue' /* webpackChunkName: "pages_brava" */))
 const _fde83afa = () => interopDefault(import('..\\pages\\custom-tour\\index.vue' /* webpackChunkName: "pages_custom-tour_index" */))
 const _cbd298a0 = () => interopDefault(import('..\\pages\\packages\\index.vue' /* webpackChunkName: "pages_packages_index" */))
 const _92747a38 = () => interopDefault(import('..\\pages\\photography-exploration\\index.vue' /* webpackChunkName: "pages_photography-exploration_index" */))
-const _56ced383 = () => interopDefault(import('..\\pages\\services.vue' /* webpackChunkName: "pages_services" */))
 const _6eeac661 = () => interopDefault(import('..\\pages\\ticketing\\index.vue' /* webpackChunkName: "pages_ticketing_index" */))
-const _73f26e5c = () => interopDefault(import('..\\pages\\tickets.vue' /* webpackChunkName: "pages_tickets" */))
 const _a399e670 = () => interopDefault(import('..\\pages\\transactions\\index.vue' /* webpackChunkName: "pages_transactions_index" */))
-const _50d434d0 = () => interopDefault(import('..\\pages\\travelpack.vue' /* webpackChunkName: "pages_travelpack" */))
 const _5c29d62d = () => interopDefault(import('..\\pages\\about-us\\contact.vue' /* webpackChunkName: "pages_about-us_contact" */))
 const _4cc37f42 = () => interopDefault(import('..\\pages\\about-us\\gallery.vue' /* webpackChunkName: "pages_about-us_gallery" */))
 const _fe10075e = () => interopDefault(import('..\\pages\\about-us\\testimony.vue' /* webpackChunkName: "pages_about-us_testimony" */))
+const _488736e4 = () => interopDefault(import('..\\pages\\others\\brava.vue' /* webpackChunkName: "pages_others_brava" */))
+const _7099fc26 = () => interopDefault(import('..\\pages\\others\\services.vue' /* webpackChunkName: "pages_others_services" */))
+const _21b27fcf = () => interopDefault(import('..\\pages\\others\\tickets.vue' /* webpackChunkName: "pages_others_tickets" */))
+const _a98d1d0a = () => interopDefault(import('..\\pages\\others\\travelpack.vue' /* webpackChunkName: "pages_others_travelpack" */))
 const _09f5fd52 = () => interopDefault(import('..\\pages\\transactions\\_id\\index.vue' /* webpackChunkName: "pages_transactions__id_index" */))
 const _7d2e7349 = () => interopDefault(import('..\\pages\\transactions\\_id\\passengers.vue' /* webpackChunkName: "pages_transactions__id_passengers" */))
 const _2930d683 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\index.vue' /* webpackChunkName: "pages_packages__id__package_index" */))
@@ -38,10 +38,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/brava",
-    component: _876036b2,
-    name: "brava"
-  }, {
     path: "/custom-tour",
     component: _fde83afa,
     name: "custom-tour"
@@ -54,25 +50,13 @@ export const routerOptions = {
     component: _92747a38,
     name: "photography-exploration"
   }, {
-    path: "/services",
-    component: _56ced383,
-    name: "services"
-  }, {
     path: "/ticketing",
     component: _6eeac661,
     name: "ticketing"
   }, {
-    path: "/tickets",
-    component: _73f26e5c,
-    name: "tickets"
-  }, {
     path: "/transactions",
     component: _a399e670,
     name: "transactions"
-  }, {
-    path: "/travelpack",
-    component: _50d434d0,
-    name: "travelpack"
   }, {
     path: "/about-us/contact",
     component: _5c29d62d,
@@ -85,6 +69,22 @@ export const routerOptions = {
     path: "/about-us/testimony",
     component: _fe10075e,
     name: "about-us-testimony"
+  }, {
+    path: "/others/brava",
+    component: _488736e4,
+    name: "others-brava"
+  }, {
+    path: "/others/services",
+    component: _7099fc26,
+    name: "others-services"
+  }, {
+    path: "/others/tickets",
+    component: _21b27fcf,
+    name: "others-tickets"
+  }, {
+    path: "/others/travelpack",
+    component: _a98d1d0a,
+    name: "others-travelpack"
   }, {
     path: "/transactions/:id",
     component: _09f5fd52,

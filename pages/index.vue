@@ -297,6 +297,13 @@
               </div>
             </div>
           </div>
+          <div class="col-12 mt-50 text-center ">
+            <nuxt-link to="/about-us/testimony"
+              ><button class="ceo-gmbh-btn wow fadeIn" data-wow-delay="0.3s">
+                SEE MORE TESTIMONIALS
+              </button>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </section>
