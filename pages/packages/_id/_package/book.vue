@@ -77,24 +77,10 @@
                   style="border-radius: 15px"
                   @submit.prevent="createTransaction"
                 >
-                  <div class="form-group row align-self-center mt-4">
-                    <label
-                      for="book-package-id"
-                      class="col-6 col-form-label text-right"
-                      >Package
-                    </label>
-                    <div class="col-6 text-left">
-                      <input
-                        id="book-package-id"
-                        :value="item.name"
-                        type="text"
-                        readonly
-                        class="form-control-plaintext text-uppercase"
-                        required
-                      />
-                    </div>
+                  <div class="col-12 mt-4">
+                    <h5>Package {{ item.name }}</h5>
                   </div>
-                  <div class="form-group row">
+                  <div class="form-group row mt-4">
                     <label
                       for="book-adults"
                       class="col-6 text-right col-form-label"
@@ -126,7 +112,6 @@
                         min="0"
                         placeholder="0"
                         class="form-control"
-                        required
                       />
                     </div>
                   </div>
@@ -147,7 +132,10 @@
                       />
                     </div>
                   </div>
-                  <div class="row">
+                  <div
+                    v-if="!disabled && Number.isInteger(calculate)"
+                    class="row"
+                  >
                     <div class="col-6 col-lg-4 mx-auto">
                       <button
                         v-if="!loading"
@@ -156,9 +144,17 @@
                       >
                         Make Booking
                       </button>
+
                       <button v-else disabled class="ceo-gmbh-btn mt-2 mb-5">
                         Making your booking ...
                       </button>
+                    </div>
+                  </div>
+                  <div v-else class="row">
+                    <div class="col-12 col-lg-6 mx-auto">
+                      <p class="text-danger">
+                        Min. 1 adult needed to make booking
+                      </p>
                     </div>
                   </div>
                 </form>
@@ -221,6 +217,17 @@ export default {
     }),
     item() {
       return this.PACKAGE.data
+    },
+    disabled() {
+      const adults = this.form.adults === '' ? 0 : parseInt(this.form.adults)
+      return this.calculate < 1 || adults < 1
+    },
+    calculate() {
+      const adults = this.form.adults === '' ? 0 : parseInt(this.form.adults)
+      const infants = this.form.infants === '' ? 0 : parseInt(this.form.infants)
+      const children =
+        this.form.children === '' ? 0 : parseInt(this.form.children)
+      return adults + infants + children
     }
   },
   methods: {
@@ -228,22 +235,45 @@ export default {
       GET_PACKAGE: 'packages/GET_PACKAGE',
       CREATE_TRANSACTION: 'transactions/CREATE_TRANSACTION'
     }),
+    checkNan(check) {
+      if (this.adults === '') {
+        this.adults = 0
+      }
+    },
     clearForm() {
       Object.assign(this.$data, this.$options.data())
     },
     async createTransaction() {
       this.loading = true
       this.form.package_id = this.$route.params.id
+      if (this.form.children === '') {
+        this.form.children = 0
+      }
+      if (this.form.infants === '') {
+        this.form.infants = 0
+      }
       try {
-        await this.CREATE_TRANSACTION(this.form)
-        await this.clearForm()
         await this.$swal({
-          icon: 'success',
-          title: 'Created! ',
-          text: `Please proceed to fill your booking details. Booking number: ${this.TRANSACTION.data.transaction_number}`,
-          showConfirmButton: true
+          title: 'Are you sure?',
+          text: `Create booking for ${this.calculate} Passenger(s)`,
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, create it!'
+        }).then((result) => {
+          if (result.value) {
+            this.CREATE_TRANSACTION(this.form)
+            this.clearForm()
+            this.$swal({
+              icon: 'success',
+              title: 'Created! ',
+              text: `Please proceed to fill your booking details. Booking number: ${this.TRANSACTION.data.transaction_number}`,
+              showConfirmButton: true
+            })
+            this.$router.push(`/transactions/${this.TRANSACTION.data.id}`)
+          }
         })
-        this.$router.push(`/transactions/${this.TRANSACTION.data.id}`)
       } catch (e) {
         this.$swal({
           icon: 'error',
