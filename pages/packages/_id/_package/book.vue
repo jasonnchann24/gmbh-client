@@ -257,6 +257,11 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      title: `${this.item.name} Book | CEO Travel GmbH`
+    }
   }
 }
 </script>

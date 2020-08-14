@@ -130,6 +130,11 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      title: `Tour Packages | CEO Travel GmbH`
+    }
   }
 }
 </script>

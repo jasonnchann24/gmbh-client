@@ -146,6 +146,11 @@ export default {
         showConfirmButton: true
       })
     }
+  },
+  head() {
+    return {
+      title: `${this.item.package.name} Add Passengers | CEO Travel GmbH`
+    }
   }
 }
 </script>

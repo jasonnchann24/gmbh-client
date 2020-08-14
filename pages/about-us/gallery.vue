@@ -193,6 +193,11 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      title: 'Gallery | CEO Travel GmbH'
+    }
   }
 }
 </script>

@@ -305,6 +305,11 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      title: `Ticketing | CEO Travel GmbH`
+    }
   }
 }
 </script>

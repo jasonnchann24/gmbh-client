@@ -36,7 +36,12 @@
 
 <script>
 export default {
-  name: 'ContactPage'
+  name: 'ContactPage',
+  head() {
+    return {
+      title: 'Contact Us | CEO Travel GmbH'
+    }
+  }
 }
 </script>
 

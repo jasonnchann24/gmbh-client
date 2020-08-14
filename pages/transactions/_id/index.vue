@@ -168,6 +168,11 @@ export default {
       CREATE_PASSENGERS: 'passengers/CREATE_PASSENGERS',
       CREATE_MASTER_PASSENGER: 'passengers/CREATE_MASTER_PASSENGER'
     })
+  },
+  head() {
+    return {
+      title: `Transaction Detail | CEO Travel GmbH`
+    }
   }
 }
 </script>

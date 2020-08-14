@@ -176,6 +176,10 @@ export default {
     }),
     item() {
       return this.PACKAGE.data
+    },
+    packageName() {
+      const name = this.$route.params.package
+      return name.charAt(0).toUpperCase() + name.slice(1)
     }
   },
 
@@ -185,6 +189,11 @@ export default {
     }),
     modalLogin() {
       document.getElementById('sign-in-btn-link').click()
+    }
+  },
+  head() {
+    return {
+      title: `${this.packageName} | CEO Travel GmbH`
     }
   }
 }

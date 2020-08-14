@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  name: 'PhotoExplorePage'
+  name: 'PhotoExplorePage',
+  head() {
+    return {
+      title: `Photography Exploration | CEO Travel GmbH`
+    }
+  }
 }
 </script>
 

@@ -234,6 +234,11 @@ export default {
         this.loading = false
       }
     }
+  },
+  head() {
+    return {
+      title: 'Custom Tour | CEO Travel GmbH'
+    }
   }
 }
 </script>

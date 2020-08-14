@@ -320,6 +320,7 @@ export default {
       show: true
     }
   },
+
   computed: {
     ...mapGetters({
       PACKAGES: 'packages/PACKAGES'
@@ -334,6 +335,11 @@ export default {
     ...mapActions({
       GET_PACKAGES: 'packages/GET_PACKAGES'
     })
+  },
+  head() {
+    return {
+      title: 'Welcome | CEO Travel GmbH'
+    }
   }
 }
 </script>
