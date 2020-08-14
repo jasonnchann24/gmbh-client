@@ -100,7 +100,7 @@
                   >
                   <a
                     v-else
-                    href="#"
+                    href="javascript:void(0)"
                     class="btn btn-danger text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     @click="modalLogin"
                     >Please login to book!</a
