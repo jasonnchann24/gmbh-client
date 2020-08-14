@@ -261,11 +261,11 @@ export default {
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
           confirmButtonText: 'Yes, create it!'
-        }).then((result) => {
+        }).then(async (result) => {
           if (result.value) {
-            this.CREATE_TRANSACTION(this.form)
-            this.clearForm()
-            this.$swal({
+            await this.CREATE_TRANSACTION(this.form)
+            await this.clearForm()
+            await this.$swal({
               icon: 'success',
               title: 'Created! ',
               text: `Please proceed to fill your booking details. Booking number: ${this.TRANSACTION.data.transaction_number}`,
