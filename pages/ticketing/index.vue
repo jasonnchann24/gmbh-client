@@ -132,8 +132,8 @@
               <div class="form-group col-12 col-md-6">
                 <label for="ticketing-date_return"
                   ><span v-if="disabled" class="text-secondary"
-                    >Trip Type (Round Trip Only)</span
-                  ><span v-else>Trip Type</span></label
+                    >Return Date (Round Trip Only)</span
+                  ><span v-else>Return Date</span></label
                 >
                 <input
                   id="ticketing-date_return"

@@ -32,47 +32,84 @@
           </div>
           <div class="row">
             <div class="col-12 col-md-6 text-left">
-              <p>
-                Passengers : {{ item.adults + item.children + item.infants }}
-              </p>
-              <p>
-                Emergency Contact :
-                <span v-if="item.forms.emergency_contact">{{
-                  item.forms.emergency_contact.name
-                }}</span>
-                <span v-else class="text-danger">Not found</span>
-              </p>
-              <p>
-                Master Passenger :
-                <span v-if="item.forms.master_passenger">{{
-                  item.forms.master_passenger.email
-                }}</span>
-                <span v-else class="text-danger">Not found</span>
-              </p>
-              <p>
-                Transaction Slip :
-                <span v-if="item.forms.transfer_evidence">Uploaded</span>
-                <span v-else class="text-danger">Not found</span>
-              </p>
+              <table class="table table-borderless table-hover">
+                <tbody>
+                  <tr>
+                    <th scope="row">Passengers</th>
+                    <td>: {{ item.adults + item.children + item.infants }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Emergency Contact</th>
+                    <td>
+                      :
+                      <span v-if="item.forms.emergency_contact">{{
+                        item.forms.emergency_contact.name
+                      }}</span>
+                      <span v-else class="text-danger">Not found</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Master Passenger</th>
+                    <td class="text-truncate">
+                      :
+                      <span v-if="item.forms.master_passenger">{{
+                        item.forms.master_passenger.email
+                      }}</span>
+                      <span v-else class="text-danger">Not found</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Transaction Slip</th>
+                    <td>
+                      :
+                      <span v-if="item.forms.transfer_evidence">Uploaded</span>
+                      <span v-else class="text-danger">Not found</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="col-12 col-md-6 text-left">
-              <p>
-                Total Price :
-                <span v-if="item.total_price_amount == 0" class="text-danger"
-                  >Please complete the details first.</span
-                ><span v-else>Rp. {{ item.total_price_amount }}.000</span>
-              </p>
-              <p>Created at : {{ item.created_at }}</p>
-              <p>Created by : {{ item.user.name }} / {{ item.user.email }}</p>
-              <p v-if="item.adults > 0">
-                Adults : {{ item.adults }}
-                <span v-if="item.children > 0">
-                  Children : {{ item.children }}</span
-                >
-                <span v-if="item.infants > 0">
-                  Infants : {{ item.infants }}</span
-                >
-              </p>
+              <table class="table table-borderless table-hover">
+                <tbody>
+                  <tr>
+                    <th scope="row">Total Price</th>
+                    <td>
+                      :
+                      <span
+                        v-if="item.total_price_amount == 0"
+                        class="text-danger"
+                        >Please complete the details first.</span
+                      ><span v-else>Rp. {{ item.total_price_amount }}.000</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Created At</th>
+                    <td>: {{ item.created_at }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Created By</th>
+                    <td class="text-truncate">
+                      : {{ item.user.name }} / {{ item.user.email }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Passengers</th>
+                    <td>
+                      :
+                      <span v-if="item.adults > 0">
+                        Adults : {{ item.adults }}
+                        <span v-if="item.children > 0">
+                          Children : {{ item.children }}</span
+                        >
+                        <span v-if="item.infants > 0">
+                          Infants : {{ item.infants }}</span
+                        >
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

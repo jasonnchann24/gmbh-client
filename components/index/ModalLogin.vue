@@ -323,8 +323,9 @@ export default {
         this.$swal({
           icon: 'success',
           title: 'Logged In!',
+          text: 'Check navigation bar for Customer Section',
           showConfirmButton: false,
-          timer: 5000,
+          timer: 7000,
           timerProgressBar: true
         })
       } catch (e) {

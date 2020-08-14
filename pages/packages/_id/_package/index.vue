@@ -28,7 +28,7 @@
                 <div class="listing-title">
                   <h4>{{ item.name }}</h4>
                   <h6>
-                    {{ item.from_period }} -
+                    PERIOD : {{ item.from_period }} -
                     {{ item.to_period }}
                   </h6>
                 </div>

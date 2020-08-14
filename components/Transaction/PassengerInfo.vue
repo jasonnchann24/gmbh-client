@@ -34,7 +34,7 @@
         <div class="col-12">
           <div class="table-responsive">
             <table class="table table-hover">
-              <thead>
+              <thead class="thead-dark text-nowrap">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
@@ -46,7 +46,7 @@
                   <th scope="col">Room Price</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="text-nowrap">
                 <tr
                   v-for="(passenger, index) in item.forms.passengers"
                   :key="passenger.id"

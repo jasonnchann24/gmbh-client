@@ -38,9 +38,7 @@
                     >
                   </li>
                   <li>
-                    <nuxtLink to="/custom-tour" tag="a"
-                      >Customize Tour</nuxtLink
-                    >
+                    <nuxtLink to="/custom-tour" tag="a">Custom Tour</nuxtLink>
                   </li>
                 </ul>
               </div>
