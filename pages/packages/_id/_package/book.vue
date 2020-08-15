@@ -252,6 +252,10 @@ export default {
       if (this.form.infants === '') {
         this.form.infants = 0
       }
+
+      this.form.adults = parseInt(this.form.adults)
+      this.form.children = parseInt(this.form.children)
+      this.form.infants = parseInt(this.form.infants)
       try {
         await this.$swal({
           title: 'Are you sure?',
