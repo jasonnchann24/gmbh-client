@@ -24,8 +24,8 @@
             <div class="col-12">
               <div class="section-heading py-5 mb-0">
                 <h4 class="text-dark">BOOKING DETAIL</h4>
-                <p class="text-dark">
-                  Transaction Number - {{ item.transaction_number }}
+                <p class="text-dark" style="line-height: 1.5em">
+                  Transaction Number - <br />{{ item.transaction_number }}
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@
               <table class="table table-borderless table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Passengers</th>
+                    <th scope="row">Total Passengers</th>
                     <td>: {{ item.adults + item.children + item.infants }}</td>
                   </tr>
                   <tr>
@@ -79,7 +79,7 @@
                       <span
                         v-if="item.total_price_amount == 0"
                         class="text-danger"
-                        >Please complete the details first.</span
+                        >Please complete the details.</span
                       ><span v-else>Rp. {{ item.total_price_amount }}.000</span>
                     </td>
                   </tr>
@@ -89,8 +89,13 @@
                   </tr>
                   <tr>
                     <th scope="row">Created By</th>
-                    <td class="text-truncate">
-                      : {{ item.user.name }} / {{ item.user.email }}
+                    <td class="text-truncate" style="overflow: hidden;">
+                      <span
+                        class="d-inline-block text-truncate"
+                        style="max-width: 200px;"
+                      >
+                        : {{ item.user.email }}
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -98,12 +103,12 @@
                     <td>
                       :
                       <span v-if="item.adults > 0">
-                        Adults : {{ item.adults }}
+                        {{ item.adults }} Adults
                         <span v-if="item.children > 0">
-                          Children : {{ item.children }}</span
+                          , {{ item.children }} Children</span
                         >
                         <span v-if="item.infants > 0">
-                          Infants : {{ item.infants }}</span
+                          , {{ item.infants }} Infants</span
                         >
                       </span>
                     </td>
