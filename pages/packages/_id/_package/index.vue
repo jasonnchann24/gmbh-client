@@ -37,19 +37,34 @@
                   <nav>
                     <ul id="listingNav">
                       <li class="active">
-                        <a href="#overview">Description</a>
+                        <a
+                          v-scroll-to="{
+                            el: '#listingNav',
+                            duration: '1000'
+                          }"
+                          href="#"
+                          >Description</a
+                        >
                       </li>
-                      <li><a href="#menu">Tour Includes & Excludes</a></li>
+                      <li>
+                        <a
+                          v-scroll-to="{
+                            el: '#tourScroll',
+                            duration: '1000'
+                          }"
+                          href="#"
+                          >Tour Includes & Excludes</a
+                        >
+                      </li>
                     </ul>
                   </nav>
                 </div>
-
                 <div id="overview" class="overview-content mt-50">
                   <p>
                     {{ item.description }}
                   </p>
                 </div>
-
+                <div id="tourScroll"></div>
                 <div id="menu" class="tour-list-info-area mt-100">
                   <h4>Tour Includes & Excludes</h4>
                   <!-- Single Listing Menu -->

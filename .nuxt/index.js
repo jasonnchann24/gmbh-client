@@ -12,6 +12,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_vuescrollto_1da66da0 from 'nuxt_plugin_vuescrollto_1da66da0' // Source: .\\vue-scrollto.js (mode: 'client')
 import nuxt_plugin_vuesweetalert2_3f83fea0 from 'nuxt_plugin_vuesweetalert2_3f83fea0' // Source: .\\vue-sweetalert2.js (mode: 'client')
 import nuxt_plugin_axios_9a6c376e from 'nuxt_plugin_axios_9a6c376e' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_carousel_2496c93e from 'nuxt_plugin_carousel_2496c93e' // Source: ..\\plugins\\carousel.js (mode: 'client')
@@ -179,6 +180,10 @@ async function createApp (ssrContext) {
   }
 
   // Plugin execution
+
+  if (process.client && typeof nuxt_plugin_vuescrollto_1da66da0 === 'function') {
+    await nuxt_plugin_vuescrollto_1da66da0(app.context, inject)
+  }
 
   if (process.client && typeof nuxt_plugin_vuesweetalert2_3f83fea0 === 'function') {
     await nuxt_plugin_vuesweetalert2_3f83fea0(app.context, inject)

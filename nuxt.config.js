@@ -91,7 +91,8 @@ export default {
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth-next',
-    'vue-sweetalert2/nuxt'
+    'vue-sweetalert2/nuxt',
+    'vue-scrollto/nuxt'
   ],
   /*
    ** Axios module configuration
