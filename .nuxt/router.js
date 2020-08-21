@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _fde83afa = () => interopDefault(import('..\\pages\\custom-tour\\index.vue' /* webpackChunkName: "pages_custom-tour_index" */))
 const _cbd298a0 = () => interopDefault(import('..\\pages\\packages\\index.vue' /* webpackChunkName: "pages_packages_index" */))
 const _92747a38 = () => interopDefault(import('..\\pages\\photography-exploration\\index.vue' /* webpackChunkName: "pages_photography-exploration_index" */))
+const _37b7ceba = () => interopDefault(import('..\\pages\\settings\\index.vue' /* webpackChunkName: "pages_settings_index" */))
 const _6eeac661 = () => interopDefault(import('..\\pages\\ticketing\\index.vue' /* webpackChunkName: "pages_ticketing_index" */))
 const _a399e670 = () => interopDefault(import('..\\pages\\transactions\\index.vue' /* webpackChunkName: "pages_transactions_index" */))
 const _5c29d62d = () => interopDefault(import('..\\pages\\about-us\\contact.vue' /* webpackChunkName: "pages_about-us_contact" */))
@@ -49,6 +50,10 @@ export const routerOptions = {
     path: "/photography-exploration",
     component: _92747a38,
     name: "photography-exploration"
+  }, {
+    path: "/settings",
+    component: _37b7ceba,
+    name: "settings"
   }, {
     path: "/ticketing",
     component: _6eeac661,

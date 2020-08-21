@@ -120,11 +120,12 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Welcome, {{ user.name }}
+                      Welcome, {{ user.name.split(' ')[0] }}
                     </a>
                     <div
                       class="dropdown-menu animate slideIn"
                       aria-labelledby="navbarDropdown"
+                      style="width: 100%;"
                     >
                       <div @click="navbarToggle">
                         <nuxtLink
@@ -132,6 +133,11 @@
                           class="dropdown-item"
                           tag="a"
                           >Transactions</nuxtLink
+                        >
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxtLink to="/settings" class="dropdown-item" tag="a"
+                          >Settings</nuxtLink
                         >
                       </div>
                       <a
