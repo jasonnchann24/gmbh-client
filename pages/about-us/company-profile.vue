@@ -73,7 +73,7 @@
             presented with personal & Friendly touch as mother Languages
             Indonesian, German and English.
           </p>
-          <p clas="text-justify p-lh">
+          <p class="text-justify p-lh">
             We are here to take you inside, feel like a local. To explore your
             favorite culture and tourist attractions and nature. An advantage
             that we would like to provide for you.
