@@ -30,10 +30,13 @@
           <p class="text-justify p-lh">
             CEO Travel GmbH is one of the leading Travel services and Tour
             operators in Germany with a representative contact in Jakarta
-            Indonesia. <br />Providing comprehensive services for groups and
-            individuals. Holding places, people and customs through professional
-            guides, modern and luxury transportations, quality hotels, fine
-            cuisine and culinary, and other key attraction vendors.
+            Indonesia.
+          </p>
+          <p class="text-justify p-lh">
+            Providing comprehensive services for groups and individuals. Holding
+            places, people and customs through professional guides, modern and
+            luxury transportations, quality hotels, fine cuisine and culinary,
+            and other key attraction vendors.
           </p>
         </div>
       </div>
@@ -48,9 +51,12 @@
           <p class="text-justify p-lh">
             We are on mission creating your perfect experiences into the Europe
             Region and Asia Region, to provide the best travel services. Our
-            services will be positioned very carefully. <br />They will be of
-            extremely high quality experience of leisure, comfortable,
-            informative in general and tailored to the clients needs.
+            services will be positioned very carefully.
+          </p>
+          <p>
+            They will be of extremely high quality experience of leisure,
+            comfortable, informative in general and tailored to the clients
+            needs.
           </p>
         </div>
       </div>
@@ -65,13 +71,18 @@
           <p class="text-justify p-lh">
             Our services According the current trending of life styles. We are
             presented with personal & Friendly touch as mother Languages
-            Indonesian, German and English. <br />We are here to take you
-            inside, feel like a local. To explore your favorite culture and
-            tourist attractions and nature. An advantage that we would like to
-            provide for you. <br />In such of combinations & proportional to
-            give unforgettable memories of the:
+            Indonesian, German and English.
           </p>
-          <ul class="ml-4">
+          <p>
+            We are here to take you inside, feel like a local. To explore your
+            favorite culture and tourist attractions and nature. An advantage
+            that we would like to provide for you.
+          </p>
+          <p>
+            In such of combinations & proportional to give unforgettable
+            memories of the:
+          </p>
+          <ul>
             <li><p>Explore & Leisure</p></li>
             <li><p>Modern & History</p></li>
             <li><p>Art & Culture</p></li>
@@ -93,31 +104,37 @@
           <div>
             <h5 class="font-weight-bolder">1. Regular Packages 🧳</h5>
             <p>All over the year excursions and itineraries of</p>
-            <li>Bavaria Alps Tour Package.</li>
-            <li>Scandinavia & Russia Tour Package</li>
-            <li>Scandinavia & Baltic Tour Package</li>
-            <li>Normandy Tour Package</li>
+            <ul>
+              <li><p>Bavaria Alps Tour Package.</p></li>
+              <li><p>Scandinavia & Russia Tour Package</p></li>
+              <li><p>Scandinavia & Baltic Tour Package</p></li>
+              <li><p>Normandy Tour Package</p></li>
+            </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
               2. Incentive, Special Interest Group 🧳
             </h5>
-            <li>Photography Trip Package 👉 Coming Soon</li>
-            <li>Historical & Culture Trip Package 👉 Coming Soon</li>
+            <ul>
+              <li><p>Photography Trip Package 👉 Coming Soon</p></li>
+              <li><p>Historical & Culture Trip Package 👉 Coming Soon</p></li>
+            </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
               3. Customize Services 🧳
             </h5>
-            <li>Private tour.</li>
-            <li>Shopping Guiding.</li>
-            <li>Personal Guiding.</li>
-            <li>
-              Car & Rental with driver ( 5 seaters & 9 seaters vehicles ).<br />
-            </li>
-            <li class="text-muted ml-4" style="list-style: none">
-              Option: VW, OPEL, Audi, Mercedes-Benz, BMW.
-            </li>
+            <ul>
+              <li><p>Private Tour</p></li>
+              <li><p>Shopping Guiding</p></li>
+              <li><p>Personal Guiding</p></li>
+              <li>
+                <p>Car & Rental with driver ( 5 & 9 seaters vehicles )</p>
+              </li>
+              <li class="text-muted" style="list-style: none">
+                Option: VW, OPEL, Audi, Mercedes-Benz, BMW.
+              </li>
+            </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
@@ -152,6 +169,10 @@ li p {
 
 li {
   list-style: circle;
+}
+
+ul {
+  margin-left: 1.5em;
 }
 
 p {
