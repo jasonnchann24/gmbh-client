@@ -53,7 +53,7 @@
             Region and Asia Region, to provide the best travel services. Our
             services will be positioned very carefully.
           </p>
-          <p>
+          <p class="text-justify p-lh">
             They will be of extremely high quality experience of leisure,
             comfortable, informative in general and tailored to the clients
             needs.
@@ -73,12 +73,12 @@
             presented with personal & Friendly touch as mother Languages
             Indonesian, German and English.
           </p>
-          <p>
+          <p clas="text-justify p-lh">
             We are here to take you inside, feel like a local. To explore your
             favorite culture and tourist attractions and nature. An advantage
             that we would like to provide for you.
           </p>
-          <p>
+          <p class="text-justify p-lh">
             In such of combinations & proportional to give unforgettable
             memories of the:
           </p>
@@ -103,7 +103,9 @@
           </p>
           <div>
             <h5 class="font-weight-bolder">1. Regular Packages 🧳</h5>
-            <p>All over the year excursions and itineraries of</p>
+            <p class="text-justify p-lh">
+              All over the year excursions and itineraries of
+            </p>
             <ul>
               <li><p>Bavaria Alps Tour Package.</p></li>
               <li><p>Scandinavia & Russia Tour Package</p></li>
@@ -129,7 +131,7 @@
               <li><p>Shopping Guiding</p></li>
               <li><p>Personal Guiding</p></li>
               <li>
-                <p>Car & Rental with driver ( 5 & 9 seaters vehicles )</p>
+                <p>Car & Rental with driver (5 & 9 seaters vehicles)</p>
               </li>
               <li class="text-muted" style="list-style: none">
                 Option: VW, OPEL, Audi, Mercedes-Benz, BMW.
