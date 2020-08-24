@@ -50,6 +50,11 @@
                     >
                   </li>
                   <li>
+                    <nuxtLink to="/about-us/company-profile" tag="a"
+                      >Company Profile</nuxtLink
+                    >
+                  </li>
+                  <li>
                     <nuxtLink to="/about-us/gallery" tag="a">Gallery</nuxtLink>
                   </li>
                   <li>

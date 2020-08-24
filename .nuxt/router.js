@@ -9,6 +9,7 @@ const _92747a38 = () => interopDefault(import('..\\pages\\photography-exploratio
 const _37b7ceba = () => interopDefault(import('..\\pages\\settings\\index.vue' /* webpackChunkName: "pages_settings_index" */))
 const _6eeac661 = () => interopDefault(import('..\\pages\\ticketing\\index.vue' /* webpackChunkName: "pages_ticketing_index" */))
 const _a399e670 = () => interopDefault(import('..\\pages\\transactions\\index.vue' /* webpackChunkName: "pages_transactions_index" */))
+const _2afa84e6 = () => interopDefault(import('..\\pages\\about-us\\company-profile.vue' /* webpackChunkName: "pages_about-us_company-profile" */))
 const _5c29d62d = () => interopDefault(import('..\\pages\\about-us\\contact.vue' /* webpackChunkName: "pages_about-us_contact" */))
 const _4cc37f42 = () => interopDefault(import('..\\pages\\about-us\\gallery.vue' /* webpackChunkName: "pages_about-us_gallery" */))
 const _fe10075e = () => interopDefault(import('..\\pages\\about-us\\testimony.vue' /* webpackChunkName: "pages_about-us_testimony" */))
@@ -62,6 +63,10 @@ export const routerOptions = {
     path: "/transactions",
     component: _a399e670,
     name: "transactions"
+  }, {
+    path: "/about-us/company-profile",
+    component: _2afa84e6,
+    name: "about-us-company-profile"
   }, {
     path: "/about-us/contact",
     component: _5c29d62d,

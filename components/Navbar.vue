@@ -95,6 +95,13 @@
                         >
                       </div>
                       <div @click="navbarToggle">
+                        <nuxt-link
+                          class="dropdown-item"
+                          to="/about-us/company-profile"
+                          >Company Profile</nuxt-link
+                        >
+                      </div>
+                      <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/about-us/gallery"
                           >Gallery</nuxt-link
                         >
