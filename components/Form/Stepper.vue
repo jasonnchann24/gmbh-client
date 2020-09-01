@@ -211,7 +211,7 @@
                         :readonly="saved > 0"
                       />
                     </div>
-                    <div class="col-12 col-md-6 mt-3">
+                    <div class="col-12 col-md-6 mt-3 mt-sm-0">
                       <label :for="`t-form-expiry${idNumber}`"
                         >Passport Expiry Date</label
                       >
