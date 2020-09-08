@@ -23,36 +23,33 @@
           <div class="contact-text">
             <h4>Book section for {{ item.name }}</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac
-              nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit
-              amet vestibulum. Proin tempus lacus porta lorem blandit aliquam
-              eget quis ipsum. Vivamus accumsan consequat ligula non volutpat.
-              Sed mollis orci non cursus vestibulum. Pellentesque vitae est a
-              augue laoreet venenatis sed eu felis. Sed cursus magna nec turpis
-              ullamcorper, eget rutrum felis egestas. Nunc odio ex, fermentum
-              efficitur nunc vitae, efficitur hendrerit diam. Lorem ipsum dolor
-              sit amet, consectetur.
+              {{ item.description }}
             </p>
 
             <div class="contact-info d-lg-flex">
               <div class="single-contact-info">
                 <h6>
                   <i class="fa fa-map-signs text-dark" aria-hidden="true"></i>
-                  Jakarta
+                  Bergstrasse 19
                 </h6>
                 <h6>
                   <i class="fa fa-map-signs text-dark" aria-hidden="true"></i>
-                  No. 25-33
+                  21481 Schnakenbek, Germany.
                 </h6>
               </div>
               <div class="single-contact-info">
                 <h6>
                   <i class="fa fa-envelope-o text-dark" aria-hidden="true"></i>
-                  contact@yourbusiness.com
+                  <a href="mailto:ceotravelweb@gmail.com" target="_blank"
+                    >ceotravelweb@gmail.com</a
+                  >
                 </h6>
                 <h6>
-                  <i class="fa fa-phone text-dark" aria-hidden="true"></i> +34
-                  567 22478 49567
+                  <i class="fa fa-phone text-dark" aria-hidden="true"></i>+62 -
+                  813 - 8915 - 8787 /
+                  <a href="https://wa.me/6281389158787" target="_blank"
+                    >Whatsapp</a
+                  >
                 </h6>
               </div>
             </div>

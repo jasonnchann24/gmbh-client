@@ -12,6 +12,8 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_pluginrouting_2e32d550 from 'nuxt_plugin_pluginrouting_2e32d550' // Source: .\\nuxt-i18n\\plugin.routing.js (mode: 'all')
+import nuxt_plugin_pluginmain_3592cfc2 from 'nuxt_plugin_pluginmain_3592cfc2' // Source: .\\nuxt-i18n\\plugin.main.js (mode: 'all')
 import nuxt_plugin_vuescrollto_1da66da0 from 'nuxt_plugin_vuescrollto_1da66da0' // Source: .\\vue-scrollto.js (mode: 'client')
 import nuxt_plugin_vuesweetalert2_3f83fea0 from 'nuxt_plugin_vuesweetalert2_3f83fea0' // Source: .\\vue-sweetalert2.js (mode: 'client')
 import nuxt_plugin_axios_9a6c376e from 'nuxt_plugin_axios_9a6c376e' // Source: .\\axios.js (mode: 'all')
@@ -180,6 +182,14 @@ async function createApp (ssrContext) {
   }
 
   // Plugin execution
+
+  if (typeof nuxt_plugin_pluginrouting_2e32d550 === 'function') {
+    await nuxt_plugin_pluginrouting_2e32d550(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pluginmain_3592cfc2 === 'function') {
+    await nuxt_plugin_pluginmain_3592cfc2(app.context, inject)
+  }
 
   if (process.client && typeof nuxt_plugin_vuescrollto_1da66da0 === 'function') {
     await nuxt_plugin_vuescrollto_1da66da0(app.context, inject)

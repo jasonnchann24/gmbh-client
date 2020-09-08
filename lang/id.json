@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "our_services": "Servis Kami",
+    "about_us": "Tentang Kami",
+    "language": "Bahasa",
+    "sign_in_btn": "Masuk / Daftar",
+    "ticketing": "Tiket",
+    "tour_packages": "Paket Wisata",
+    "photography_exploration": "Eksplorasi Fotografi",
+    "custom_tour": "Tur Khusus",
+    "contact_us": "Hubungi Kami",
+    "company_profile": "Profil Perusahaan",
+    "gallery": "Galeri",
+    "testimony": "Testimonial",
+    "welcome": "Selamat Datang",
+    "transactions": "Transaksi",
+    "settings": "Penyetelan",
+    "logout": "Keluar"
+  },
+  "home": {
+    "main_header": "Explore World. Beyond Words.",
+    "description_header": "CEO Travel GmbH merupakan salah satu operator jasa Travel dan Tour terdepan di Jerman, mempunyai kontak perwakilan di Jakarta, Indonesia. Menyediakan jasa-jasa komprehensif untuk grup-grup maupun individual. Menangani tempat, orang, dan bea cukai melalui pemandu profesional, transportasi modern dan mewah, hotel berkualitas, hidangan lezat dan kuliner, dan vendor daya tarik utama lainnya.",
+    "our_services": "Servis Kami",
+    "tagline": "Explore World. Beyond Words."
+  }
+}

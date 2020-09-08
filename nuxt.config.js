@@ -1,4 +1,6 @@
 import redirectSSL from 'redirect-ssl'
+import i18n from './config/i18n'
+
 require('dotenv').config()
 export default {
   mode: 'universal',
@@ -82,7 +84,26 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    [
+      'nuxt-i18n',
+      {
+        defaultLocale: 'en',
+        locales: [
+          {
+            code: 'en',
+            name: 'English'
+          },
+          {
+            code: 'id',
+            name: 'Bahasa Indonesia'
+          }
+        ],
+        vueI18n: i18n
+      }
+    ]
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -92,7 +113,8 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/auth-next',
     'vue-sweetalert2/nuxt',
-    'vue-scrollto/nuxt'
+    'vue-scrollto/nuxt',
+    'nuxt-i18n'
   ],
   /*
    ** Axios module configuration

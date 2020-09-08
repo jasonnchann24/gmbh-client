@@ -1,12 +1,12 @@
 <template>
-  <div class="packagesPage">
+  <div id="top-package-page" class="packagesPage">
     <div class="container">
       <div class="row">
         <div class="col-10 col-lg-6 mx-auto mt-100 p-4 h-auto">
           <div class="section-heading mb-0 text-center">
             <span></span>
             <h4>Our Packages</h4>
-            <p>Click for more detail</p>
+            <p>Premium tour packages</p>
           </div>
         </div>
       </div>
@@ -61,23 +61,41 @@
           </nuxt-link>
         </div>
       </div>
-      <div v-if="PACKAGES.meta" class="row mt-100 mb-100">
-        <div
-          v-if="PACKAGES.meta.last_page > 1"
-          class="col-6 mx-auto bg-light borderRad shadow-pack"
-          style="height: 150px"
-        >
-          <pagination
-            :object-to-paginate="PACKAGES"
-            :store-action="'packages/GET_PACKAGES'"
-          />
-        </div>
-      </div>
+      <nav v-if="PACKAGES.links" aria-label="Page navigation example">
+        <ul class="pagination pagination-lg justify-content-center">
+          <li v-if="PACKAGES.links.prev" class="page-item">
+            <a
+              class="page-link border-0"
+              href="javascript:void(0);"
+              aria-label="Previous"
+              @click="changePage('prev')"
+            >
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item disabled ">
+            <a v-if="!loading" class="page-link border-0" href="#">{{
+              PACKAGES.meta.current_page
+            }}</a>
+            <a v-else class="page-link border-0">Loading...</a>
+          </li>
+          <li v-if="PACKAGES.links.next" class="page-item">
+            <a
+              class="page-link border-0"
+              href="javascript:void(0)"
+              aria-label="Next"
+              @click="changePage('next')"
+            >
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
     <div v-else class="container">
       <div class="row">
         <client-only>
-          <div v-for="index in 3" :key="index" class="col-4 my-5 ">
+          <div v-for="index in 3" :key="index" class="col-12 col-lg-4 my-5 ">
             <content-placeholders :rounded="true">
               <content-placeholders-heading />
               <content-placeholders-img />
@@ -91,13 +109,10 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import Pagination from '@/components/Core/Pagination'
 
 export default {
   name: 'PackagesPage',
-  components: {
-    Pagination
-  },
+  components: {},
   data() {
     return {
       loading: false,
@@ -120,6 +135,20 @@ export default {
       GET_PACKAGES: 'packages/GET_PACKAGES'
     }),
 
+    async changePage(action) {
+      this.loading = true
+      if (action === 'next') {
+        this.page++
+        await this.GET_PACKAGES(this.page)
+        this.loading = false
+        this.$scrollTo('#top-package-page', 1000)
+      } else if (action === 'prev') {
+        this.page--
+        await this.GET_PACKAGES(this.page)
+        this.loading = false
+        this.$scrollTo('#top-package-page', 1000)
+      }
+    },
     async getPackages(page = 1) {
       this.loading = true
       try {

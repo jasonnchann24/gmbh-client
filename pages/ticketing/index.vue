@@ -13,7 +13,7 @@
         <h1
           class="hero-text text-uppercase display-1 font-weight-bold text-white"
         >
-          TICKETING
+          {{ $t('ticketing.title') }}
         </h1>
       </div>
     </section>
@@ -22,8 +22,8 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>TICKETING FORM</h4>
-            <p>Fill all fields provided</p>
+            <h4>{{ $t('ticketing.form_title') }}</h4>
+            <p>{{ $t('ticketing.form_subtitle') }}</p>
           </div>
         </div>
       </div>
@@ -36,18 +36,22 @@
           >
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="ticketing-name">Full Name</label>
+                <label for="ticketing-name">{{
+                  $t('ticketing.form.full_name')
+                }}</label>
                 <input
                   id="ticketing-name"
                   v-model="form.name"
                   type="text"
                   class="form-control"
                   required
-                  placeholder="John Doe"
+                  :placeholder="$t('ticketing.form.full_name')"
                 />
               </div>
               <div class="form-group col-md-6">
-                <label for="ticketing-email">Email</label>
+                <label for="ticketing-email">{{
+                  $t('ticketing.form.email')
+                }}</label>
                 <input
                   id="ticketing-email"
                   v-model="form.email"
@@ -59,7 +63,9 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="ticketing-phone">Phone</label>
+              <label for="ticketing-phone">{{
+                $t('ticketing.form.phone')
+              }}</label>
               <input
                 id="ticketing-phone"
                 v-model="form.phone"
@@ -71,7 +77,9 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label for="ticketing-origin">Origin</label>
+                <label for="ticketing-origin">{{
+                  $t('ticketing.form.origin')
+                }}</label>
                 <select
                   id="ticketing-origin"
                   v-model="form.origin"
@@ -88,7 +96,9 @@
                 </select>
               </div>
               <div class="form-group col-md-4">
-                <label for="ticketing-destination">Destination</label>
+                <label for="ticketing-destination">{{
+                  $t('ticketing.form.destination')
+                }}</label>
                 <select
                   id="ticketing-destination"
                   v-model="form.destination"
@@ -105,7 +115,9 @@
                 </select>
               </div>
               <div class="form-group col-12 col-md-4">
-                <label for="ticketing-purpose">Trip Type</label>
+                <label for="ticketing-purpose">{{
+                  $t('ticketing.form.trip_type')
+                }}</label>
                 <select
                   id="ticketing-purpose"
                   v-model="form.trip_type"
@@ -120,7 +132,9 @@
             </div>
             <div class="form-row">
               <div class="form-group col-12 col-md-6">
-                <label for="ticketing-date_from">Departure Date</label>
+                <label for="ticketing-date_from">{{
+                  $t('ticketing.form.departure_date')
+                }}</label>
                 <input
                   id="ticketing-date_from"
                   v-model="form.departure"
@@ -131,9 +145,12 @@
               </div>
               <div class="form-group col-12 col-md-6">
                 <label for="ticketing-date_return"
-                  ><span v-if="disabled" class="text-secondary"
-                    >Return Date (Round Trip Only)</span
-                  ><span v-else>Return Date</span></label
+                  ><span v-if="disabled" class="text-secondary">{{
+                    $t('ticketing.form.return_date')
+                  }}</span
+                  ><span v-else>{{
+                    $t('ticketing.form.return_date')
+                  }}</span></label
                 >
                 <input
                   id="ticketing-date_return"
@@ -148,7 +165,9 @@
 
             <div class="form-row">
               <div class="form-group col-12 col-md-4">
-                <label for="ticketing-adult">Adult</label>
+                <label for="ticketing-adult">{{
+                  $t('ticketing.form.adult')
+                }}</label>
                 <input
                   id="ticketing-adult"
                   v-model="adult"
@@ -160,7 +179,9 @@
                 />
               </div>
               <div class="form-group col-12 col-md-4">
-                <label for="ticketing-child">Child</label>
+                <label for="ticketing-child">{{
+                  $t('ticketing.form.children')
+                }}</label>
                 <input
                   id="ticketing-child"
                   v-model="child"
@@ -172,7 +193,9 @@
                 />
               </div>
               <div class="form-group col-12 col-md-4">
-                <label for="ticketing-infant">Infant</label>
+                <label for="ticketing-infant">{{
+                  $t('ticketing.form.infants')
+                }}</label>
                 <input
                   id="ticketing-infant"
                   v-model="infant"
@@ -186,7 +209,9 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="ticketing-seat_class">Seat Class</label>
+                <label for="ticketing-seat_class">{{
+                  $t('ticketing.form.seat_class')
+                }}</label>
                 <select
                   id="ticketing-seat_class"
                   v-model="form.seat_class"
@@ -208,7 +233,7 @@
                   class="btn btn-primary w-25 "
                   style="background-color: #4576a2"
                 >
-                  Submit
+                  {{ $t('ticketing.submit_btn') }}
                 </button>
                 <button
                   v-else
@@ -216,7 +241,7 @@
                   style="background-color:#4576a2"
                   disabled
                 >
-                  Submitting your request ...
+                  {{ $t('ticketing.form_submitting') }} ...
                 </button>
               </div>
             </div>
@@ -226,15 +251,15 @@
       <div v-else class="row my-5" style="height: 250px">
         <div class="col-12 text-center mt-50">
           <h4 class="text-danger font-weight-bold">
-            Please login to request your ticket!
+            {{ $t('ticketing.message.please_login') }}
           </h4>
           <button
             type="button"
-            class="ceo-gmbh-btn text-white mt-4"
+            class="ceo-gmbh-btn text-white mt-4 text-uppercase"
             data-toggle="modal"
             data-target="#modal-login"
           >
-            LOGIN
+            {{ $t('ticketing.message.login') }}
           </button>
         </div>
       </div>
@@ -287,16 +312,15 @@ export default {
         await this.CREATE_TICKET(this.form)
         await this.$swal({
           icon: 'success',
-          title: 'Created! ',
-          text: `Your tickets request has been created! Kindly wait for our email.`,
+          text: `${this.$t('ticketing.message.success')}`,
           showConfirmButton: true
         })
         this.clearForm()
+        this.$router.push(this.localeRoute({ name: 'about-us-contact' }))
       } catch (e) {
         this.$swal({
           icon: 'error',
-          title: 'Oops! Something wrong.',
-          text: 'Double check your inputs! or Please try again later.',
+          text: `${this.$t('ticketing.message.error')}`,
           showConfirmButton: false,
           timerProgressBar: true,
           timer: 5000

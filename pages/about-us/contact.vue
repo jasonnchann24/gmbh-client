@@ -23,10 +23,14 @@
             Bergstrasse 19, 21481 Schnakenbek. Germany.
           </h5>
           <h5 class="font-weight-bolder mt-2">
-            <i class="fa fa-envelope"></i> ceotravelweb@gmail.com
+            <a href="mailto:ceotravelweb@gmail.com" target="_blank">
+              <i class="fa fa-envelope"></i> ceotravelweb@gmail.com
+            </a>
           </h5>
           <h5 class="font-weight-bolder mt-2 mb-100">
-            <i class="fa fa-phone"></i> +62 813 8915 8787 (Indo.Contact)
+            <a href="https://wa.me/6281389158787" target="_blank">
+              <i class="fa fa-phone"></i> +62 813 8915 8787 (Indo.Contact)
+            </a>
           </h5>
         </div>
       </div>

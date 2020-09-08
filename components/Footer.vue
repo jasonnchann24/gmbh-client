@@ -9,58 +9,73 @@
         <div class="row">
           <div class="col-lg-4 mt-50">
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Us</h3>
+              <h3 class="footer-heading mb-4">{{ $t('nav.about_us') }}</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
-                pariatur reprehenderit vero atque, consequatur id ratione, et
-                non dignissimos culpa? Ut veritatis, quos illum totam quis
-                blanditiis, minima minus odio!
+                {{ $t('about_us_short') }}
               </p>
             </div>
           </div>
           <div class="col-lg-4 mb-0 mb-lg-0 mt-50">
             <div class="row mb-0">
               <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigations</h3>
+                <h3 class="footer-heading mb-4">
+                  {{ $t('footer.navigations') }}
+                </h3>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><nuxtLink to="/" tag="a">Home</nuxtLink></li>
                   <li>
-                    <nuxtLink to="/ticketing" tag="a">Ticketing</nuxtLink>
+                    <nuxtLink :to="localePath('/')" tag="a">{{
+                      $t('nav.home')
+                    }}</nuxtLink>
                   </li>
                   <li>
-                    <nuxtLink to="/packages" tag="a">Tour Packages</nuxtLink>
+                    <nuxtLink :to="localePath('/ticketing')" tag="a">{{
+                      $t('nav.ticketing')
+                    }}</nuxtLink>
                   </li>
                   <li>
-                    <nuxtLink to="/photography-exploration" tag="a"
-                      >Photography Exploration</nuxtLink
+                    <nuxtLink :to="localePath('/packages')" tag="a">{{
+                      $t('nav.tour_packages')
+                    }}</nuxtLink>
+                  </li>
+                  <li>
+                    <nuxtLink
+                      :to="localePath('/photography-exploration')"
+                      tag="a"
+                      >{{ $t('nav.photography_exploration') }}</nuxtLink
                     >
                   </li>
                   <li>
-                    <nuxtLink to="/custom-tour" tag="a">Custom Tour</nuxtLink>
+                    <nuxtLink :to="localePath('/custom-tour')" tag="a">{{
+                      $t('nav.custom_tour')
+                    }}</nuxtLink>
                   </li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
                   <li>
-                    <nuxtLink to="/about-us/contact" tag="a"
-                      >Contact Us</nuxtLink
+                    <nuxtLink :to="localePath('/about-us/contact')" tag="a">{{
+                      $t('nav.contact_us')
+                    }}</nuxtLink>
+                  </li>
+                  <li>
+                    <nuxtLink
+                      :to="localePath('/about-us/company-profile')"
+                      tag="a"
+                      >{{ $t('nav.company_profile') }}</nuxtLink
                     >
                   </li>
                   <li>
-                    <nuxtLink to="/about-us/company-profile" tag="a"
-                      >Company Profile</nuxtLink
-                    >
+                    <nuxtLink :to="localePath('/about-us/gallery')" tag="a">{{
+                      $t('nav.gallery')
+                    }}</nuxtLink>
                   </li>
                   <li>
-                    <nuxtLink to="/about-us/gallery" tag="a">Gallery</nuxtLink>
-                  </li>
-                  <li>
-                    <nuxtLink to="/about-us/testimony" tag="a"
-                      >Testimony</nuxtLink
-                    >
+                    <nuxtLink :to="localePath('/about-us/testimony')" tag="a">{{
+                      $t('nav.testimony')
+                    }}</nuxtLink>
                   </li>
                 </ul>
               </div>

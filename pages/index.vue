@@ -29,7 +29,7 @@
                 CEO Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
-                Discover the Beautiful World
+                Explore World. Beyond Words.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@
                 CEO Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
-                Discover the Beautiful World
+                Explore World. Beyond Words.
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@
                 CEO Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
-                Discover the Beautiful World
+                Explore World. Beyond Words.
               </p>
             </div>
           </div>
@@ -96,21 +96,16 @@
                 class="font-weight-bold wow fadeInUpBig"
                 data-wow-delay="0.5s"
               >
-                Discover the beautiful world with
+                {{ $t('home.main_header') }}
                 <br />
-                <span>CEO Travel GmbH</span>
+                <span>CEO Travel GmbH </span>
               </h3>
               <p
                 class="wow fadeIn mt-50"
                 data-wow-delay="0.8s"
                 data-wow-duration="0.5s"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem
-                reprehenderit, at sint dolor natus fugit minima facere vel
-                adipisci officiis nostrum minus tenetur nesciunt debitis rerum
-                eveniet fuga. Officiis, fugiat! Tempore amet eligendi inventore.
-                Est ea ut iure, possimus deleniti necessitatibus similique.
+                {{ $t('home.description_header') }}
               </p>
             </div>
           </div>
@@ -127,18 +122,18 @@
             <div class="section-heading dark text-center my-auto">
               <span></span>
               <h4 class="text-dark wow fadeInUp" data-wow-delay="0.5s">
-                Our Packages
+                {{ $t('home.our_services') }}
               </h4>
               <p class="text-dark wow fadeInUp" data-wow-delay="0.6s">
-                Discover the Beautiful World with Us
+                {{ $t('home.tagline') }}
               </p>
             </div>
           </div>
         </div>
-        <div v-if="!$fetchState.pending" class="row">
+        <div class="row mb-100">
           <client-only>
-            <div v-if="PACKAGES" class="col-12  mt-4">
-              <div v-if="PACKAGES && show" class="all-catagories">
+            <div class="col-12  mt-4">
+              <div class="all-catagories">
                 <div class="row">
                   <!-- Single Catagory Area Brava -->
                   <div class="col-12 col-sm-12 col-md-4 my-md-3">
@@ -147,10 +142,10 @@
                       style="border-radius: 15px"
                       data-wow-delay="0.4s"
                     >
-                      <nuxt-link tag="a" to="/custom-tour">
+                      <nuxt-link tag="a" :to="localePath('/custom-tour')">
                         <div class="catagory-content">
                           <h5 class="text-dark py-2 p-md-2">
-                            Custom Tour
+                            {{ $t('nav.custom_tour') }}
                           </h5>
 
                           <div class="img-hover-zoom parent">
@@ -162,8 +157,9 @@
                             </content-placeholders>
                             <img
                               v-if="show"
-                              src="/images/custom-tour.jpg"
+                              src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                               alt="custom-tour-package"
+                              crossorigin="anonymous"
                               class="m-0 package-image image2"
                               loading="lazy"
                             />
@@ -172,28 +168,18 @@
                       </nuxt-link>
                     </div>
                   </div>
-                  <div
-                    v-for="(item, index) in PACKAGES.data"
-                    :key="item.id"
-                    class="col-12 col-sm-12 col-md-4 my-md-3"
-                  >
+                  <div class="col-12 col-sm-12 col-md-4 my-md-3">
                     <div
                       class="single-catagory-area my-50 p-0"
                       style="border-radius: 15px"
-                      :data-wow-delay="`${(index + 1) * 0.6}s`"
+                      data-wow-delay="0.4s"
                     >
-                      <nuxt-link
-                        tag="a"
-                        :to="
-                          `/packages/${item.id}/${item.name
-                            .replace(/\s/g, '-')
-                            .toLowerCase()}`
-                        "
-                      >
+                      <nuxt-link tag="a" :to="localePath('/packages')">
                         <div class="catagory-content">
                           <h5 class="text-dark py-2 p-md-2">
-                            {{ item.name }}
+                            {{ $t('nav.tour_packages') }}
                           </h5>
+
                           <div class="img-hover-zoom parent">
                             <content-placeholders
                               :rounded="true"
@@ -203,8 +189,44 @@
                             </content-placeholders>
                             <img
                               v-if="show"
-                              :src="item.image_url"
-                              :alt="`packages-${item.name}`"
+                              src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                              alt="custom-tour-package"
+                              crossorigin="anonymous"
+                              class="m-0 package-image image2"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </nuxt-link>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 my-md-3">
+                    <div
+                      class="single-catagory-area my-50 p-0"
+                      style="border-radius: 15px"
+                      data-wow-delay="0.4s"
+                    >
+                      <nuxt-link
+                        tag="a"
+                        :to="localePath('/photography-exploration')"
+                      >
+                        <div class="catagory-content">
+                          <h5 class="text-dark py-2 p-md-2">
+                            {{ $t('nav.photography_exploration') }}
+                          </h5>
+
+                          <div class="img-hover-zoom parent">
+                            <content-placeholders
+                              :rounded="true"
+                              class="image1"
+                            >
+                              <content-placeholders-img />
+                            </content-placeholders>
+                            <img
+                              v-if="show"
+                              src="https://images.unsplash.com/photo-1541163941099-f6faf8c3bc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                              alt="custom-tour-package"
+                              crossorigin="anonymous"
                               class="m-0 package-image image2"
                               loading="lazy"
                             />
@@ -214,43 +236,9 @@
                     </div>
                   </div>
                 </div>
-                <div v-if="PACKAGES.meta" class="row mt-100 mb-100">
-                  <div v-if="PACKAGES.meta.last_page > 1" class="col-12">
-                    <pagination
-                      :object-to-paginate="PACKAGES"
-                      :store-action="'packages/GET_PACKAGES'"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div v-else>
-                <div class="all-categories">
-                  <div class="row">
-                    <div
-                      v-for="index in 3"
-                      :key="index"
-                      class="col-12 col-sm-12 col-md-4 my-md-3"
-                    >
-                      <div class="single-catagory-area m-1 p-0">
-                        <content-placeholders :rounded="true">
-                          <content-placeholders-heading />
-                          <content-placeholders-img />
-                        </content-placeholders>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </client-only>
-        </div>
-        <div v-else class="row">
-          <div v-for="index in 3" :key="index" class="col-4 my-5">
-            <content-placeholders :rounded="true">
-              <content-placeholders-heading />
-              <content-placeholders-img />
-            </content-placeholders>
-          </div>
         </div>
       </div>
     </section>
@@ -266,43 +254,84 @@
           <div class="col-12">
             <div class="section-heading text-center">
               <span></span>
-              <h4 class="wow fadeInUp" data-wow-delay="0.5s">Testimonials</h4>
+              <h4 class="wow fadeInUp" data-wow-delay="0.5s">
+                {{ $t('testimonial.title') }}
+              </h4>
               <p class="wow fadeInUp" data-wow-delay="0.6s">
-                Our happy customers
+                {{ $t('testimonial.subtitle') }}
               </p>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div v-for="index in 3" :key="index" class="col-12 col-lg-12">
+          <div
+            v-for="item in testimonialPosts"
+            :key="item.id"
+            class="col-12 col-lg-12"
+          >
             <div
               class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
               data-wow-delay="0.2s"
             >
               <div class="feature-events-thumb">
-                <img
-                  src="img/bg-img/event-1.jpg"
-                  style="border-radius: 15px"
-                  alt=""
-                />
+                <img :src="item.image" style="border-radius: 15px" alt="" />
               </div>
               <div class="feature-events-content">
-                <h5>Tom Hanks</h5>
-                <h6>Jakarta</h6>
+                <h5>{{ item.name }}</h5>
+                <h6 class="font-weight-bold">{{ item.location }}</h6>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae iste at vitae, totam odio provident?
+                  {{ item.post }}
                 </p>
               </div>
             </div>
           </div>
           <div class="col-12 mt-50 text-center ">
-            <nuxt-link to="/about-us/testimony"
+            <nuxt-link :to="localePath('/about-us/testimony')"
               ><button class="ceo-gmbh-btn wow fadeIn" data-wow-delay="0.3s">
                 SEE MORE TESTIMONIALS
               </button>
             </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ceo-gmbh-about-area section-padding-0-100 pb-100 mt-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="about-content text-center">
+              <h3 class="font-weight-bold wow fadeInUpBig">
+                {{ $t('nav.contact_us') }}
+                <br />
+                <span>CEO Travel GmbH </span>
+              </h3>
+              <div class="mt-50">
+                <div class="row">
+                  <div class="col-12 col-lg-6 ">
+                    <a href="https://wa.me/6281389158787" target="_blank">
+                      <img
+                        class="wow fadeIn img-fluid w-25"
+                        src="/icons/whatsapp.png"
+                        alt="whatsapp message"
+                      />
+                    </a>
+                    <p class="text-muted">+62-813-8915-8787</p>
+                  </div>
+                  <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                    <a href="mailto:ceotravelweb@gmail.com" target="_blank">
+                      <img
+                        class="wow fadeIn img-fluid w-25"
+                        src="/icons/gmail.png"
+                        alt="whatsapp message"
+                      />
+                    </a>
+                    <p class="text-muted">ceotravelweb@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -312,13 +341,10 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import Pagination from '@/components/Core/Pagination'
 
 export default {
   name: 'IndexPage',
-  components: {
-    Pagination
-  },
+  components: {},
   async fetch() {
     await this.GET_PACKAGES()
   },
@@ -334,6 +360,9 @@ export default {
     }),
     packageSlug(name) {
       return name.replace(/\s/g, '-')
+    },
+    testimonialPosts() {
+      return this.$t('testimonial.posts').slice(0, 3)
     }
   },
 

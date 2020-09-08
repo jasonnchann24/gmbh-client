@@ -5,7 +5,7 @@
         <div class="row h-100">
           <div class="col-12 h-100">
             <nav class="h-100 navbar navbar-expand-lg">
-              <nuxt-link to="/" class="navbar-brand" tag="a">
+              <nuxt-link :to="localePath('/')" class="navbar-brand" tag="a">
                 <img
                   src="/images/logo.png"
                   width="150"
@@ -33,6 +33,11 @@
                 class="collapse navbar-collapse bg-white animate slideIn"
               >
                 <ul id="dorneMenu" class="navbar-nav mr-auto ml-lg-5">
+                  <li class="nav-item ">
+                    <nuxt-link :to="localePath('/')" class="nav-link">
+                      {{ $t('nav.home') }}
+                    </nuxt-link>
+                  </li>
                   <li class="nav-item dropdown">
                     <a
                       id="navbarDropdown-1"
@@ -43,33 +48,43 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Our Services
+                      {{ $t('nav.our_services') }}
                     </a>
                     <div
                       class="dropdown-menu  animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/ticketing"
-                          >Ticketing</nuxt-link
+                        <nuxt-link
+                          class="dropdown-item"
+                          :to="localePath('/ticketing')"
                         >
-                      </div>
-                      <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/packages"
-                          >Tour Packages</nuxt-link
-                        >
+                          {{ $t('nav.ticketing') }}
+                        </nuxt-link>
                       </div>
                       <div @click="navbarToggle">
                         <nuxt-link
                           class="dropdown-item"
-                          to="/photography-exploration"
-                          >Photography Exploration</nuxt-link
+                          :to="localePath('/packages')"
                         >
+                          {{ $t('nav.tour_packages') }}
+                        </nuxt-link>
                       </div>
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/custom-tour"
-                          >Custom Tour</nuxt-link
+                        <nuxt-link
+                          class="dropdown-item"
+                          :to="localePath('/photography-exploration')"
                         >
+                          {{ $t('nav.photography_exploration') }}
+                        </nuxt-link>
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link
+                          class="dropdown-item"
+                          :to="localePath('/custom-tour')"
+                        >
+                          {{ $t('nav.custom_tour') }}
+                        </nuxt-link>
                       </div>
                     </div>
                   </li>
@@ -83,38 +98,47 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      About Us
+                      {{ $t('nav.about_us') }}
                     </a>
                     <div
                       class="dropdown-menu animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
                       <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/about-us/contact"
-                          >Contact Us</nuxt-link
+                        <nuxt-link
+                          class="dropdown-item"
+                          :to="localePath('/about-us/contact')"
                         >
+                          {{ $t('nav.contact_us') }}
+                        </nuxt-link>
                       </div>
                       <div @click="navbarToggle">
                         <nuxt-link
                           class="dropdown-item"
-                          to="/about-us/company-profile"
-                          >Company Profile</nuxt-link
+                          :to="localePath('/about-us/company-profile')"
                         >
-                      </div>
-                      <div @click="navbarToggle">
-                        <nuxt-link class="dropdown-item" to="/about-us/gallery"
-                          >Gallery</nuxt-link
-                        >
+                          {{ $t('nav.company_profile') }}
+                        </nuxt-link>
                       </div>
                       <div @click="navbarToggle">
                         <nuxt-link
                           class="dropdown-item"
-                          to="/about-us/testimony"
-                          >Testimony</nuxt-link
+                          :to="localePath('/about-us/gallery')"
                         >
+                          {{ $t('nav.gallery') }}
+                        </nuxt-link>
+                      </div>
+                      <div @click="navbarToggle">
+                        <nuxt-link
+                          class="dropdown-item"
+                          :to="localePath('/about-us/testimony')"
+                        >
+                          {{ $t('nav.testimony') }}
+                        </nuxt-link>
                       </div>
                     </div>
                   </li>
+                  <lang-change />
                 </ul>
                 <ul id="dorneMenu2" class="navbar-nav ml-auto mr-lg-5">
                   <li v-if="authenticated" class="nav-item dropdown">
@@ -127,7 +151,7 @@
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      Welcome, {{ user.name.split(' ')[0] }}
+                      {{ $t('nav.welcome') }}, {{ user.name.split(' ')[0] }}
                     </a>
                     <div
                       class="dropdown-menu animate slideIn"
@@ -136,15 +160,18 @@
                     >
                       <div @click="navbarToggle">
                         <nuxtLink
-                          to="/transactions"
+                          :to="localePath('/transactions')"
                           class="dropdown-item"
                           tag="a"
-                          >Transactions</nuxtLink
+                          >{{ $t('nav.transactions') }}</nuxtLink
                         >
                       </div>
                       <div @click="navbarToggle">
-                        <nuxtLink to="/settings" class="dropdown-item" tag="a"
-                          >Settings</nuxtLink
+                        <nuxtLink
+                          :to="localePath('/settings')"
+                          class="dropdown-item"
+                          tag="a"
+                          >{{ $t('nav.settings') }}</nuxtLink
                         >
                       </div>
                       <a
@@ -154,7 +181,7 @@
                           logout()
                           navbarToggle()
                         "
-                        >Logout</a
+                        >{{ $t('nav.logout') }}</a
                       >
                     </div>
                   </li>
@@ -171,7 +198,7 @@
                       addShowClass()
                       navbarToggle()
                     "
-                    >Sign In / Register</a
+                    >{{ $t('nav.sign_in_btn') }}</a
                   >
                 </div>
               </div>
@@ -187,9 +214,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import LangChange from '@/components/Core/LangChange'
 export default {
   name: 'Navbar',
-  components: {},
+  components: {
+    LangChange
+  },
   data() {
     return {
       show: false
@@ -203,7 +233,9 @@ export default {
   },
   methods: {
     async logout() {
-      await this.$auth.logout().then(() => this.$router.push('/'))
+      await this.$auth
+        .logout()
+        .then(() => this.$router.push(this.localeRoute({ name: 'index' })))
       this.$swal({
         icon: 'success',
         title: 'Logged out!',
@@ -269,6 +301,10 @@ a:hover {
 
 .nav-link {
   font-size: 18px !important;
+}
+
+.nav-link:hover {
+  color: #0348f8;
 }
 
 .dropdown-item {

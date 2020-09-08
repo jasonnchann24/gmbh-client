@@ -17,6 +17,7 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    'import/no-named-as-default': 0
+    'import/no-named-as-default': 0,
+    'vue/no-v-html': 'off'
   }
 }

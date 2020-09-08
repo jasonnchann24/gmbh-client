@@ -13,7 +13,7 @@
       <div class="modal-content p-3" style="border-radius: 25px">
         <div class="modal-header border-0">
           <h5 id="modal-loginLabel" class="modal-title">
-            Welcome to CEO GmbH
+            {{ $t('modal_login.title') }}
           </h5>
           <button
             id="closeModalBtn"
@@ -30,20 +30,19 @@
           <div v-if="!register" class="container">
             <div class="row">
               <div class="col-12">
-                <h3>Sign In</h3>
+                <h3>{{ $t('modal_login.sign_in.title') }}</h3>
               </div>
               <div class="col-12 mt-4">
                 <div class="form-group">
-                  <label for="login-email">Email address</label>
+                  <label for="login-email">Email</label>
                   <input
                     id="login-email"
                     v-model="loginForm.email"
-                    placeholder="Email"
+                    placeholder="example@email.com"
                     type="email"
                     class="form-control"
                     aria-describedby="emailHelp"
                     required
-                    autocomplete="off"
                   />
                 </div>
                 <div class="form-group">
@@ -60,12 +59,12 @@
                 <div class="row">
                   <div class="col-12">
                     <a :href="`${sanctum_url}/password/reset`" target="_blank">
-                      Forget your password?
+                      {{ $t('modal_login.sign_in.forgot_password') }}
                     </a>
                   </div>
                   <div class="col-12">
                     <a href="javascript:void(0);" @click="changeModal">
-                      Need a new account? Register here.
+                      {{ $t('modal_login.sign_in.register') }}
                     </a>
                   </div>
                   <div class="col-12 my-4 ">
@@ -76,7 +75,7 @@
                       style="background-color: #4d89b9"
                       @click="login"
                     >
-                      Sign In
+                      {{ $t('modal_login.sign_in.title') }}
                     </button>
 
                     <button
@@ -85,7 +84,7 @@
                       style="background-color: #4d89b9"
                       disabled
                     >
-                      Logging in...
+                      {{ $t('loading') }} ...
                     </button>
                   </div>
                 </div>
@@ -96,29 +95,33 @@
           <div v-else-if="register" class="container">
             <div class="row">
               <div class="col-12">
-                <h3 class="pt-2 pb-2 pr-2">Register</h3>
+                <h3 class="pt-2 pb-2 pr-2">
+                  {{ $t('modal_login.register.title') }}
+                </h3>
               </div>
               <div class="col-12 mt-4">
                 <div class="form-group">
-                  <label for="name-register">Full Name</label>
+                  <label for="name-register">{{
+                    $t('modal_login.register.full_name')
+                  }}</label>
                   <input
                     id="name-register"
                     v-model="form.name"
                     type="text"
                     class="form-control"
                     required
-                    placeholder="Enter your full name"
+                    :placeholder="$t('modal_login.register.name_placeholder')"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="email-register">Email address</label>
+                  <label for="email-register">Email</label>
                   <input
                     id="email-register"
                     v-model="form.email"
                     type="email"
                     class="form-control"
                     required
-                    placeholder="email@email.com"
+                    placeholder="example@email.com"
                   />
                 </div>
                 <div class="form-group">
@@ -132,9 +135,9 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="password-confirm-register"
-                    >Confirm Password</label
-                  >
+                  <label for="password-confirm-register">{{
+                    $t('modal_login.register.confirm_password')
+                  }}</label>
                   <input
                     id="password-confirm-register"
                     v-model="form.c_password"
@@ -152,12 +155,12 @@
                         clearForm()
                       "
                     >
-                      Have an account? Login here.
+                      {{ $t('modal_login.register.login') }}
                     </a>
                   </div>
                   <div class="col-12">
                     <a href="javascript:void(0);" @click="showResend">
-                      Not Receiving Verification Email?
+                      {{ $t('modal_login.register.resend_email') }}
                     </a>
                   </div>
                   <div v-if="error" class="col-12 mt-4">
@@ -173,7 +176,7 @@
                       style="background-color: #4d89b9"
                       @click="registerUser"
                     >
-                      Register
+                      {{ $t('modal_login.register.title') }}
                     </button>
                     <button
                       v-else
@@ -181,7 +184,7 @@
                       style="background-color: #4d89b9"
                       disabled
                     >
-                      Loading ...
+                      {{ $t('loading') }} ...
                     </button>
                   </div>
                 </div>
@@ -192,14 +195,16 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="email-resend">Resend Verification Email</label>
+                  <label for="email-resend">{{
+                    $t('modal_login.resend_email')
+                  }}</label>
                   <input
                     id="email-resend"
                     v-model="email"
                     type="email"
                     class="form-control"
                     required
-                    placeholder="email@email.com"
+                    placeholder="example@email.com"
                   />
                 </div>
                 <div v-if="errorResend" class="col-12 mt-4">
@@ -217,7 +222,7 @@
                     style="background-color: #4d89b9"
                     @click="resendEmail"
                   >
-                    Resend Email
+                    {{ $t('modal_login.resend_btn') }}
                   </button>
                   <button
                     v-else
@@ -225,7 +230,7 @@
                     style="background-color: #4d89b9"
                     disabled
                   >
-                    Loading ...
+                    {{ $t('loading') }} ...
                   </button>
                 </div>
               </div>
@@ -295,7 +300,7 @@ export default {
         await this.$axios.$post('email/resend', { email: this.email })
         this.$swal({
           icon: 'success',
-          title: 'Verification Email Resent!',
+          title: `${this.$t('modal_login.resend_success')}`,
           showConfirmButton: false,
           timer: 10000
         })
@@ -317,21 +322,30 @@ export default {
         await document.getElementById('closeModalBtn').click()
         this.$swal({
           icon: 'success',
-          title: 'Logged In!',
-          text: 'Check navigation bar for Customer Section',
+          title: `${this.$t('modal_login.logged_in')}`,
+          text: `${this.$t('modal_login.logged_in_des')}`,
           showConfirmButton: false,
           timer: 7000,
           timerProgressBar: true
         })
       } catch (e) {
-        this.$swal({
-          icon: 'error',
-          title: 'Something went wrong!',
-          text: 'Wrong Credentials / Not Verified Email!',
-          showConfirmButton: false,
-          timer: 5000,
-          timerProgressBar: true
-        })
+        if (e.response.data.message === 'Email Not Verified') {
+          this.$swal({
+            icon: 'error',
+            title: `${this.$t('modal_login.not_verified')}`,
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true
+          })
+        } else {
+          this.$swal({
+            icon: 'error',
+            title: `${this.$t('modal_login.wrong')}`,
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true
+          })
+        }
       } finally {
         this.loading = false
       }
@@ -340,4 +354,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+a:focus {
+  border-bottom: 1.3px solid;
+}
+</style>

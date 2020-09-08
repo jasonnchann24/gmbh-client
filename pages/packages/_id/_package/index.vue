@@ -36,7 +36,7 @@
                 <div class="single-listing-nav">
                   <nav>
                     <ul id="listingNav">
-                      <li class="active">
+                      <li class="active" style="list-style: none;">
                         <a
                           v-scroll-to="{
                             el: '#listingNav',
@@ -46,7 +46,7 @@
                           >Description</a
                         >
                       </li>
-                      <li>
+                      <li style="list-style: none;">
                         <a
                           v-scroll-to="{
                             el: '#tourScroll',
@@ -77,7 +77,14 @@
                         Tour Includes
                       </h5>
                       <p class="text-white tour-ex-in">
-                        {{ item.tour_includes }}
+                        <!-- eslint-disable -->
+                        <client-only>
+                          <span
+                            id="includes"
+                            v-html="item.tour_includes"
+                          ></span>
+                        </client-only>
+                        <!-- eslint-enable -->
                       </p>
                     </div>
                   </div>
@@ -91,7 +98,14 @@
                         Tour Excludes
                       </h5>
                       <p class="text-white tour-ex-in">
-                        {{ item.tour_excludes }}
+                        <!-- eslint-disable -->
+                        <client-only>
+                          <span
+                            id="includes"
+                            v-html="item.tour_excludes"
+                          ></span>
+                        </client-only>
+                        <!-- eslint-enable -->
                       </p>
                     </div>
                   </div>
@@ -111,7 +125,7 @@
                     class="btn text-white text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     style="background-color: #4676A3"
                     ><i class="fa fa-check pr-3"></i>Click here to book
-                    ticket!</nuxtLink
+                    package!</nuxtLink
                   >
                   <a
                     v-else
