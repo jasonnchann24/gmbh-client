@@ -117,6 +117,11 @@
       "error": "Double check your inputs or please try again later."
     }
   },
+  "packages": {
+    "title": "Our Packages",
+    "subtitle": "Premium tour packages",
+    "more_details": "More Details"
+  },
   "footer": {
     "navigations": "Navigations"
   }

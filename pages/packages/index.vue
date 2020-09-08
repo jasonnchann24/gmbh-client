@@ -5,15 +5,15 @@
         <div class="col-10 col-lg-6 mx-auto mt-100 p-4 h-auto">
           <div class="section-heading mb-0 text-center">
             <span></span>
-            <h4>Our Packages</h4>
-            <p>Premium tour packages</p>
+            <h4>{{ $t('packages.title') }}</h4>
+            <p>{{ $t('packages.subtitle') }}</p>
           </div>
         </div>
       </div>
     </div>
     <div v-if="PACKAGES.data" class="container mt-50 pb-4">
       <div v-for="item in PACKAGES.data" :key="item.id" class="row">
-        <div class="col-12 col-lg-10 mx-auto my-4">
+        <div class="col-12 col-lg-6 mx-auto my-4">
           <nuxt-link
             :to="
               `/packages/${item.id}/${item.name
@@ -51,7 +51,7 @@
                       "
                     >
                       <button class="btn btn-outline-info ">
-                        More Details...
+                        {{ $t('packages.more_details') }}...
                       </button>
                     </nuxt-link>
                   </div>
