@@ -16,9 +16,11 @@
         <div class="col-12 col-lg-6 mx-auto my-4">
           <nuxt-link
             :to="
-              `/packages/${item.id}/${item.name
-                .replace(/\s/g, '-')
-                .toLowerCase()}`
+              localePath(
+                `/packages/${item.id}/${item.name
+                  .replace(/\s/g, '-')
+                  .toLowerCase()}`
+              )
             "
           >
             <div class="card bg-light borderRad shadow-pack img-hover-zoom">
@@ -45,9 +47,11 @@
                   <div class="col-12 my-2 text-right">
                     <nuxt-link
                       :to="
-                        `/packages/${item.id}/${item.name
-                          .replace(/\s/g, '-')
-                          .toLowerCase()}`
+                        localePath(
+                          `/packages/${item.id}/${item.name
+                            .replace(/\s/g, '-')
+                            .toLowerCase()}`
+                        )
                       "
                     >
                       <button class="btn btn-outline-info ">

@@ -13,7 +13,7 @@
         <h1
           class="hero-text text-uppercase display-1 font-weight-bold text-white"
         >
-          SITE UNDER CONSTRUCTION
+          {{ $t('site_under_construction') }}
         </h1>
       </div>
     </section>

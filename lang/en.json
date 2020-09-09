@@ -1,6 +1,7 @@
 {
   "about_us_short": "CEO Travel GmbH is one of the leading Travel services and Tour operators in Germany.",
   "loading": "Loading",
+  "site_under_construction": "Site Under Construction",
   "nav": {
     "home": "Home",
     "our_services": "Our Services",
@@ -49,6 +50,162 @@
     "our_services": "Our Services",
     "tagline": "Explore World. Beyond Words."
   },
+  "ticketing": {
+    "title": "Ticketing",
+    "form_title": "Ticketing Form",
+    "form_subtitle": "Fill all the fields provided",
+    "form_submitting": "Submitting your request",
+    "submit_btn": "Submit",
+    "form": {
+      "full_name": "Full Name",
+      "phone": "Phone",
+      "email": "Email",
+      "origin": "Origin",
+      "destination": "Destination",
+      "trip_type": "Trip Type",
+      "departure_date": "Departure Date",
+      "return_date": "Return Date (Round Trip Only)",
+      "adult": "Adults",
+      "children": "Children",
+      "infants": "Infants",
+      "seat_class": "Seat Class"
+    },
+    "message": {
+      "please_login": "Please login to request your ticket!",
+      "login": "Login",
+      "success": "Your tickets request has been created! Kindly wait for our email or contact us to follow up your request!",
+      "error": "Double check your inputs or please try again later."
+    }
+  },
+  "packages": {
+    "title": "Our Packages",
+    "subtitle": "Premium tour packages",
+    "more_details": "More Details"
+  },
+  "package": {
+    "description": "Description",
+    "tour_in_ex": "Tour Includes & Excludes",
+    "tour_includes": "Tour Includes",
+    "tour_excludes": "Tour Excludes",
+    "click_here": "Click here to book package!",
+    "please_login": "Please login to book!",
+    "room_choices": "Room Choices",
+    "price_in_thou": "Prices in Thousands",
+    "book": {
+      "section": "Book Section for",
+      "make_booking": "Make Booking",
+      "loading_make": "Making your booking",
+      "package": "Package",
+      "adults": "Adults",
+      "children": "Children",
+      "infants": "Infants",
+      "required": "Min. 1 adult needed to make booking",
+      "swal": {
+        "create_accept": "Are you sure?",
+        "create_text": "Create booking for",
+        "passengers": "Passenger(s)",
+        "confirmBtn": "Yes, create it!",
+        "success_title": "Created!",
+        "success_text": "You will be redirected to booking details page! Booking number:"
+      }
+    }
+  },
+  "custom_tour": {
+    "title": "Custom Tour",
+    "form_title": "Custom Tour Form",
+    "form_subtitle": "Fill all the fields provided",
+    "login": "Login",
+    "form": {
+      "full_name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "origin": "Origin",
+      "destination": "Destination",
+      "trip_purpose": "Trip Purpose",
+      "date_from": "Date From",
+      "date_to": "Date To",
+      "submit_btn": "Submit",
+      "submitting": "Submitting your request"
+    },
+    "message": {
+      "please_login": "Please login to request your custom tour!"
+    },
+    "swal": {
+      "success_title": "Created!",
+      "success_text": "Your custom tour has been created! Kindly wait for our email or contact us to follow up your request!",
+      "error_title": "Oops! Something went wrong.",
+      "error_text": "We are sorry, please try again later."
+    }
+  },
+  "about_contact": {
+    "title": "Contact Us"
+  },
+  "about_profile": {
+    "title": "Company Profile",
+    "who_we_are": {
+      "title": "Who We Are?",
+      "text1": "CEO Travel GmbH is one of the leading Travel services and Tour operators in Germany with a representative contact in Jakarta Indonesia.",
+      "text2": "Providing comprehensive services for groups and individuals. Holding places, people and customs through professional guides, modern and luxury transportations, quality hotels, fine cuisine and culinary, and other key attraction vendors."
+    },
+    "our_mission": {
+      "title": "Our Mission",
+      "text1": " We are on mission creating your perfect experiences into the Europe Region and Asia Region, to provide the best travel services. Our services will be positioned very carefully.",
+      "text2": "They will be of extremely high quality experience of leisure, comfortable, informative in general and tailored to the clients needs."
+    },
+    "why_choose_us": {
+      "title": "Why Choose Us?",
+      "text1": "Our services According the current trending of life styles. We are presented with personal & Friendly touch as mother Languages Indonesian, German and English.",
+      "text2": "We are here to take you inside, feel like a local To explore your favorite culture and tourist attractions and nature. An advantage that we would like to provide for you.",
+      "text3": "In such of combinations & proportional to give unforgettable memories of the:",
+      "ul": [
+        "Explore & Leisure",
+        "Modern & History",
+        "Art & Culture",
+        "City & Nature"
+      ]
+    },
+    "our_services": {
+      "title": "Our Services",
+      "text": "Our services include everything related with tourism, such as:",
+      "one": {
+        "title": "Regular Packages",
+        "text": "All over the year excursions and itineraries of",
+        "ul": [
+          "Bavaria Alps Tour Package",
+          "Scandinavia & Russia Tour Package",
+          "Scandinavia & Baltic Tour Package",
+          "Normandy Tour Package"
+        ]
+      },
+      "two": {
+        "title": "Incentive, Special Interest Group",
+        "ul": [
+          "Photography Trip Package 👉 Coming Soon",
+          "Historical & Culture Trip Package 👉 Coming Soon"
+        ]
+      },
+      "three": {
+        "title": "Customize Services",
+        "ul": [
+          "Private Tour",
+          "Shopping Guiding",
+          "Personal Guiding",
+          "Car & Rental with driver (5 & 9 seaters vehicles)"
+        ]
+      },
+      "four": {
+        "title": "Airlines Ticket"
+      },
+      "five": {
+        "title": "Visa"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Our beautiful photos"
+  },
+
   "testimonial": {
     "title": "Testimonials",
     "subtitle": "Our happy customers",
@@ -90,37 +247,11 @@
       }
     ]
   },
-  "ticketing": {
-    "title": "Ticketing",
-    "form_title": "Ticketing Form",
-    "form_subtitle": "Fill all the fields provided",
-    "form_submitting": "Submitting your request",
-    "submit_btn": "Submit",
-    "form": {
-      "full_name": "Full Name",
-      "phone": "Phone",
-      "email": "Email",
-      "origin": "Origin",
-      "destination": "Destination",
-      "trip_type": "Trip Type",
-      "departure_date": "Departure Date",
-      "return_date": "Return Date (Round Trip Only)",
-      "adult": "Adults",
-      "children": "Children",
-      "infants": "Infants",
-      "seat_class": "Seat Class"
-    },
-    "message": {
-      "please_login": "Please login to request your ticket!",
-      "login": "Login",
-      "success": "Your tickets request has been created! Kindly wait for our email or contact us to follow up your request!",
-      "error": "Double check your inputs or please try again later."
-    }
-  },
-  "packages": {
-    "title": "Our Packages",
-    "subtitle": "Premium tour packages",
-    "more_details": "More Details"
+  "bookings": {
+    "title": "Bookings",
+    "subtitle": "Click for more detail",
+    "complete": "Complete",
+    "incomplete": "Incomplete"
   },
   "footer": {
     "navigations": "Navigations"

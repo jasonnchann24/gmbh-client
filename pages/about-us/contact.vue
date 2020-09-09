@@ -5,7 +5,7 @@
         <div class="col-12 mt-100">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>CONTACT US</h4>
+            <h4>{{ $t('about_contact.title') }}</h4>
           </div>
         </div>
       </div>

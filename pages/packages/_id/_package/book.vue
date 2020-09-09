@@ -21,7 +21,7 @@
       <div id="contact" class="dorne-contact-area d-md-flex">
         <div class="contact-form-area equal-height mb-0">
           <div class="contact-text">
-            <h4>Book section for {{ item.name }}</h4>
+            <h4>{{ $t('package.book.section') }} {{ item.name }}</h4>
             <p>
               {{ item.description }}
             </p>
@@ -63,7 +63,7 @@
                   class="section-heading dark text-uppercase mb-4"
                   style="font-weight: 800"
                 >
-                  Make Booking
+                  {{ $t('package.book.make_booking') }}
                 </h4>
               </div>
             </div>
@@ -75,13 +75,13 @@
                   @submit.prevent="createTransaction"
                 >
                   <div class="col-12 mt-4">
-                    <h5>Package {{ item.name }}</h5>
+                    <h5>{{ $t('package.book.package') }} - {{ item.name }}</h5>
                   </div>
                   <div class="form-group row mt-4">
                     <label
                       for="book-adults"
                       class="col-6 text-right col-form-label"
-                      >Adults
+                      >{{ $t('package.book.adults') }}
                     </label>
                     <div class="col-3 col-lg-2">
                       <input
@@ -99,7 +99,7 @@
                     <label
                       for="book-children"
                       class="col-6 text-right col-form-label"
-                      >Children
+                      >{{ $t('package.book.children') }}
                     </label>
                     <div class="col-3 col-lg-2">
                       <input
@@ -116,7 +116,7 @@
                     <label
                       for="book-infants"
                       class="col-6 text-right col-form-label"
-                      >Infants
+                      >{{ $t('package.book.infants') }}
                     </label>
                     <div class="col-3 col-lg-2">
                       <input
@@ -129,6 +129,22 @@
                       />
                     </div>
                   </div>
+                  <div class="form-group form-check">
+                    <input
+                      id="book-agree"
+                      type="checkbox"
+                      class="form-check-input"
+                      required
+                    />
+                    <label class="form-check-label" for="book-agree"
+                      ><a
+                        :href="tcLink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Agree Terms & Conditions</a
+                      ></label
+                    >
+                  </div>
                   <div
                     v-if="!disabled && Number.isInteger(calculate)"
                     class="row"
@@ -139,18 +155,18 @@
                         type="submit"
                         class="ceo-gmbh-btn btn-block mt-2 mb-5"
                       >
-                        Make Booking
+                        {{ $t('package.book.make_booking') }}
                       </button>
 
                       <button v-else disabled class="ceo-gmbh-btn mt-2 mb-5">
-                        Making your booking ...
+                        {{ $t('package.book.loading_make') }} ...
                       </button>
                     </div>
                   </div>
                   <div v-else class="row">
                     <div class="col-12 col-lg-6 mx-auto">
                       <p class="text-danger">
-                        Min. 1 adult needed to make booking
+                        {{ $t('package.book.required') }}
                       </p>
                     </div>
                   </div>
@@ -204,7 +220,8 @@ export default {
         infants: 0,
         children: 0
       },
-      loading: false
+      loading: false,
+      tcLink: 'https://google.com'
     }
   },
   computed: {
@@ -255,24 +272,33 @@ export default {
       this.form.infants = parseInt(this.form.infants)
       try {
         await this.$swal({
-          title: 'Are you sure?',
-          text: `Create booking for ${this.calculate} Passenger(s)`,
+          title: `${this.$t('package.book.swal.create_accept')}`,
+          text: `${this.$t('package.book.swal.create_text')} ${
+            this.calculate
+          } ${this.$t('package.book.swal.passengers')}`,
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, create it!'
+          confirmButtonText: `${this.$t('package.book.swal.confirmBtn')}`
         }).then(async (result) => {
           if (result.value) {
             await this.CREATE_TRANSACTION(this.form)
             await this.clearForm()
             await this.$swal({
               icon: 'success',
-              title: 'Created! ',
-              text: `Please proceed to fill your booking details. Booking number: ${this.TRANSACTION.data.transaction_number}`,
+              title: `${this.$t('package.book.swal.success_title')}`,
+              text: `${this.$t('package.book.swal.success_text')} ${
+                this.TRANSACTION.data.transaction_number
+              }`,
               showConfirmButton: true
             })
-            this.$router.push(`/transactions/${this.TRANSACTION.data.id}`)
+            this.$router.push(
+              this.localeRoute({
+                name: 'transactions-id',
+                params: { id: `${this.TRANSACTION.data.id}` }
+              })
+            )
           }
         })
       } catch (e) {

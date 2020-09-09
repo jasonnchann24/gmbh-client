@@ -13,7 +13,7 @@
         <h1
           class="hero-text text-uppercase display-1 font-weight-bold text-white"
         >
-          CUSTOM TOUR
+          {{ $t('custom_tour.title') }}
         </h1>
       </div>
     </section>
@@ -22,8 +22,10 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>CUSTOM TOUR FORM</h4>
-            <p>Fill all fields provided</p>
+            <h4>{{ $t('custom_tour.form_title') }}</h4>
+            <p>
+              {{ $t('custom_tour.form_subtitle') }}
+            </p>
           </div>
         </div>
       </div>
@@ -36,7 +38,9 @@
           >
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="custom-name">Full Name</label>
+                <label for="custom-name">
+                  {{ $t('custom_tour.form.full_name') }}</label
+                >
                 <input
                   id="custom-name"
                   v-model="form.name"
@@ -47,7 +51,9 @@
                 />
               </div>
               <div class="form-group col-md-6">
-                <label for="custom-email">Email</label>
+                <label for="custom-email">
+                  {{ $t('custom_tour.form.email') }}</label
+                >
                 <input
                   id="custom-email"
                   v-model="form.email"
@@ -59,7 +65,9 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="custom-phone">Phone</label>
+              <label for="custom-phone">
+                {{ $t('custom_tour.form.phone') }}</label
+              >
               <input
                 id="custom-phone"
                 v-model="form.phone"
@@ -71,7 +79,9 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label for="custom-origin">Origin</label>
+                <label for="custom-origin">
+                  {{ $t('custom_tour.form.origin') }}</label
+                >
                 <select
                   id="custom-origin"
                   v-model="form.origin"
@@ -88,7 +98,9 @@
                 </select>
               </div>
               <div class="form-group col-md-4">
-                <label for="custom-destination">Destination</label>
+                <label for="custom-destination">
+                  {{ $t('custom_tour.form.destination') }}</label
+                >
                 <select
                   id="custom-destination"
                   v-model="form.destination"
@@ -105,7 +117,9 @@
                 </select>
               </div>
               <div class="form-group col-12 col-md-4">
-                <label for="custom-purpose">Trip Purpose</label>
+                <label for="custom-purpose">
+                  {{ $t('custom_tour.form.trip_purpose') }}</label
+                >
                 <input
                   id="custom-purpose"
                   v-model="form.trip_purpose"
@@ -118,7 +132,9 @@
             </div>
             <div class="form-row">
               <div class="form-group col-12 col-md-6">
-                <label for="custom-date_from">Date From</label>
+                <label for="custom-date_from">
+                  {{ $t('custom_tour.form.date_from') }}</label
+                >
                 <input
                   id="custom-date_from"
                   v-model="form.date_from"
@@ -128,7 +144,9 @@
                 />
               </div>
               <div class="form-group col-12 col-md-6">
-                <label for="custom-date_to">Date To</label>
+                <label for="custom-date_to">
+                  {{ $t('custom_tour.form.date_to') }}</label
+                >
                 <input
                   id="custom-date_to"
                   v-model="form.date_to"
@@ -146,7 +164,7 @@
                   class="btn btn-primary w-25 "
                   style="background-color: #4576a2"
                 >
-                  Submit
+                  {{ $t('custom_tour.form.submit_btn') }}
                 </button>
                 <button
                   v-else
@@ -154,7 +172,7 @@
                   style="background-color:#4576a2"
                   disabled
                 >
-                  Submitting your request ...
+                  {{ $t('custom_tour.form.submitting') }}...
                 </button>
               </div>
             </div>
@@ -164,7 +182,7 @@
       <div v-else class="row my-5" style="height: 250px">
         <div class="col-12 text-center mt-50">
           <h4 class="text-danger font-weight-bold">
-            Please login to request your custom tour!
+            {{ $t('custom_tour.message.please_login') }}
           </h4>
           <button
             type="button"
@@ -172,7 +190,7 @@
             data-toggle="modal"
             data-target="#modal-login"
           >
-            LOGIN
+            {{ $t('custom_tour.login') }}
           </button>
         </div>
       </div>
@@ -224,7 +242,6 @@ export default {
       } catch (e) {
         this.$swal({
           icon: 'error',
-          title: 'Oops! Something wrong.',
           text: 'Please try again later.',
           showConfirmButton: false,
           timerProgressBar: true,

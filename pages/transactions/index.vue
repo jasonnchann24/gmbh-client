@@ -10,8 +10,8 @@
             <div class="col-12">
               <div class="section-heading dark text-center">
                 <span></span>
-                <h4>Bookings</h4>
-                <p>Click for more detail</p>
+                <h4>{{ $t('bookings.title') }}</h4>
+                <p>{{ $t('bookings.subtitle') }}</p>
               </div>
             </div>
           </div>
@@ -23,7 +23,7 @@
               class="col-12 col-sm-6 col-lg-4"
             >
               <nuxt-link
-                :to="`/transactions/${item.id}`"
+                :to="localePath(`/transactions/${item.id}`)"
                 tag="a"
                 style="text-decoration: none;"
               >
@@ -36,9 +36,11 @@
                   <!-- Price -->
                   <div class="price-start">
                     <p v-if="badge(item)" class="bg-success">
-                      Complete
+                      {{ $t('bookings.complete') }}
                     </p>
-                    <p v-else class="bg-danger">Incomplete</p>
+                    <p v-else class="bg-danger">
+                      {{ $t('bookings.incomplete') }}
+                    </p>
                   </div>
                   <div
                     class="feature-content d-flex align-items-center justify-content-between"

@@ -5,8 +5,8 @@
         <div class="col-12 mt-100">
           <div class="section-heading dark text-center">
             <span></span>
-            <h4>Gallery</h4>
-            <p>Our beautiful photos</p>
+            <h4>{{ $t('gallery.title') }}</h4>
+            <p>{{ $t('gallery.subtitle') }}</p>
           </div>
         </div>
       </div>

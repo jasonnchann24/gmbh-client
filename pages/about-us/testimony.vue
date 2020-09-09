@@ -10,33 +10,34 @@
           <div class="col-12">
             <div class="section-heading text-center">
               <span></span>
-              <h4 class="wow fadeInUp" data-wow-delay="0.5s">Testimonials</h4>
+              <h4 class="wow fadeInUp" data-wow-delay="0.5s">
+                {{ $t('testimonial.title') }}
+              </h4>
               <p class="wow fadeInUp" data-wow-delay="0.6s">
-                Our happy customers
+                {{ $t('testimonial.subtitle') }}
               </p>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div v-for="index in 8" :key="index" class="col-12 col-lg-6">
+          <div
+            v-for="(item, index) in $t('testimonial.posts')"
+            :key="index"
+            class="col-12 col-lg-6"
+          >
             <div
               class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig"
-              :data-wow-delay="`${index * 0.15}s`"
+              :data-wow-delay="`${index * 0.06}s`"
             >
               <div class="feature-events-thumb">
-                <img
-                  src="/img/bg-img/event-1.jpg"
-                  style="border-radius: 15px"
-                  alt=""
-                />
+                <img :src="item.image" style="border-radius: 15px" alt="" />
               </div>
               <div class="feature-events-content">
-                <h5>Tom Hanks</h5>
-                <h6>Jakarta</h6>
+                <h5>{{ item.name }}</h5>
+                <h6>{{ item.location }}</h6>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae iste at vitae, totam odio provident?
+                  {{ item.post }}
                 </p>
               </div>
             </div>

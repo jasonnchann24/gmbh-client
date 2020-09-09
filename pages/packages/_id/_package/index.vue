@@ -43,7 +43,7 @@
                             duration: '1000'
                           }"
                           href="#"
-                          >Description</a
+                          >{{ $t('package.description') }}</a
                         >
                       </li>
                       <li style="list-style: none;">
@@ -53,7 +53,7 @@
                             duration: '1000'
                           }"
                           href="#"
-                          >Tour Includes & Excludes</a
+                          >{{ $t('package.tour_in_ex') }}</a
                         >
                       </li>
                     </ul>
@@ -66,7 +66,7 @@
                 </div>
                 <div id="tourScroll"></div>
                 <div id="menu" class="tour-list-info-area mt-100">
-                  <h4>Tour Includes & Excludes</h4>
+                  <h4>{{ $t('package.tour_in_ex') }}</h4>
                   <!-- Single Listing Menu -->
                   <div
                     class="single-tour-list-info d-flex justify-content-between"
@@ -74,7 +74,7 @@
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
                       <h5 class="text-uppercase text-white font-weight-bolder">
-                        Tour Includes
+                        {{ $t('package.tour_includes') }}
                       </h5>
                       <p class="text-white tour-ex-in">
                         <!-- eslint-disable -->
@@ -95,7 +95,7 @@
                     <!-- Listing Menu Title -->
                     <div class="tour-list-info-title">
                       <h5 class="text-uppercase text-white font-weight-bolder">
-                        Tour Excludes
+                        {{ $t('package.tour_excludes') }}
                       </h5>
                       <p class="text-white tour-ex-in">
                         <!-- eslint-disable -->
@@ -124,15 +124,15 @@
                     tag="a"
                     class="btn text-white text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     style="background-color: #4676A3"
-                    ><i class="fa fa-check pr-3"></i>Click here to book
-                    package!</nuxtLink
+                    ><i class="fa fa-check pr-3"></i
+                    >{{ $t('package.click_here') }}</nuxtLink
                   >
                   <a
                     v-else
                     href="javascript:void(0)"
                     class="btn btn-danger text-uppercase w-100 animate__animated animate__pulse animate__infinite"
                     @click="modalLogin"
-                    >Please login to book!</a
+                    >{{ $t('package.please_login') }}</a
                   >
                 </div>
 
@@ -141,9 +141,9 @@
                 <!-- Opening Hours Widget -->
                 <div class="room-price-widget mt-50">
                   <h6 class="text-uppercase text-dark font-weight-bolder">
-                    Room Choices
+                    {{ $t('package.room_choices') }}
                   </h6>
-                  <p class="text-muted">Prices in Thousands</p>
+                  <p class="text-muted">{{ $t('package.price_in_thou') }}</p>
                   <ul class="room-price">
                     <li v-for="room in item.room_choices" :key="room.id">
                       <p>{{ room.room_name }}</p>

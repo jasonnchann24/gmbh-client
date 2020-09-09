@@ -5,7 +5,7 @@
         <div class="col-12 mt-100">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>Company Profile</h4>
+            <h4>{{ $t('about_profile.title') }}</h4>
           </div>
         </div>
       </div>
@@ -23,20 +23,15 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>Who We Are?</h4>
+            <h4>{{ $t('about_profile.who_we_are.title') }}</h4>
           </div>
         </div>
         <div class="col-12 col-lg-8 mt-2 mx-auto">
           <p class="text-justify p-lh">
-            CEO Travel GmbH is one of the leading Travel services and Tour
-            operators in Germany with a representative contact in Jakarta
-            Indonesia.
+            {{ $t('about_profile.who_we_are.text1') }}
           </p>
           <p class="text-justify p-lh">
-            Providing comprehensive services for groups and individuals. Holding
-            places, people and customs through professional guides, modern and
-            luxury transportations, quality hotels, fine cuisine and culinary,
-            and other key attraction vendors.
+            {{ $t('about_profile.who_we_are.text2') }}
           </p>
         </div>
       </div>
@@ -44,19 +39,15 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>Our Mission</h4>
+            <h4>{{ $t('about_profile.our_mission.title') }}</h4>
           </div>
         </div>
         <div class="col-12 col-lg-8 mt-2 mx-auto">
           <p class="text-justify p-lh">
-            We are on mission creating your perfect experiences into the Europe
-            Region and Asia Region, to provide the best travel services. Our
-            services will be positioned very carefully.
+            {{ $t('about_profile.our_mission.text1') }}
           </p>
           <p class="text-justify p-lh">
-            They will be of extremely high quality experience of leisure,
-            comfortable, informative in general and tailored to the clients
-            needs.
+            {{ $t('about_profile.our_mission.text2') }}
           </p>
         </div>
       </div>
@@ -64,29 +55,26 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>Why Choose Us?</h4>
+            <h4>{{ $t('about_profile.why_choose_us.title') }}</h4>
           </div>
         </div>
         <div class="col-12 col-lg-8 mt-2 mx-auto">
           <p class="text-justify p-lh">
-            Our services According the current trending of life styles. We are
-            presented with personal & Friendly touch as mother Languages
-            Indonesian, German and English.
+            {{ $t('about_profile.why_choose_us.text1') }}
           </p>
           <p class="text-justify p-lh">
-            We are here to take you inside, feel like a local. To explore your
-            favorite culture and tourist attractions and nature. An advantage
-            that we would like to provide for you.
+            {{ $t('about_profile.why_choose_us.text2') }}
           </p>
           <p class="text-justify p-lh">
-            In such of combinations & proportional to give unforgettable
-            memories of the:
+            {{ $t('about_profile.why_choose_us.text3') }}
           </p>
           <ul>
-            <li><p>Explore & Leisure</p></li>
-            <li><p>Modern & History</p></li>
-            <li><p>Art & Culture</p></li>
-            <li><p>City & Nature</p></li>
+            <li
+              v-for="(item, index) in $t('about_profile.why_choose_us.ul')"
+              :key="index"
+            >
+              <p>{{ item }}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -94,58 +82,68 @@
         <div class="col-12 mt-50">
           <div class="section-heading dark text-center mb-0">
             <span></span>
-            <h4>Our Services</h4>
+            <h4>{{ $t('about_profile.our_services.title') }}</h4>
           </div>
         </div>
         <div class="col-12 col-lg-8 mt-2 mx-auto">
           <p class="text-justify p-lh">
-            Our services include Everything related with Tourism, such as:
+            {{ $t('about_profile.our_services.text') }}
           </p>
           <div>
-            <h5 class="font-weight-bolder">1. Regular Packages 🧳</h5>
+            <h5 class="font-weight-bolder">
+              1. {{ $t('about_profile.our_services.one.title') }} 🧳
+            </h5>
             <p class="text-justify p-lh">
-              All over the year excursions and itineraries of
+              {{ $t('about_profile.our_services.one.text') }}
             </p>
             <ul>
-              <li><p>Bavaria Alps Tour Package.</p></li>
-              <li><p>Scandinavia & Russia Tour Package</p></li>
-              <li><p>Scandinavia & Baltic Tour Package</p></li>
-              <li><p>Normandy Tour Package</p></li>
+              <li
+                v-for="(item, index) in $t('about_profile.our_services.one.ul')"
+                :key="index"
+              >
+                <p>{{ item }}</p>
+              </li>
             </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
-              2. Incentive, Special Interest Group 🧳
+              2. {{ $t('about_profile.our_services.two.title') }} 🧳
             </h5>
             <ul>
-              <li><p>Photography Trip Package 👉 Coming Soon</p></li>
-              <li><p>Historical & Culture Trip Package 👉 Coming Soon</p></li>
+              <li
+                v-for="(item, index) in $t('about_profile.our_services.two.ul')"
+                :key="index"
+              >
+                <p>{{ item }}</p>
+              </li>
             </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
-              3. Customize Services 🧳
+              3. {{ $t('about_profile.our_services.three.title') }} 🧳
             </h5>
             <ul>
-              <li><p>Private Tour</p></li>
-              <li><p>Shopping Guiding</p></li>
-              <li><p>Personal Guiding</p></li>
-              <li>
-                <p>Car & Rental with driver (5 & 9 seaters vehicles)</p>
+              <li
+                v-for="(item, index) in $t(
+                  'about_profile.our_services.three.ul'
+                )"
+                :key="index"
+              >
+                <p>{{ item }}</p>
               </li>
               <li class="text-muted" style="list-style: none">
-                Option: VW, OPEL, Audi, Mercedes-Benz, BMW.
+                VW, OPEL, Audi, Mercedes-Benz, BMW.
               </li>
             </ul>
           </div>
           <div class="mt-4">
             <h5 class="font-weight-bolder">
-              4. Airlines Ticket 🌐
+              4. {{ $t('about_profile.our_services.four.title') }} 🌐
             </h5>
           </div>
           <div class="mt-4 mb-100">
             <h5 class="font-weight-bolder">
-              5. Visa 🌐
+              5. {{ $t('about_profile.our_services.five.title') }} 🌐
             </h5>
           </div>
         </div>
