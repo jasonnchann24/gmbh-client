@@ -138,9 +138,10 @@
                       </div>
                     </div>
                   </li>
-                  <lang-change />
                 </ul>
                 <ul id="dorneMenu2" class="navbar-nav ml-auto mr-lg-5">
+                  <lang-change />
+
                   <li v-if="authenticated" class="nav-item dropdown">
                     <a
                       id="navbarDropdown-3"

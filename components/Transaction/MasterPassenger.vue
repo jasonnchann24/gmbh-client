@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
-          <h5 class="text-uppercase">2. Master Passenger Information</h5>
+          <h5 class="text-uppercase">
+            2. {{ $t('master_passenger_comp.title') }}
+          </h5>
         </div>
         <div v-if="!item.forms.master_passenger" class="col-12 col-md-6">
           <button
@@ -11,10 +13,10 @@
             class="btn btn-block btn-primary"
             @click="masterForm = !masterForm"
           >
-            Choose Master Passenger
+            {{ $t('master_passenger_comp.choose') }}
           </button>
           <button v-else class="btn btn-block btn-secondary" disabled>
-            Please submit all passengers first
+            {{ $t('master_passenger_comp.please_submit_passenger') }}
           </button>
         </div>
         <div v-else class="col-12 col-md-6">
@@ -22,20 +24,22 @@
             class="btn btn-block btn-success"
             @click="showMasterDetail = !showMasterDetail"
           >
-            Master Passenger Detail
+            {{ $t('master_passenger_comp.master_detail') }}
           </button>
         </div>
       </div>
       <div v-if="masterForm && !item.forms.master_passenger" class="row mt-4">
         <div class="col-12">
-          <h6>PLEASE CHOOSE THE MASTER PASSENGER</h6>
+          <h6 class="text-uppercase">
+            {{ $t('master_passenger_comp.please_choose') }}
+          </h6>
         </div>
         <div class="col-8 mt-4">
           <form @submit.prevent="createMasterPassenger">
             <div class="form-group row">
-              <label for="master-passenger" class="col-sm-2 col-form-label"
-                >Passenger</label
-              >
+              <label for="master-passenger" class="col-sm-2 col-form-label">{{
+                $t('master_passenger_comp.passenger')
+              }}</label>
               <div class="col-sm-6 ">
                 <select
                   id="master-passenger"
@@ -53,9 +57,9 @@
               </div>
             </div>
             <div class="form-group row">
-              <label for="master-email" class="col-sm-2 col-form-label"
-                >E-mail</label
-              >
+              <label for="master-email" class="col-sm-2 col-form-label">{{
+                $t('master_passenger_comp.email')
+              }}</label>
               <div class="col-sm-6">
                 <input
                   id="master-email"
@@ -72,10 +76,10 @@
                   type="submit"
                   class="btn btn-block btn-success"
                 >
-                  Add Master Passenger
+                  {{ $t('master_passenger_comp.add_master_btn') }}
                 </button>
                 <button v-else class="btn btn-block btn-success" disabled>
-                  Adding Master Passenger ...
+                  {{ $t('master_passenger_comp.saving_btn') }} ...
                 </button>
               </div>
             </div>
@@ -86,11 +90,11 @@
         <div class="row mt-4">
           <div class="col-12">
             <p>
-              Email :
+              {{ $t('master_passenger_comp.email') }} :
               {{ item.forms.master_passenger.email }}
             </p>
             <p>
-              Name :
+              {{ $t('master_passenger_comp.name') }} :
               {{ item.forms.master_passenger.passenger_name }}
             </p>
           </div>
@@ -136,16 +140,18 @@ export default {
         this.$swal({
           background: '#f5f5f5',
           icon: 'success',
-          title: 'Created!',
-          text: `Master Passenger Created! ${this.masterDetail.email}`,
+          title: `${this.$t('master_passenger_comp.swal.success_title')}`,
+          text: `${this.$t('master_passenger_comp.swal.success_text')} ${
+            this.masterDetail.email
+          }`,
           showConfirmButton: true
         })
       } catch (e) {
         this.$swal({
           background: '#f5f5f5',
           icon: 'error',
-          title: 'Error!',
-          text: `Please double check your inputs before submitting!`,
+          title: `${this.$t('master_passenger_comp.swal.error_title')}`,
+          text: `${this.$t('master_passenger_comp.swal.error_text')}`,
           showConfirmButton: true
         })
       } finally {

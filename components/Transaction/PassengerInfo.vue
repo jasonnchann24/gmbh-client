@@ -4,16 +4,16 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
-          <h5 class="text-uppercase">1. Passengers Information</h5>
+          <h5 class="text-uppercase">1. {{ $t('passengers_info.title') }}</h5>
         </div>
         <div v-if="item.forms.passengers.length == 0" class="col-12 col-md-6">
           <nuxt-link
-            :to="`/transactions/${$route.params.id}/passengers`"
+            :to="localePath(`/transactions/${$route.params.id}/passengers`)"
             class="btn btn-block btn-primary"
             :disabled="disabled"
             tag="button"
           >
-            Add Passengers Information
+            {{ $t('passengers_info.button.1') }}
           </nuxt-link>
         </div>
         <div
@@ -24,7 +24,7 @@
             class="btn btn-block btn-success"
             @click="passengersDetail = !passengersDetail"
           >
-            All Passengers Detail
+            {{ $t('passengers_info.button.2') }}
           </button>
         </div>
       </div>
@@ -37,13 +37,23 @@
               <thead class="thead-dark text-nowrap">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">DOB</th>
-                  <th scope="col">Passport Number</th>
-                  <th scope="col">Food Preference</th>
-                  <th scope="col">Issuing Country</th>
-                  <th scope="col">Room Choice</th>
-                  <th scope="col">Room Price</th>
+                  <th scope="col">{{ $t('passengers_info.table.name') }}</th>
+                  <th scope="col">{{ $t('passengers_info.table.dob') }}</th>
+                  <th scope="col">
+                    {{ $t('passengers_info.table.passport_number') }}
+                  </th>
+                  <th scope="col">
+                    {{ $t('passengers_info.table.food_preference') }}
+                  </th>
+                  <th scope="col">
+                    {{ $t('passengers_info.table.issuing_country') }}
+                  </th>
+                  <th scope="col">
+                    {{ $t('passengers_info.table.room_choice') }}
+                  </th>
+                  <th scope="col">
+                    {{ $t('passengers_info.table.room_price') }}
+                  </th>
                 </tr>
               </thead>
               <tbody class="text-nowrap">
@@ -61,7 +71,9 @@
                   <td>Rp. {{ passenger.room_choice_id.room_price }}K</td>
                 </tr>
                 <tr>
-                  <th colspan="7" class="text-right pr-5">Total Price</th>
+                  <th colspan="7" class="text-right pr-5">
+                    {{ $t('passengers_info.table.total_price') }}
+                  </th>
                   <td>Rp. {{ item.total_price_amount }}K</td>
                 </tr>
               </tbody>

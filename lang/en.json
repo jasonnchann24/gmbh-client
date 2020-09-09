@@ -45,10 +45,10 @@
     "resend_btn": "Resend Email"
   },
   "home": {
-    "main_header": "Explore World. Beyond Words.",
+    "main_header": "Discover the beautiful world with us.",
     "description_header": "CEO Travel GmbH is one of the leading Travel services and Tour operators in Germany with a representative contact in Jakarta Indonesia. Providing comprehensive services for groups and individuals. Holding places, people and customs through professional guides, modern and luxury transportations, quality hotels, fine cuisine and culinary, and other key attraction vendors.",
     "our_services": "Our Services",
-    "tagline": "Explore World. Beyond Words."
+    "tagline": "Discover the beautiful world with us."
   },
   "ticketing": {
     "title": "Ticketing",
@@ -252,6 +252,171 @@
     "subtitle": "Click for more detail",
     "complete": "Complete",
     "incomplete": "Incomplete"
+  },
+  "booking": {
+    "title": "Booking Detail",
+    "transaction_number": "Transaction Number",
+    "booking_form": "Booking Form",
+    "table": {
+      "total_passengers": "Total Passengers",
+      "emergency_contact": "Emergency Contact",
+      "master_passenger": "Master Passenger",
+      "transaction_slip": "Transaction Slip",
+      "total_price": "Total Price",
+      "created_at": "Created At",
+      "created_by": "Created By",
+      "passengers": "Passengers",
+      "adults": "Adults",
+      "children": "Children",
+      "infants": "Infants"
+    },
+    "message": {
+      "not_found": "Not Found",
+      "uploaded": "Uploaded",
+      "please_complete": "Please complete the details."
+    }
+  },
+
+  "passengers_info": {
+    "title": "Passengers Information",
+    "button": {
+      "1": "Add Passengers Information",
+      "2": "All Passengers Detail"
+    },
+    "table": {
+      "name": "Name",
+      "dob": "DOB",
+      "passport_number": "Passport Number",
+      "food_preference": "Food Preference",
+      "issuing_country": "Issuing Country",
+      "room_choice": "Room Choice",
+      "room_price": "Room Price",
+      "total_price": "Total Price"
+    }
+  },
+
+  "passenger": {
+    "title": "Add Passengers",
+    "subtitle": "Fill all passengers detail",
+    "submit_all": "Submit all passengers",
+    "submitting": "Submitting",
+    "swal": {
+      "success_title": "Created!",
+      "success_text": "Passengers Created!",
+      "error_title": "Error!",
+      "error_text": "Please double check your inputs before submitting!",
+      "add_passengers": {
+        "success_title": "Created!",
+        "success_text": "Passengers form created! Please double check your inputs before submitting!"
+      }
+    }
+  },
+
+  "stepper": {
+    "passenger": "Passenger",
+    "person_details": "Person Details",
+    "passport": "Passport",
+    "passport_disabled": "Passport (Disabled)",
+    "review_data": "Review Data",
+    "review_disabled": "Review (Disabled)",
+    "form": {
+      "full_name": "Full Name",
+      "title": "Title",
+      "food_preference": "Food Preference",
+      "date_of_birth": "Date of Birth",
+      "room_choice": "Room Choice",
+      "next": "Next",
+      "please_complete": "Please complete the fields.",
+      "passport_number": "Passport Number",
+      "passport_number_placeholder": "Enter passenger's passport number",
+      "passport_issued": "Passport Issued Date",
+      "passport_expiry": "Passport Expiry Date",
+      "issuing_country": "Issuing Country",
+      "issuing_country_placeholder": "Passport issuing country",
+      "save_passenger": "Save Passenger",
+      "passenger_saved": "Passenger Saved"
+    },
+    "swal": {
+      "confirmation": {
+        "title": "Are you sure?",
+        "text": "You won't be able to revert this!",
+        "confirmBtn": "Yes, save passenger!"
+      },
+      "success_title": "Saved! Please proceed."
+    }
+  },
+
+  "master_passenger_comp": {
+    "title": "Master Passenger Information",
+    "choose": "Choose Master Passenger",
+    "please_submit_passenger": "Please submit all passengers first",
+    "master_detail": "Master Passenger Detail",
+    "please_choose": "Please Choose The Master Passenger",
+    "passenger": "Passenger",
+    "email": "Email",
+    "add_master_btn": "Add Master Passenger",
+    "saving_btn": "Saving Master Passenger",
+    "name": "Name",
+    "swal": {
+      "success_title": "Created!",
+      "success_text": "Master Passenger Created!",
+      "error_title": "Error!",
+      "error_text": "Please double check your inputs before submitting!"
+    }
+  },
+
+  "emergency_contact_comp": {
+    "title": "Emergency Contact Information",
+    "create_emergency": "Create Emergency Contact",
+    "please_choose": "Please Choose The Master Passenger First",
+    "emergency_contact_detail": "Emergency Contact Detail",
+    "create_contact": "Create Emergency Contact",
+    "phone": "Phone Number",
+    "relative": "Relative",
+    "submit_btn": "Submit",
+    "submitting": "Submitting",
+    "name": "Name",
+    "telephone": "Telephone",
+    "swal": {
+      "success_title": "Created!",
+      "success_text": "Emergency Contact Created!",
+      "error_title": "Error!",
+      "error_text": "Please double check your inputs before submitting!"
+    }
+  },
+
+  "transaction_slip_comp": {
+    "title": "Transaction Slip",
+    "upload": "Upload Transaction Slip",
+    "please_create": "Please create emergency contact first",
+    "detail": "Transaction Slip Detail",
+    "choose_file": "Choose file",
+    "upload_btn": "Upload",
+    "uploading": "Uploading",
+    "view_transaction": "View Transaction Slip",
+    "swal": {
+      "success_title": "Created!",
+      "success_text": "Transaction Slip Uploaded!",
+      "error_title": "Error!",
+      "error_text": "Please double check your inputs before submitting!"
+    }
+  },
+
+  "settings": {
+    "title": "Settings",
+    "change_pass": "Change Password",
+    "old_password": "Old Password",
+    "curr_password": "Your current password",
+    "new_password": "New Password",
+    "new_password_confirm": "New Password Confirmation",
+    "submit": "Submit",
+    "loading": "Loading",
+    "error": {
+      "not_match": "New password confirmation doesn't match."
+    },
+    "swal": {
+      "success_title": "Password Changed!"
+    }
   },
   "footer": {
     "navigations": "Navigations"

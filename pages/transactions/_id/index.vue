@@ -23,9 +23,13 @@
           <div class="row">
             <div class="col-12">
               <div class="section-heading py-5 mb-0">
-                <h4 class="text-dark">BOOKING DETAIL</h4>
+                <h4 class="text-dark text-uppercase">
+                  {{ $t('booking.title') }}
+                </h4>
                 <p class="text-dark" style="line-height: 1.5em">
-                  Transaction Number - <br />{{ item.transaction_number }}
+                  {{ $t('booking.transaction_number') }} - <br />{{
+                    item.transaction_number
+                  }}
                 </p>
               </div>
             </div>
@@ -35,35 +39,51 @@
               <table class="table table-borderless table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Total Passengers</th>
+                    <th scope="row">
+                      {{ $t('booking.table.total_passengers') }}
+                    </th>
                     <td>: {{ item.adults + item.children + item.infants }}</td>
                   </tr>
                   <tr>
-                    <th scope="row">Emergency Contact</th>
+                    <th scope="row">
+                      {{ $t('booking.table.emergency_contact') }}
+                    </th>
                     <td>
                       :
                       <span v-if="item.forms.emergency_contact">{{
                         item.forms.emergency_contact.name
                       }}</span>
-                      <span v-else class="text-danger">Not found</span>
+                      <span v-else class="text-danger">{{
+                        $t('booking.message.not_found')
+                      }}</span>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Master Passenger</th>
+                    <th scope="row">
+                      {{ $t('booking.table.master_passenger') }}
+                    </th>
                     <td class="text-truncate">
                       :
                       <span v-if="item.forms.master_passenger">{{
                         item.forms.master_passenger.email
                       }}</span>
-                      <span v-else class="text-danger">Not found</span>
+                      <span v-else class="text-danger">{{
+                        $t('booking.message.not_found')
+                      }}</span>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Transaction Slip</th>
+                    <th scope="row">
+                      {{ $t('booking.table.transaction_slip') }}
+                    </th>
                     <td>
                       :
-                      <span v-if="item.forms.transfer_evidence">Uploaded</span>
-                      <span v-else class="text-danger">Not found</span>
+                      <span v-if="item.forms.transfer_evidence">{{
+                        $t('booking.message.uploaded')
+                      }}</span>
+                      <span v-else class="text-danger">{{
+                        $t('booking.message.not_found')
+                      }}</span>
                     </td>
                   </tr>
                 </tbody>
@@ -73,22 +93,22 @@
               <table class="table table-borderless table-hover">
                 <tbody>
                   <tr>
-                    <th scope="row">Total Price</th>
+                    <th scope="row">{{ $t('booking.table.total_price') }}</th>
                     <td>
                       :
                       <span
                         v-if="item.total_price_amount == 0"
                         class="text-danger"
-                        >Please complete the details.</span
+                        >{{ $t('booking.message.please_complete') }}</span
                       ><span v-else>Rp. {{ item.total_price_amount }}.000</span>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Created At</th>
+                    <th scope="row">{{ $t('booking.table.created_at') }}</th>
                     <td>: {{ item.created_at }}</td>
                   </tr>
                   <tr>
-                    <th scope="row">Created By</th>
+                    <th scope="row">{{ $t('booking.table.created_by') }}</th>
                     <td class="text-truncate" style="overflow: hidden;">
                       <span
                         class="d-inline-block text-truncate"
@@ -99,16 +119,18 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Passengers</th>
+                    <th scope="row">{{ $t('booking.table.passengers') }}</th>
                     <td>
                       :
                       <span v-if="item.adults > 0">
-                        {{ item.adults }} Adults
+                        {{ item.adults }} {{ $t('booking.table.adults') }}
                         <span v-if="item.children > 0">
-                          , {{ item.children }} Children</span
+                          , {{ item.children }}
+                          {{ $t('booking.table.children') }}</span
                         >
                         <span v-if="item.infants > 0">
-                          , {{ item.infants }} Infants</span
+                          , {{ item.infants }}
+                          {{ $t('booking.table.infants') }}</span
                         >
                       </span>
                     </td>
@@ -124,7 +146,9 @@
         <div class="row">
           <div class="col-12">
             <div class="section-heading pt-5 pb-2 mb-0">
-              <h4 class="text-dark">BOOKING FORM</h4>
+              <h4 class="text-dark text-uppercase">
+                {{ $t('booking.booking_form') }}
+              </h4>
             </div>
           </div>
         </div>

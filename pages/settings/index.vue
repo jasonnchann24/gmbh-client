@@ -5,7 +5,7 @@
         <div class="col-12 mt-100">
           <div class="section-heading dark text-center">
             <span></span>
-            <h4>Settings</h4>
+            <h4>{{ $t('settings.title') }}</h4>
           </div>
         </div>
       </div>
@@ -13,18 +13,22 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-8 mx-auto">
-          <h4 class="text-uppercase font-weight-bolder">Change Password</h4>
+          <h4 class="text-uppercase font-weight-bolder">
+            {{ $t('settings.change_pass') }}
+          </h4>
           <div v-if="error" class="alert alert-danger" role="alert">
             <span v-if="error.status === 403">
               {{ error.data.message }}
             </span>
             <span v-else>
-              New password confirmation doesn't match.
+              {{ $t('settings.error.not_match') }}
             </span>
           </div>
           <form class="mt-4 mb-100" @submit.prevent="resetPassword">
             <div class="form-group">
-              <label for="old-password">Old Password</label>
+              <label for="old-password">{{
+                $t('settings.old_password')
+              }}</label>
               <input
                 id="old-password"
                 v-model="form.old_password"
@@ -34,12 +38,14 @@
                 :style="errorBorder403"
                 required
               />
-              <small id="oldPasswordHelp" class="form-text text-muted"
-                >Your current password.</small
-              >
+              <small id="oldPasswordHelp" class="form-text text-muted">{{
+                $t('settings.curr_password')
+              }}</small>
             </div>
             <div class="form-group">
-              <label for="new-password">New Password</label>
+              <label for="new-password">{{
+                $t('settings.new_password')
+              }}</label>
               <input
                 id="new-password"
                 v-model="form.new_password"
@@ -50,9 +56,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="new-password-confirmation"
-                >New Password Confirmation</label
-              >
+              <label for="new-password-confirmation">{{
+                $t('settings.new_password_confirm')
+              }}</label>
               <input
                 id="new-password-confirmation"
                 v-model="form.new_password_confirmation"
@@ -64,7 +70,7 @@
             </div>
             <div class="text-right">
               <button v-if="!loading" type="submit" class="ceo-gmbh-btn">
-                Submit
+                {{ $t('settings.submit') }}
               </button>
               <button
                 v-else
@@ -72,7 +78,7 @@
                 disabled
                 style="pointer-events: none;"
               >
-                Loading ...
+                {{ $t('settings.loading') }} ...
               </button>
             </div>
           </form>
@@ -124,7 +130,7 @@ export default {
         this.clearForm()
         this.$swal({
           icon: 'success',
-          title: 'Password Changed!',
+          title: `${this.$t('settings.swal.success_title')}`,
           showConfirmButton: false,
           timerProgressBar: true,
           timer: 5000

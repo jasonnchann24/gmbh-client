@@ -5,8 +5,8 @@
         <div class="col-12 mt-100">
           <div class="section-heading dark text-center">
             <span></span>
-            <h4>Add Passengers</h4>
-            <p>Fill all passengers detail</p>
+            <h4>{{ $t('passenger.title') }}</h4>
+            <p>{{ $t('passenger.subtitle') }}</p>
           </div>
         </div>
       </div>
@@ -33,11 +33,9 @@
               @click="createPassengers"
             >
               <span v-if="!formLoading">
-                Submit all passengers
+                {{ $t('passenger.submit_all') }}
               </span>
-              <span v-else>
-                Submitting ...
-              </span>
+              <span v-else> {{ $t('passenger.submitting') }} ... </span>
             </button>
           </div>
         </div>
@@ -115,18 +113,23 @@ export default {
         this.$swal({
           background: '#f5f5f5',
           icon: 'success',
-          title: 'Created!',
-          text: `Passengers Created!`,
+          title: `${this.$t('passenger.swal.success_title')}`,
+          text: `${this.$t('passenger.swal.success_text')}`,
           showConfirmButton: true
         })
-        this.$router.push(`/transactions/${this.$route.params.id}`)
+        this.$router.push(
+          this.localeRoute({
+            name: 'transactions-id',
+            params: { id: `${this.$route.params.id}` }
+          })
+        )
         this.RESET_STEPPER()
       } catch (e) {
         this.$swal({
           background: '#f5f5f5',
           icon: 'error',
-          title: 'Error!',
-          text: `Please double check your inputs before submitting!`,
+          title: `${this.$t('passenger.swal.error_title')}`,
+          text: `${this.$t('passenger.swal.error_text')}`,
           showConfirmButton: true
         })
       } finally {
@@ -141,15 +144,17 @@ export default {
         position: 'top',
         background: '#f5f5f5',
         icon: 'success',
-        title: 'Created!',
-        text: `${passengersCount} Passengers form created! Please double check your inputs before submitting!`,
+        title: `${this.$t('passenger.swal.add_passengers.success_title')}`,
+        text: `${passengersCount} ${this.$t(
+          'passenger.swal.add_passengers.success_text'
+        )}`,
         showConfirmButton: true
       })
     }
   },
   head() {
     return {
-      title: `${this.item.package.name} Add Passengers | CEO Travel GmbH`
+      title: `Add Passengers | CEO Travel GmbH`
     }
   }
 }
