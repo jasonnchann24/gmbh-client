@@ -26,12 +26,15 @@
           >
             <li class="nav-item">
               <a
+                id="person-detail1"
                 class="flex-sm-fill nav-link"
                 data-toggle="collapse"
                 :data-target="`#stepOne-${idNumber}`"
                 role="button"
                 aria-expanded="true"
+                tabindex="0"
                 :aria-controls="`stepOne-${idNumber}`"
+                @keyup.enter="enterClick('person-detail1')"
               >
                 {{ $t('stepper.person_details') }}
               </a>
@@ -39,12 +42,15 @@
             <li class="nav-item">
               <a
                 v-if="!stepTwoDisable"
+                id="passport-tab"
                 class="flex-sm-fill nav-link"
                 data-toggle="collapse"
                 :data-target="`#stepTwo-${idNumber}`"
                 role="button"
                 aria-expanded="false"
                 :aria-controls="`stepTwo-${idNumber}`"
+                tabindex="0"
+                @keyup.enter="enterClick('passport-tab')"
                 >{{ $t('stepper.passport') }}</a
               >
               <a v-else class="flex-sm-fill nav-link disabled">{{
@@ -54,12 +60,15 @@
             <li class="nav-item">
               <a
                 v-if="!stepThreeDisable"
+                id="review-tab"
                 class="flex-sm-fill nav-link"
                 data-toggle="collapse"
                 :data-target="`#stepThree-${idNumber}`"
                 role="button"
                 aria-expanded="false"
                 :aria-controls="`stepThree-${idNumber}`"
+                tabindex="0"
+                @keyup.enter="enterClick('review-tab')"
                 >{{ $t('stepper.review_data') }}</a
               >
               <a v-else class="flex-sm-fill nav-link disabled">{{
@@ -167,12 +176,15 @@
             <div class="card-footer border-0 text-right bg-white">
               <a
                 v-if="!stepTwoDisable"
+                id="next-1"
                 class="btn btn-lg btn-primary text-white my-2 "
                 data-toggle="collapse"
                 :data-target="`#stepTwo-${idNumber}`"
                 role="button"
                 aria-expanded="false"
                 :aria-controls="`stepTwo-${idNumber}`"
+                tabindex="0"
+                @keyup.enter="enterClick('next-1')"
                 >{{ $t('stepper.form.next') }}</a
               >
               <button
@@ -258,12 +270,15 @@
             <div class="card-footer border-0 text-right bg-white">
               <a
                 v-if="!stepThreeDisable"
+                id="next-2"
                 class="btn btn-lg btn-primary text-white my-2 "
                 data-toggle="collapse"
                 :data-target="`#stepThree-${idNumber}`"
                 role="button"
                 aria-expanded="false"
                 :aria-controls="`stepThree-${idNumber}`"
+                tabindex="0"
+                @keyup.enter="enterClick('next-2')"
                 >{{ $t('stepper.form.next') }}</a
               >
               <button
@@ -360,6 +375,7 @@
                   <button
                     v-if="!stepTwoDisable && !stepThreeDisable && saved == 0"
                     class="btn btn-lg btn-success text-white my-2 px-4"
+                    tabindex="0"
                     type="submit"
                   >
                     {{ $t('stepper.form.save_passenger') }}
@@ -451,6 +467,9 @@ export default {
     ...mapMutations({
       PUSH_PASSENGER: 'stepper-form/PUSH_PASSENGER'
     }),
+    enterClick(id) {
+      document.getElementById(id).click()
+    },
     pushPassenger() {
       this.$swal({
         title: `${this.$t('stepper.swal.confirmation.title')}`,

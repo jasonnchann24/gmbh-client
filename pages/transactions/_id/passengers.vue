@@ -30,6 +30,7 @@
               class="btn btn-block btn-lg btn-success mb-4 "
               type="button"
               :disabled="formLoading"
+              tabindex="0"
               @click="createPassengers"
             >
               <span v-if="!formLoading">

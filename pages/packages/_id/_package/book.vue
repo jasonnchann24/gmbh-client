@@ -141,7 +141,7 @@
                         :href="tcLink"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >Agree Terms & Conditions</a
+                        >{{ $t('tnc') }}</a
                       ></label
                     >
                   </div>

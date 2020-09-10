@@ -53,6 +53,22 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group form-check">
+                <input
+                  id="book-agree-upload"
+                  type="checkbox"
+                  class="form-check-input"
+                  required
+                />
+                <label class="form-check-label" for="book-agree-upload"
+                  ><a
+                    :href="tcLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ $t('tnc') }}</a
+                  ></label
+                >
+              </div>
               <div class="row">
                 <div class="col-12">
                   <button
@@ -101,7 +117,8 @@ export default {
       showTransactionSlip: false,
       slip: null,
       slipName: null,
-      loading: false
+      loading: false,
+      tcLink: 'https://google.com'
     }
   },
   computed: {
