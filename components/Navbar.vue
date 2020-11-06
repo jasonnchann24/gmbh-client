@@ -33,11 +33,13 @@
                 class="collapse navbar-collapse bg-white animate slideIn"
               >
                 <ul id="dorneMenu" class="navbar-nav mr-auto ml-lg-5">
-                  <li class="nav-item ">
-                    <nuxt-link :to="localePath('/')" class="nav-link">
-                      {{ $t('nav.home') }}
-                    </nuxt-link>
-                  </li>
+                  <div @click="navbarToggle">
+                    <li class="nav-item ">
+                      <nuxt-link :to="localePath('/')" class="nav-link">
+                        {{ $t('nav.home') }}
+                      </nuxt-link>
+                    </li>
+                  </div>
                   <li class="nav-item dropdown">
                     <a
                       id="navbarDropdown-1"

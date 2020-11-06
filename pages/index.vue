@@ -156,7 +156,6 @@
                               <content-placeholders-img />
                             </content-placeholders>
                             <img
-                              v-if="show"
                               src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                               alt="custom-tour-package"
                               crossorigin="anonymous"
@@ -187,14 +186,21 @@
                             >
                               <content-placeholders-img />
                             </content-placeholders>
-                            <img
-                              v-if="show"
+                            <!-- <img
                               src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                               alt="custom-tour-package"
                               crossorigin="anonymous"
                               class="m-0 package-image image2"
                               loading="lazy"
-                            />
+                            /> -->
+                            <transition name="slide">
+                              <img
+                                :key="photo"
+                                :src="photo"
+                                class="m-0 package-image image2"
+                                loading="lazy"
+                              />
+                            </transition>
                           </div>
                         </div>
                       </nuxt-link>
@@ -223,7 +229,6 @@
                               <content-placeholders-img />
                             </content-placeholders>
                             <img
-                              v-if="show"
                               src="https://images.unsplash.com/photo-1541163941099-f6faf8c3bc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                               alt="custom-tour-package"
                               crossorigin="anonymous"
@@ -350,13 +355,15 @@ export default {
   },
   data() {
     return {
-      show: true
+      photo: '',
+      i: 0
     }
   },
 
   computed: {
     ...mapGetters({
-      PACKAGES: 'packages/PACKAGES'
+      PACKAGES: 'packages/PACKAGES',
+      IMAGES: 'packages/IMAGES'
     }),
     packageSlug(name) {
       return name.replace(/\s/g, '-')
@@ -366,11 +373,31 @@ export default {
     }
   },
 
-  mounted() {},
+  created() {
+    this.GET_PACKAGE_IMAGES()
+  },
+  mounted() {
+    this.cardImg()
+  },
   methods: {
     ...mapActions({
-      GET_PACKAGES: 'packages/GET_PACKAGES'
-    })
+      GET_PACKAGES: 'packages/GET_PACKAGES',
+      GET_PACKAGE_IMAGES: 'packages/GET_PACKAGE_IMAGES'
+    }),
+    cardImg() {
+      const max = this.IMAGES.length
+      if (this.i !== max) {
+        this.photo = this.IMAGES[this.i]
+        this.i++
+      } else {
+        this.i = 0
+        this.photo = this.IMAGES[this.i]
+      }
+
+      setTimeout(() => {
+        this.cardImg()
+      }, 1750)
+    }
   },
   head() {
     return {
@@ -434,5 +461,17 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 1.2s ease-in-out;
+}
+.slide-enter {
+  transform: translateY(-50%);
+}
+
+.slide-leave-to {
+  transform: translateY(-50%);
 }
 </style>

@@ -36,7 +36,11 @@
                 <div class="single-listing-nav">
                   <nav>
                     <ul id="listingNav">
-                      <li class="active" style="list-style: none;">
+                      <li
+                        :class="active('des')"
+                        style="list-style: none;"
+                        @click="nowActive = 'des'"
+                      >
                         <a
                           v-scroll-to="{
                             el: '#listingNav',
@@ -46,7 +50,11 @@
                           >{{ $t('package.description') }}</a
                         >
                       </li>
-                      <li style="list-style: none;">
+                      <li
+                        :class="active('in_ex')"
+                        style="list-style: none;"
+                        @click="nowActive = 'in_ex'"
+                      >
                         <a
                           v-scroll-to="{
                             el: '#tourScroll',
@@ -54,6 +62,20 @@
                           }"
                           href="#"
                           >{{ $t('package.tour_in_ex') }}</a
+                        >
+                      </li>
+                      <li
+                        :class="active('gallery')"
+                        style="list-style: none;"
+                        @click="nowActive = 'gallery'"
+                      >
+                        <a
+                          v-scroll-to="{
+                            el: '#package-gallery',
+                            duration: '1000'
+                          }"
+                          href="#"
+                          >{{ $t('package.gallery') }}</a
                         >
                       </li>
                     </ul>
@@ -109,6 +131,12 @@
                       </p>
                     </div>
                   </div>
+                </div>
+                <div id="package-gallery"></div>
+                <div class="tour-list-info-area mt-100">
+                  <h4>{{ $t('package.gallery') }} - {{ item.name }}</h4>
+                  <!-- Single Listing Menu -->
+                  <carousel-gallery />
                 </div>
               </div>
             </div>
@@ -181,8 +209,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import CarouselGallery from '@/components/Package/CarouselGallery'
 export default {
   name: 'PackageShow',
+  components: {
+    CarouselGallery
+  },
   async fetch() {
     this.loading = true
     try {
@@ -195,7 +227,8 @@ export default {
   },
   data() {
     return {
-      loading: false
+      loading: false,
+      nowActive: 'des'
     }
   },
   computed: {
@@ -206,6 +239,7 @@ export default {
     item() {
       return this.PACKAGE.data
     },
+
     packageName() {
       const name = this.$route.params.package
       return name.charAt(0).toUpperCase() + name.slice(1)
@@ -216,6 +250,14 @@ export default {
     ...mapActions({
       GET_PACKAGE: 'packages/GET_PACKAGE'
     }),
+
+    active(id) {
+      if (id === this.nowActive) {
+        return 'active'
+      } else {
+        return ''
+      }
+    },
     modalLogin() {
       document.getElementById('sign-in-btn-link').click()
     }
