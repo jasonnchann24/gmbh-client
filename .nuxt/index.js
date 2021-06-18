@@ -12,14 +12,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_vuescrollto_1da66da0 from 'nuxt_plugin_vuescrollto_1da66da0' // Source: .\\vue-scrollto.js (mode: 'client')
-import nuxt_plugin_vuesweetalert2_3f83fea0 from 'nuxt_plugin_vuesweetalert2_3f83fea0' // Source: .\\vue-sweetalert2.js (mode: 'client')
-import nuxt_plugin_axios_9a6c376e from 'nuxt_plugin_axios_9a6c376e' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_vuescrollto_1f1b7b08 from 'nuxt_plugin_vuescrollto_1f1b7b08' // Source: .\\vue-scrollto.js (mode: 'client')
+import nuxt_plugin_vuesweetalert2_54c8a778 from 'nuxt_plugin_vuesweetalert2_54c8a778' // Source: .\\vue-sweetalert2.js (mode: 'client')
+import nuxt_plugin_axios_7ceb8eed from 'nuxt_plugin_axios_7ceb8eed' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_carousel_2496c93e from 'nuxt_plugin_carousel_2496c93e' // Source: ..\\plugins\\carousel.js (mode: 'client')
 import nuxt_plugin_contentPlaceholder_fe334272 from 'nuxt_plugin_contentPlaceholder_fe334272' // Source: ..\\plugins\\contentPlaceholder.js (mode: 'client')
 import nuxt_plugin_vuemoment_732aa8ba from 'nuxt_plugin_vuemoment_732aa8ba' // Source: ..\\plugins\\vue-moment.js (mode: 'client')
 import nuxt_plugin_vueagile_726cdbff from 'nuxt_plugin_vueagile_726cdbff' // Source: ..\\plugins\\vue-agile (mode: 'client')
-import nuxt_plugin_auth_6c9797c7 from 'nuxt_plugin_auth_6c9797c7' // Source: .\\auth.js (mode: 'all')
+import nuxt_plugin_auth_100408a3 from 'nuxt_plugin_auth_100408a3' // Source: .\\auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -66,7 +66,7 @@ async function createApp (ssrContext) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"CEO GmbH","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"travel website"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"\u002Fstyle.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"\u002Fcss\u002Fresponsive\u002Fresponsive.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"https:\u002F\u002Fstackpath.bootstrapcdn.com\u002Fbootstrap\u002F4.5.1\u002Fcss\u002Fbootstrap.min.css","type":"text\u002Fcss","integrity":"sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww\u002FaWY76TfkUoSX","crossorigin":"anonymous"},{"rel":"stylesheet","href":"\u002FinfinitePagination\u002Fcss\u002Fstyle.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fanimate.css\u002F4.0.0\u002Fanimate.min.css","type":"text\u002Fcss"}],"script":[{"src":"\u002Fjs\u002Fjquery\u002Fjquery-2.2.4.min.js","body":true},{"src":"\u002Fjs\u002Fbootstrap\u002Fpopper.min.js","body":true},{"src":"https:\u002F\u002Fstackpath.bootstrapcdn.com\u002Fbootstrap\u002F4.5.2\u002Fjs\u002Fbootstrap.min.js","body":true},{"src":"\u002Fjs\u002Fothers\u002Fplugins.js","body":true},{"src":"\u002Fjs\u002Factive.js","body":true},{"src":"\u002FinfinitePagination\u002Fjs\u002Findex.js","body":true}],"style":[]},
+    head: {"title":"CEO GmbH","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"\u002Fstyle.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"\u002Fcss\u002Fresponsive\u002Fresponsive.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"https:\u002F\u002Fstackpath.bootstrapcdn.com\u002Fbootstrap\u002F4.5.1\u002Fcss\u002Fbootstrap.min.css","type":"text\u002Fcss","integrity":"sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww\u002FaWY76TfkUoSX","crossorigin":"anonymous"},{"rel":"stylesheet","href":"\u002FinfinitePagination\u002Fcss\u002Fstyle.css","type":"text\u002Fcss"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fanimate.css\u002F4.0.0\u002Fanimate.min.css","type":"text\u002Fcss"}],"script":[{"src":"\u002Fjs\u002Fjquery\u002Fjquery-2.2.4.min.js","body":true},{"src":"\u002Fjs\u002Fbootstrap\u002Fpopper.min.js","body":true},{"src":"https:\u002F\u002Fstackpath.bootstrapcdn.com\u002Fbootstrap\u002F4.5.2\u002Fjs\u002Fbootstrap.min.js","body":true},{"src":"\u002Fjs\u002Fothers\u002Fplugins.js","body":true},{"src":"\u002Fjs\u002Factive.js","body":true},{"src":"\u002FinfinitePagination\u002Fjs\u002Findex.js","body":true}],"style":[]},
 
     store,
     router,
@@ -181,16 +181,16 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_vuescrollto_1da66da0 === 'function') {
-    await nuxt_plugin_vuescrollto_1da66da0(app.context, inject)
+  if (process.client && typeof nuxt_plugin_vuescrollto_1f1b7b08 === 'function') {
+    await nuxt_plugin_vuescrollto_1f1b7b08(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_vuesweetalert2_3f83fea0 === 'function') {
-    await nuxt_plugin_vuesweetalert2_3f83fea0(app.context, inject)
+  if (process.client && typeof nuxt_plugin_vuesweetalert2_54c8a778 === 'function') {
+    await nuxt_plugin_vuesweetalert2_54c8a778(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_9a6c376e === 'function') {
-    await nuxt_plugin_axios_9a6c376e(app.context, inject)
+  if (typeof nuxt_plugin_axios_7ceb8eed === 'function') {
+    await nuxt_plugin_axios_7ceb8eed(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_carousel_2496c93e === 'function') {
@@ -209,8 +209,8 @@ async function createApp (ssrContext) {
     await nuxt_plugin_vueagile_726cdbff(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_6c9797c7 === 'function') {
-    await nuxt_plugin_auth_6c9797c7(app.context, inject)
+  if (typeof nuxt_plugin_auth_100408a3 === 'function') {
+    await nuxt_plugin_auth_100408a3(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

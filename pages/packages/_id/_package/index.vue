@@ -76,9 +76,10 @@
                       <h5 class="text-uppercase text-white font-weight-bolder">
                         Tour Includes
                       </h5>
-                      <p class="text-white tour-ex-in">
-                        {{ item.tour_includes }}
-                      </p>
+                      <p
+                        class="text-white tour-ex-in"
+                        v-html="item.tour_includes"
+                      ></p>
                     </div>
                   </div>
                   <!-- Single Listing Menu -->
@@ -90,9 +91,10 @@
                       <h5 class="text-uppercase text-white font-weight-bolder">
                         Tour Excludes
                       </h5>
-                      <p class="text-white tour-ex-in">
-                        {{ item.tour_excludes }}
-                      </p>
+                      <p
+                        class="text-white tour-ex-in"
+                        v-html="item.tour_excludes"
+                      ></p>
                     </div>
                   </div>
                 </div>
