@@ -69,7 +69,12 @@
           <div class="col-lg-4 mb-5 mb-lg-0 mt-50">
             <div class="row">
               <div class="col-12 text-center">
-                <img src="/images/logo.png" width="250" height="250" alt="" />
+                <img
+                  src="/images/new-logo-trade-travel-gmbh.png"
+                  width="250"
+                  height="250"
+                  alt="logo ceo gmbh trade and travel"
+                />
               </div>
               <div class="col-12 mt-2 text-center px-4">
                 <p>
@@ -82,7 +87,7 @@
         <div class="row text-center">
           <div class="col-md-12">
             <p>
-              Copyright &copy; | CEO Travel GmbH 2020
+              Copyright &copy; | CEO Trade & Travel GmbH 2020
             </p>
           </div>
         </div>

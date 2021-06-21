@@ -25,7 +25,7 @@ export default {
   name: 'PhotoExplorePage',
   head() {
     return {
-      title: `Photography Exploration | CEO Travel GmbH`
+      title: `Photography Exploration | CEO Trade & Travel GmbH`
     }
   }
 }

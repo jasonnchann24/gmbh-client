@@ -213,7 +213,7 @@ export default {
   },
   head() {
     return {
-      title: `Transaction Detail | CEO Travel GmbH`
+      title: `Transaction Detail | CEO Trade & Travel GmbH`
     }
   }
 }

@@ -36,7 +36,10 @@
                 <div class="single-listing-nav">
                   <nav>
                     <ul id="listingNav">
-                      <li class="active">
+                      <li
+                        :class="{ active: currentClick == 'listing' }"
+                        @click="currentClick = 'listing'"
+                      >
                         <a
                           v-scroll-to="{
                             el: '#listingNav',
@@ -46,7 +49,10 @@
                           >Description</a
                         >
                       </li>
-                      <li>
+                      <li
+                        :class="{ active: currentClick == 'tour' }"
+                        @click="currentClick = 'tour'"
+                      >
                         <a
                           v-scroll-to="{
                             el: '#tourScroll',
@@ -183,7 +189,8 @@ export default {
   },
   data() {
     return {
-      loading: false
+      loading: false,
+      currentClick: 'listing'
     }
   },
   computed: {
@@ -210,7 +217,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.packageName} | CEO Travel GmbH`
+      title: `${this.packageName} | CEO Trade & Travel GmbH`
     }
   }
 }

@@ -26,7 +26,7 @@
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
-                CEO Travel GmbH
+                CEO Trade & Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
@@ -41,7 +41,7 @@
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
-                CEO Travel GmbH
+                CEO Trade & Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
@@ -56,7 +56,7 @@
           >
             <div class="carousel-caption" style="backdrop-filter: blur(1.5px)">
               <h1 class=" text-white d-none d-md-block font-weight-bold">
-                CEO Travel GmbH
+                CEO Trade & Travel GmbH
               </h1>
               <p class="lead text-white font-weight-bold">
                 Discover the Beautiful World
@@ -98,7 +98,7 @@
               >
                 Discover the beautiful world with
                 <br />
-                <span>CEO Travel GmbH</span>
+                <span>CEO Trade & Travel GmbH</span>
               </h3>
               <p
                 class="wow fadeIn mt-50"
@@ -345,7 +345,7 @@ export default {
   },
   head() {
     return {
-      title: 'Welcome | CEO Travel GmbH'
+      title: 'Welcome | CEO Trade & Travel GmbH'
     }
   }
 }

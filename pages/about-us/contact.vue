@@ -12,10 +12,10 @@
       <div class="row">
         <div class="col-12 mt-50 text-center">
           <img
-            src="/images/logo.png"
+            src="/images/new-logo-trade-travel-gmbh.png"
             alt="logo-ceo-gmbh"
-            width="250"
-            height="250"
+            width="450"
+            height="450"
           />
         </div>
         <div class="col-12 text-center mt-50">
@@ -26,7 +26,7 @@
             <i class="fa fa-envelope"></i> ceotravelweb@gmail.com
           </h5>
           <h5 class="font-weight-bolder mt-2 mb-100">
-            <i class="fa fa-phone"></i> +62 813 8915 8787 (Indo.Contact)
+            <i class="fa fa-phone"></i> +62 813 8915 8787 (Indonesia)
           </h5>
         </div>
       </div>
@@ -39,7 +39,7 @@ export default {
   name: 'ContactPage',
   head() {
     return {
-      title: 'Contact Us | CEO Travel GmbH'
+      title: 'Contact Us | CEO Trade & Travel GmbH'
     }
   }
 }

@@ -21,7 +21,10 @@
                 .toLowerCase()}`
             "
           >
-            <div class="card bg-light borderRad shadow-pack img-hover-zoom">
+            <div
+              class="card bg-light borderRad shadow-pack img-hover-zoom mx-auto border-0"
+              style="max-width: 35rem;"
+            >
               <div class="card-header py-4 text-center">
                 <div class="section-heading mb-0 dark text-center">
                   <h4 class="mb-0">{{ item.name }}</h4>
@@ -133,7 +136,7 @@ export default {
   },
   head() {
     return {
-      title: `Tour Packages | CEO Travel GmbH`
+      title: `Tour Packages | CEO Trade & Travel GmbH`
     }
   }
 }
@@ -179,8 +182,8 @@ a:hover {
 }
 
 .shadow-pack {
-  -webkit-box-shadow: 4px 4px 15px 0px rgb(169, 169, 169);
-  -moz-box-shadow: 4px 4px 15px 0px rgb(169, 169, 169);
-  box-shadow: 4px 4px 15px 0px rgb(169, 169, 169);
+  -webkit-box-shadow: 4px 4px 15px 0px rgb(104, 104, 104);
+  -moz-box-shadow: 4px 4px 15px 0px rgb(104, 104, 104);
+  box-shadow: 4px 4px 15px 0px rgb(104, 104, 104);
 }
 </style>

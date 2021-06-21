@@ -12,10 +12,10 @@
       <div class="row">
         <div class="col-12 mt-50 text-center">
           <img
-            src="/images/logo.png"
-            alt="logo-ceo-gmbh"
-            width="250"
-            height="250"
+            src="/images/new-logo-trade-travel-gmbh.png"
+            alt="logo ceo trade and travel gmbh"
+            width="500"
+            height="500"
           />
         </div>
       </div>
@@ -28,8 +28,8 @@
         </div>
         <div class="col-12 col-lg-8 mt-2 mx-auto">
           <p class="text-justify p-lh">
-            CEO Travel GmbH is one of the leading Travel services and Tour
-            operators in Germany with a representative contact in Jakarta
+            CEO Trade & Travel GmbH is one of the leading Travel services and
+            Tour operators in Germany with a representative contact in Jakarta
             Indonesia.
           </p>
           <p class="text-justify p-lh">

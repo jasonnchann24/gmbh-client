@@ -237,7 +237,7 @@ export default {
   },
   head() {
     return {
-      title: 'Custom Tour | CEO Travel GmbH'
+      title: 'Custom Tour | CEO Trade & Travel GmbH'
     }
   }
 }

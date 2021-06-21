@@ -149,7 +149,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.item.package.name} Add Passengers | CEO Travel GmbH`
+      title: `${this.item.package.name} Add Passengers | CEO Trade & Travel GmbH`
     }
   }
 }

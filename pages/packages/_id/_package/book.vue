@@ -294,7 +294,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.item.name} Book | CEO Travel GmbH`
+      title: `${this.item.name} Book | CEO Trade & Travel GmbH`
     }
   }
 }

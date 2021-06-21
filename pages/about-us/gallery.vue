@@ -196,7 +196,7 @@ export default {
   },
   head() {
     return {
-      title: 'Gallery | CEO Travel GmbH'
+      title: 'Gallery | CEO Trade & Travel GmbH'
     }
   }
 }

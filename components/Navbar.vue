@@ -7,10 +7,10 @@
             <nav class="h-100 navbar navbar-expand-lg">
               <nuxt-link to="/" class="navbar-brand" tag="a">
                 <img
-                  src="/images/logo.png"
-                  width="150"
-                  height="150"
-                  alt="logo-ceo-gmbh"
+                  src="/images/new-logo-trade-travel-gmbh.png"
+                  width="175"
+                  height="175"
+                  alt="logo ceo gmbh trade and travel"
                   @click="navbarToggle"
                 />
               </nuxt-link>

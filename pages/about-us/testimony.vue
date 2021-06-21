@@ -52,7 +52,7 @@ export default {
   name: 'TestimonyPage',
   head() {
     return {
-      title: 'Testimony | CEO Travel GmbH'
+      title: 'Testimony | CEO Trade & Travel GmbH'
     }
   }
 }

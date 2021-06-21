@@ -155,7 +155,7 @@ export default {
   },
   head() {
     return {
-      title: `Transactions | CEO Travel GmbH`
+      title: `Transactions | CEO Trade & Travel GmbH`
     }
   }
 }
