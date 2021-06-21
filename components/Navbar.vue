@@ -112,6 +112,9 @@
                           to="/about-us/testimony"
                           >Testimony</nuxt-link
                         >
+                        <nuxt-link class="dropdown-item" to="/blog"
+                          >Blog</nuxt-link
+                        >
                       </div>
                     </div>
                   </li>

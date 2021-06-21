@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="">
     <!-- ****** Footer Area Start ****** -->
     <footer
       class="site-footer bg-dark"

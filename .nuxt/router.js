@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _6449b7a7 = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages_blog_index" */))
 const _4a93e4b7 = () => interopDefault(import('..\\pages\\custom-tour\\index.vue' /* webpackChunkName: "pages_custom-tour_index" */))
 const _4cd60408 = () => interopDefault(import('..\\pages\\packages\\index.vue' /* webpackChunkName: "pages_packages_index" */))
 const _260fd1d0 = () => interopDefault(import('..\\pages\\photography-exploration\\index.vue' /* webpackChunkName: "pages_photography-exploration_index" */))
@@ -19,6 +20,7 @@ const _6130ca1b = () => interopDefault(import('..\\pages\\others\\tickets.vue' /
 const _74c173af = () => interopDefault(import('..\\pages\\others\\travelpack.vue' /* webpackChunkName: "pages_others_travelpack" */))
 const _18b88886 = () => interopDefault(import('..\\pages\\transactions\\_id\\index.vue' /* webpackChunkName: "pages_transactions__id_index" */))
 const _3bf26ed6 = () => interopDefault(import('..\\pages\\transactions\\_id\\passengers.vue' /* webpackChunkName: "pages_transactions__id_passengers" */))
+const _444ba48b = () => interopDefault(import('..\\pages\\blog\\_id\\_slug.vue' /* webpackChunkName: "pages_blog__id__slug" */))
 const _5f632ab7 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\index.vue' /* webpackChunkName: "pages_packages__id__package_index" */))
 const _39fc8b14 = () => interopDefault(import('..\\pages\\packages\\_id\\_package\\book.vue' /* webpackChunkName: "pages_packages__id__package_book" */))
 const _d889c16e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
@@ -40,6 +42,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/blog",
+    component: _6449b7a7,
+    name: "blog"
+  }, {
     path: "/custom-tour",
     component: _4a93e4b7,
     name: "custom-tour"
@@ -103,6 +109,10 @@ export const routerOptions = {
     path: "/transactions/:id/passengers",
     component: _3bf26ed6,
     name: "transactions-id-passengers"
+  }, {
+    path: "/blog/:id/:slug?",
+    component: _444ba48b,
+    name: "blog-id-slug"
   }, {
     path: "/packages/:id/:package?",
     component: _5f632ab7,

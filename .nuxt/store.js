@@ -19,6 +19,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('..\\store\\articles.js'), 'articles.js')
   resolveStoreModules(require('..\\store\\custom-tours.js'), 'custom-tours.js')
   resolveStoreModules(require('..\\store\\gallery.js'), 'gallery.js')
   resolveStoreModules(require('..\\store\\packages.js'), 'packages.js')
@@ -32,6 +33,7 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '..\\store\\articles.js',
       '..\\store\\custom-tours.js',
       '..\\store\\gallery.js',
       '..\\store\\index.js',
