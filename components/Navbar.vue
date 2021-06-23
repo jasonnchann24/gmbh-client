@@ -118,6 +118,9 @@
                       </div>
                     </div>
                   </li>
+                  <li class="nav-item">
+                    <nuxt-link class="nav-link" to="/blog">Blog</nuxt-link>
+                  </li>
                 </ul>
                 <ul id="dorneMenu2" class="navbar-nav ml-auto mr-lg-5">
                   <li v-if="authenticated" class="nav-item dropdown">

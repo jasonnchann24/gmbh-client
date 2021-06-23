@@ -94,7 +94,7 @@
             <div class="about-content text-center">
               <h3
                 class="font-weight-bold wow fadeInUpBig"
-                data-wow-delay="0.5s"
+                data-wow-delay="0.3s"
               >
                 Discover the beautiful world with
                 <br />
@@ -103,14 +103,15 @@
               <p
                 class="wow fadeIn mt-50"
                 data-wow-delay="0.8s"
-                data-wow-duration="0.5s"
+                data-wow-duration="0.3s"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                odit dolorum quasi voluptatum. Blanditiis delectus velit dolorem
-                reprehenderit, at sint dolor natus fugit minima facere vel
-                adipisci officiis nostrum minus tenetur nesciunt debitis rerum
-                eveniet fuga. Officiis, fugiat! Tempore amet eligendi inventore.
-                Est ea ut iure, possimus deleniti necessitatibus similique.
+                CEO Trade & Travel GmbH is one of the leading Travel services
+                and Tour operators in Germany with a representative contact in
+                Jakarta Indonesia. Providing comprehensive services for groups
+                and individuals. Holding places, people and customs through
+                professional guides, modern and luxury transportations, quality
+                hotels, fine cuisine and culinary, and other key attraction
+                vendors.
               </p>
             </div>
           </div>

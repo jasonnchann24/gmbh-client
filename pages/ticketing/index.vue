@@ -23,7 +23,7 @@
           <div class="section-heading dark text-center mb-0">
             <span></span>
             <h4>TICKETING FORM</h4>
-            <p>Fill all fields provided</p>
+            <p v-show="isAuthenticated">Fill all fields provided</p>
           </div>
         </div>
       </div>

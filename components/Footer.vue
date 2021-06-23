@@ -11,10 +11,9 @@
             <div class="mb-5">
               <h3 class="footer-heading mb-4">About Us</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe
-                pariatur reprehenderit vero atque, consequatur id ratione, et
-                non dignissimos culpa? Ut veritatis, quos illum totam quis
-                blanditiis, minima minus odio!
+                CEO Trade & Travel GmbH is one of the leading Travel services
+                and Tour operators in Germany with a representative contact in
+                Jakarta Indonesia.
               </p>
             </div>
           </div>
@@ -61,6 +60,9 @@
                     <nuxtLink to="/about-us/testimony" tag="a"
                       >Testimony</nuxtLink
                     >
+                  </li>
+                  <li>
+                    <nuxtLink to="/blog" tag="a">Blog</nuxtLink>
                   </li>
                 </ul>
               </div>
