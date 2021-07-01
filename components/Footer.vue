@@ -25,9 +25,9 @@
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
                   <li><nuxtLink to="/" tag="a">Home</nuxtLink></li>
-                  <li>
+                  <!-- <li>
                     <nuxtLink to="/ticketing" tag="a">Ticketing</nuxtLink>
-                  </li>
+                  </li> -->
                   <li>
                     <nuxtLink to="/packages" tag="a">Tour Packages</nuxtLink>
                   </li>

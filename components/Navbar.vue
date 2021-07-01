@@ -49,11 +49,11 @@
                       class="dropdown-menu  animate slideIn"
                       aria-labelledby="navbarDropdown"
                     >
-                      <div @click="navbarToggle">
+                      <!-- <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/ticketing"
                           >Ticketing</nuxt-link
                         >
-                      </div>
+                      </div> -->
                       <div @click="navbarToggle">
                         <nuxt-link class="dropdown-item" to="/packages"
                           >Tour Packages</nuxt-link

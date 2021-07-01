@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="ceo-gmbh-welcome-area bg-img bg-overlay">
+    <!-- <section class="ceo-gmbh-welcome-area bg-img bg-overlay">
       <div class="hero-container">
         <img
           src="/images/ticketing/hero-ticketing.jpg"
@@ -238,7 +238,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -263,6 +263,9 @@ export default {
     disabled() {
       return this.form.trip_type !== '2'
     }
+  },
+  beforeCreate() {
+    this.$router.push('/')
   },
   async created() {
     const data = await this.$axios.$get(
